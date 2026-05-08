@@ -1,0 +1,13 @@
+
+
+# check the database under backend folder
+npx prisma studio
+
+# import property data under backend folder
+node scripts/importProperties.js
+
+
+# Data Base
+
+### reset data base, erase and genarate
+ npm run db:reset
