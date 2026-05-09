@@ -67,7 +67,7 @@ app.use(
 /**
  * Handle browser preflight requests
  */
-app.options("*", cors());
+// app.options("*", cors());
 
 app.use(express.json());
 
