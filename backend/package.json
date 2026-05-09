@@ -6,8 +6,8 @@
   "dev": "nodemon src/index.js",
   "start": "node src/index.js",
 
-  "db:push": "prisma db push",
   "db:generate": "prisma generate",
+  "db:push": "prisma db push",
   "db:reset": "prisma db push --force-reset && prisma generate",
 
   "sync:ics": "node scripts/syncIcsStatus.js",
@@ -20,7 +20,7 @@
   "setup:import": "npm run db:reset && npm run import:property && npm run import:unitroom",
 
   "deploy:setup": "npm run db:generate && npm run db:push && npm run import:property && npm run import:unitroom && npm run sync:ics && npm run sync:longterm"
-  },
+},
   "keywords": [],
   "author": "",
   "license": "ISC",
