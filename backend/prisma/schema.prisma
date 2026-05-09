@@ -24,6 +24,7 @@ model Unit {
   name       String
   propertyId String
   url        String?
+  note       String?
   status     String   @default("Available")
   property   Property @relation(fields: [propertyId], references: [id])
   rooms      Room[]
@@ -34,6 +35,8 @@ model Room {
   name       String
   url        String?
   listingName String?
+  appfolioName String?
+  note       String?
   status     String   @default("Available")
   unitId     String
   unit       Unit    @relation(fields: [unitId], references: [id])

@@ -6,16 +6,20 @@ const prisma = require("../src/prisma");
 /**
  * Import Units and Rooms from CSV.
  *
- * Expected logic:
- * - Column A / Property Name: match existing Property.name
- * - Column E / Unit: create or find Unit under Property
- * - Column F / Room: create or find Room under Unit
- * - ICS_URL: save to Room.url normally
- * - Listing_Status: save to Room.status normally
- * - If Room is "Whole Unit":
- *    - save ICS_URL to Unit.url
- *    - save Listing_Status to Unit.status
- *    - DO NOT create a Room named "Whole Unit"
+ * Logic:
+ * - Property column matches existing Property.name
+ * - Property_Address column creates/finds Unit
+ * - Room_Number column creates/finds Room
+ * - ICS_URL goes to Room.url normally
+ * - Listing_Status goes to Room.status normally
+ * - Listing_Name goes to Room.listingName
+ * - appfolioName = Unit Name - Room Name
+ *
+ * Special case:
+ * - If Room_Number is "Whole Unit":
+ *   - save ICS_URL to Unit.url
+ *   - save Listing_Status to Unit.status
+ *   - do NOT create a Room named "Whole Unit"
  */
 
 const FILE_PATH = path.join(__dirname, "../data/ImportData - Unit & Rooms.csv");
@@ -24,25 +28,24 @@ const DEFAULT_UNIT_NAME = "Default Unit";
 const DEFAULT_STATUS = "Available";
 const WHOLE_UNIT_VALUE = "Whole Unit";
 
-/**
- * Clean cell value.
- */
 function clean(value) {
   if (value === undefined || value === null) return "";
-  return String(value).trim();
+
+  return String(value)
+    .replace(/^\uFEFF/, "")
+    .replace(/[\r\n\t]/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
 }
 
-/**
- * Case-insensitive Whole Unit check.
- */
 function isWholeUnit(roomName) {
   return clean(roomName).toLowerCase() === WHOLE_UNIT_VALUE.toLowerCase();
 }
 
-/**
- * Get value from row by possible header names.
- * This lets the script work even if your CSV header names are slightly different.
- */
+function buildAppfolioName(unitName, roomName) {
+  return `${clean(unitName)} - ${clean(roomName)}`;
+}
+
 function getValue(row, possibleKeys) {
   for (const key of possibleKeys) {
     if (row[key] !== undefined) {
@@ -53,9 +56,6 @@ function getValue(row, possibleKeys) {
   return "";
 }
 
-/**
- * Read CSV file into rows.
- */
 function readCsv(filePath) {
   return new Promise((resolve, reject) => {
     const rows = [];
@@ -68,9 +68,6 @@ function readCsv(filePath) {
   });
 }
 
-/**
- * Find existing Unit under one Property, or create it.
- */
 async function findOrCreateUnit({ propertyId, unitName }) {
   const existingUnit = await prisma.unit.findFirst({
     where: {
@@ -93,10 +90,16 @@ async function findOrCreateUnit({ propertyId, unitName }) {
   return newUnit;
 }
 
-/**
- * Find existing Room under one Unit, or create it.
- */
-async function findOrCreateRoom({ unitId, roomName, url, status, listingName }) {
+async function findOrCreateRoom({
+  unitId,
+  unitName,
+  roomName,
+  url,
+  status,
+  listingName,
+}) {
+  const appfolioName = buildAppfolioName(unitName, roomName);
+
   const existingRoom = await prisma.room.findFirst({
     where: {
       unitId,
@@ -113,10 +116,11 @@ async function findOrCreateRoom({ unitId, roomName, url, status, listingName }) 
         url: url || existingRoom.url,
         status: status || existingRoom.status,
         listingName: listingName || existingRoom.listingName,
+        appfolioName,
       },
     });
 
-    console.log(`Updated Room: ${roomName}`);
+    console.log(`Updated Room: ${appfolioName}`);
 
     return updatedRoom;
   }
@@ -128,10 +132,11 @@ async function findOrCreateRoom({ unitId, roomName, url, status, listingName }) 
       url: url || null,
       status: status || DEFAULT_STATUS,
       listingName: listingName || null,
+      appfolioName,
     },
   });
 
-  console.log(`Created Room: ${roomName}`);
+  console.log(`Created Room: ${appfolioName}`);
 
   return newRoom;
 }
@@ -145,14 +150,6 @@ async function importUnitsRooms() {
   let skippedCount = 0;
 
   for (const row of rows) {
-    /**
-     * Adjust these keys if your CSV header names are different.
-     *
-     * A column = Property name
-     * E column = Unit
-     * F column = Room
-     * I column / ICS_URL = URL
-     */
     const propertyName = getValue(row, [
       "Property",
       "Property Name",
@@ -163,11 +160,17 @@ async function importUnitsRooms() {
     const unitNameRaw = getValue(row, [
       "Property_Address",
       "property_Address",
+      "Property Address",
+      "Unit",
+      "unit",
     ]);
 
     const roomName = getValue(row, [
       "Room_Number",
       "room_Number",
+      "Room Number",
+      "Room",
+      "room",
     ]);
 
     const url = getValue(row, [
@@ -215,11 +218,6 @@ async function importUnitsRooms() {
       unitName,
     });
 
-    /**
-     * Special case:
-     * If Room column says "Whole Unit",
-     * URL and Status belong to Unit, not Room.
-     */
     if (isWholeUnit(roomName)) {
       await prisma.unit.update({
         where: {
@@ -236,18 +234,17 @@ async function importUnitsRooms() {
       continue;
     }
 
-    /**
-     * Normal case:
-     * Create Room under Unit.
-     */
     if (!roomName) {
-      console.log(`Skipped row: missing room name -> ${propertyName} / ${unitName}`);
+      console.log(
+        `Skipped row: missing room name -> ${propertyName} / ${unitName}`
+      );
       skippedCount++;
       continue;
     }
 
     await findOrCreateRoom({
       unitId: unit.id,
+      unitName,
       roomName,
       url,
       status: listingStatus || DEFAULT_STATUS,
@@ -257,9 +254,10 @@ async function importUnitsRooms() {
     createdOrUpdatedCount++;
   }
 
-  console.log("Import completed");
+  console.log("\n========== IMPORT SUMMARY ==========");
   console.log(`Created / Updated: ${createdOrUpdatedCount}`);
   console.log(`Skipped: ${skippedCount}`);
+  console.log("Import completed");
 
   await prisma.$disconnect();
 }

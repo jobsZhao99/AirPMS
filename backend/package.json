@@ -7,7 +7,13 @@
     "start": "node src/index.js",
     "db:push": "prisma db push",
     "db:reset": "prisma db push --force-reset && prisma generate",
-    "db:studio": "prisma studio"
+    "db:studio": "prisma studio",
+    "sync:ics": "node scripts/syncIcsStatus.js",
+    "import:property": "node scripts/importProperties.js",
+    "import:unitroom": "node scripts/importUnitsRooms.js",
+    "sync:longterm": "node scripts/syncLongTermLeases.js",
+    "setup:all": "npm run db:reset && npm run import:property && npm run import:unitroom && npm run sync:ics && npm run sync:longterm",
+    "setup:import": "npm run db:reset && npm run import:property && npm run import:unitroom"
   },
   "keywords": [],
   "author": "",
@@ -17,6 +23,7 @@
     "@prisma/adapter-pg": "^7.8.0",
     "@prisma/client": "^7.8.0",
     "cors": "^2.8.6",
+    "csv-parse": "^6.2.1",
     "csv-parser": "^3.2.1",
     "dotenv": "^17.4.2",
     "express": "^5.2.1",

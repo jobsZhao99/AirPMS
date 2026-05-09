@@ -5,54 +5,41 @@ import api from "../api";
 const properties = ref([]);
 const loading = ref(false);
 
-/**
- * 从房间名里提取数字
- * 例如：
- * Rm 101 -> 101
- * Rm 1 -> 1
- * Room 12 -> 12
- */
 function getRoomNumber(roomName) {
-  const match = String(roomName).match(/\d+/);
+  const match = String(roomName || "").match(/\d+/);
   return match ? Number(match[0]) : null;
 }
 
-/**
- * 判断是否是三位数房间：
- * Rm 101 / Rm 205 / Rm 401
- */
 function isThreeDigitRoom(room) {
   const num = getRoomNumber(room.name);
   return num >= 100 && num <= 999;
 }
 
-/**
- * 判断是否全部都是三位数房间
- */
 function allRoomsAreThreeDigit(rooms) {
   if (!rooms.length) return false;
   return rooms.every(isThreeDigitRoom);
 }
 
-/**
- * 房间排序：按数字从小到大
- */
 function sortRooms(rooms) {
   return [...rooms].sort((a, b) => {
     const numA = getRoomNumber(a.name);
     const numB = getRoomNumber(b.name);
 
-    if (numA !== null && numB !== null) {
-      return numA - numB;
-    }
+    if (numA !== null && numB !== null) return numA - numB;
 
-    return a.name.localeCompare(b.name);
+    return String(a.name || "").localeCompare(String(b.name || ""));
   });
 }
 
-/**
- * 每 8 个房间一行
- */
+function sortUnits(units) {
+  return [...(units || [])].sort((a, b) => {
+    return String(a.name || "").localeCompare(String(b.name || ""), undefined, {
+      numeric: true,
+      sensitivity: "base",
+    });
+  });
+}
+
 function chunkRooms(rooms, size = 8) {
   const result = [];
 
@@ -63,20 +50,6 @@ function chunkRooms(rooms, size = 8) {
   return result;
 }
 
-/**
- * 核心排列逻辑
- *
- * 情况 1：
- * Unit 下面没有房间 -> 一整行只显示 Unit
- *
- * 情况 2：
- * 房间都是 Rm 101 / 201 / 301 这种三位数
- * -> 按楼层分组：100 / 200 / 300 / 400
- *
- * 情况 3：
- * Rm 1 / Rm 12 这种
- * -> 从小到大，每 8 个一行
- */
 function buildUnitRows(unit) {
   const rooms = sortRooms(unit.rooms || []);
 
@@ -97,10 +70,7 @@ function buildUnitRows(unit) {
       const roomNumber = getRoomNumber(room.name);
       const floor = Math.floor(roomNumber / 100);
 
-      if (!floorMap[floor]) {
-        floorMap[floor] = [];
-      }
-
+      if (!floorMap[floor]) floorMap[floor] = [];
       floorMap[floor].push(room);
     }
 
@@ -122,6 +92,31 @@ function buildUnitRows(unit) {
   }));
 }
 
+function statusClass(status) {
+  const value = String(status || "").toLowerCase();
+
+  if (value.includes("airbnb rented")) return "airbnb-rented";
+  if (value.includes("booking.com rented")) return "booking-rented";
+  if (value === "vacant") return "vacant";
+  if (value.includes("rented")) return "rented";
+  if (value.includes("available")) return "available";
+  if (value.includes("occupied")) return "occupied";
+  if (value.includes("maintenance")) return "maintenance";
+  if (value.includes("offline")) return "offline";
+  if (value.includes("inactive")) return "inactive";
+  if (value.includes("no ics")) return "no-ics";
+  if (value.includes("http")) return "error";
+  if (value.includes("not ics")) return "error";
+  if (value.includes("error")) return "error";
+
+  return "default";
+}
+
+function firstNoteLine(note) {
+  if (!note) return "";
+  return String(note).split("\n")[0];
+}
+
 async function loadDashboard() {
   loading.value = true;
 
@@ -141,8 +136,14 @@ onMounted(loadDashboard);
 <template>
   <div class="dashboard-page">
     <div class="page-header">
-      <h1>AirPMS Inventory Dashboard</h1>
-      <button @click="loadDashboard">Refresh</button>
+      <div>
+        <h1>AirPMS Inventory Dashboard</h1>
+        <p>Property / Unit / Room inventory overview</p>
+      </div>
+
+      <button @click="loadDashboard">
+        Refresh
+      </button>
     </div>
 
     <div v-if="loading" class="loading">
@@ -160,7 +161,7 @@ onMounted(loadDashboard);
 
       <div class="inventory-table">
         <template
-          v-for="unit in property.units"
+          v-for="unit in sortUnits(property.units)"
           :key="unit.id"
         >
           <div
@@ -168,30 +169,64 @@ onMounted(loadDashboard);
             :key="`${unit.id}-${rowIndex}`"
             class="inventory-row"
           >
-            <!-- 第一列：Unit -->
             <div
               class="unit-cell"
-              :class="{ muted: rowIndex > 0 }"
+              :class="[
+                rowIndex > 0 ? 'muted' : '',
+                rowIndex === 0 ? statusClass(unit.status) : '',
+              ]"
+              :title="rowIndex === 0 ? unit.note || '' : ''"
             >
-              <span v-if="rowIndex === 0">
-                {{ unit.name }}
-              </span>
+              <div v-if="rowIndex === 0">
+                <div class="unit-name">
+                  {{ unit.name }}
+                </div>
+
+                <div
+                  v-if="unit.url"
+                  class="unit-status"
+                >
+                  {{ unit.status }}
+                </div>
+
+                <div
+                  v-if="unit.note"
+                  class="unit-note"
+                >
+                  {{ firstNoteLine(unit.note) }}
+                </div>
+              </div>
             </div>
 
-            <!-- 情况 1：没有房间 -->
             <div
               v-if="row.type === 'unitOnly'"
               class="room-cell empty-room-cell"
             >
-              No rooms
+              <div class="room-name">
+                Whole Unit / No Rooms
+              </div>
+
+              <div
+                v-if="unit.url"
+                class="room-status"
+              >
+                {{ unit.status }}
+              </div>
+
+              <div
+                v-if="unit.note"
+                class="room-note"
+              >
+                {{ firstNoteLine(unit.note) }}
+              </div>
             </div>
 
-            <!-- 情况 2 / 3：显示房间 -->
             <div
               v-for="room in row.rooms"
               :key="room.id"
               class="room-cell"
-              :class="room.status?.toLowerCase()"
+              :class="statusClass(room.status)"
+              :title="room.note || ''"
             >
               <div class="room-name">
                 {{ room.name }}
@@ -199,6 +234,13 @@ onMounted(loadDashboard);
 
               <div class="room-status">
                 {{ room.status }}
+              </div>
+
+              <div
+                v-if="room.note"
+                class="room-note"
+              >
+                {{ firstNoteLine(room.note) }}
               </div>
             </div>
           </div>
@@ -220,12 +262,19 @@ onMounted(loadDashboard);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 24px;
+  margin-bottom: 22px;
 }
 
 .page-header h1 {
   font-size: 24px;
   margin: 0;
+  color: #111827;
+}
+
+.page-header p {
+  margin: 6px 0 0;
+  color: #6b7280;
+  font-size: 14px;
 }
 
 .page-header button {
@@ -264,7 +313,7 @@ onMounted(loadDashboard);
 
 .inventory-row {
   display: flex;
-  min-height: 58px;
+  min-height: 64px;
   border-bottom: 1px solid #e5e7eb;
 }
 
@@ -273,9 +322,9 @@ onMounted(loadDashboard);
 }
 
 .unit-cell {
-  width: 180px;
-  min-width: 180px;
-  padding: 12px;
+  width: 190px;
+  min-width: 190px;
+  padding: 10px 12px;
   border-right: 1px solid #e5e7eb;
   background: #f3f4f6;
   font-weight: 600;
@@ -285,11 +334,32 @@ onMounted(loadDashboard);
 
 .unit-cell.muted {
   color: transparent;
+  background: #f9fafb;
+}
+
+.unit-name {
+  font-weight: 700;
+  font-size: 14px;
+}
+
+.unit-status {
+  font-size: 12px;
+  color: #374151;
+  margin-top: 4px;
+  font-weight: 500;
+}
+
+.unit-note {
+  font-size: 11px;
+  color: #6b7280;
+  margin-top: 4px;
+  white-space: pre-line;
+  font-weight: 400;
 }
 
 .room-cell {
-  width: 120px;
-  min-width: 120px;
+  width: 130px;
+  min-width: 130px;
   padding: 8px;
   border-right: 1px solid #e5e7eb;
   background: #ffffff;
@@ -299,34 +369,83 @@ onMounted(loadDashboard);
 }
 
 .room-name {
-  font-weight: 600;
+  font-weight: 700;
   font-size: 14px;
+  color: #111827;
 }
 
 .room-status {
   font-size: 12px;
+  color: #374151;
+  margin-top: 4px;
+}
+
+.room-note {
+  font-size: 11px;
   color: #6b7280;
   margin-top: 4px;
+  white-space: pre-line;
 }
 
 .empty-room-cell {
   color: #9ca3af;
   font-style: italic;
+  width: 260px;
+  min-width: 260px;
 }
 
-.room-cell.available {
-  background: #ecfdf5;
-}
-
-.room-cell.occupied {
+.room-cell.airbnb-rented,
+.unit-cell.airbnb-rented {
   background: #fee2e2;
 }
 
-.room-cell.maintenance {
+.room-cell.booking-rented,
+.unit-cell.booking-rented {
+  background: #ffedd5;
+}
+
+.room-cell.rented,
+.unit-cell.rented {
+  background: #fee2e2;
+}
+
+.room-cell.vacant,
+.unit-cell.vacant {
+  background: #ecfdf5;
+}
+
+.room-cell.available,
+.unit-cell.available {
+  background: #ecfdf5;
+}
+
+.room-cell.occupied,
+.unit-cell.occupied {
+  background: #fee2e2;
+}
+
+.room-cell.maintenance,
+.unit-cell.maintenance {
   background: #fef3c7;
 }
 
-.room-cell.offline {
+.room-cell.offline,
+.unit-cell.offline {
   background: #e5e7eb;
+}
+
+.room-cell.error,
+.unit-cell.error {
+  background: #fef3c7;
+}
+
+.room-cell.inactive,
+.unit-cell.inactive {
+  background: #e5e7eb;
+}
+
+.room-cell.no-ics,
+.unit-cell.no-ics {
+  background: #f3f4f6;
 }
 </style>

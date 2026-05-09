@@ -1,0 +1,846 @@
+Tenant Directory,,,,,,,,,,,,,,
+Exported On: 05/01/2026 03:22 PM,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+Tenants: Active,,,,,,,,,,,,,,
+"Tenant Status: Future, Current, Notice, and Evict",,,,,,,,,,,,,,
+Tenant Type: Financially Responsible,,,,,,,,,,,,,,
+Property Groups: USC Airbnb,,,,,,,,,,,,,,
+,,,,,,,,,,,,,,
+Property ID,Property Name,Unit,Tenant,Occupancy ID,Status,Tenant Type,Move-in,Move-out,Lease From,Lease To,Rent,Deposit,Primary Tenant,Tenant Tags
+1550,USC - Ali 1213/1215 W 24th St,1213 W 24th St - Rm 1,"Lee, Juyoung",34182,Current,Financially Responsible,04/14/2025,,08/10/2024,07/25/2026,"1,563.00","3,126.00",Yes,"Amanda, ID"
+1550,USC - Ali 1213/1215 W 24th St,1213 W 24th St - Rm 2,"Yoon, Dawi",34178,Current,Financially Responsible,04/14/2025,,08/10/2024,07/25/2026,"1,521.00","1,521.00",Yes,
+1550,USC - Ali 1213/1215 W 24th St,1213 W 24th St - Rm 3,"Purba, Adrian",34181,Current,Financially Responsible,06/01/2025,,08/10/2024,07/25/2026,"1,490.00","1,490.00",No,"Amanda, ID"
+1550,USC - Ali 1213/1215 W 24th St,1213 W 24th St - Rm 3,"Kang, Sean SeokWon",34181,Current,Financially Responsible,04/14/2025,,08/10/2024,07/25/2026,"1,490.00","1,490.00",Yes,"Amanda, ID"
+1550,USC - Ali 1213/1215 W 24th St,1213 1/2 W 24th St - Rm 1,"Xu, Mengxia",40376,Current,Financially Responsible,12/04/2025,,12/04/2025,07/25/2026,0,"1,578.00",Yes,ID-Cecilia
+1550,USC - Ali 1213/1215 W 24th St,1213 1/2 W 24th St - Rm 2,"Zhang, Ke",40610,Current,Financially Responsible,01/16/2026,,01/16/2026,06/30/2026,"1,578.00","1,578.00",Yes,
+1550,USC - Ali 1213/1215 W 24th St,1213 1/2 W 24th St - Rm 3,"King, Airbnb Justin",42107,Current,Financially Responsible,03/30/2026,,03/30/2026,,0,0,Yes,
+1550,USC - Ali 1213/1215 W 24th St,1213 1/2 W 24th St - Rm 4,"Sami El Khattabi, Airbnb",42151,Current,Financially Responsible,04/02/2026,,04/02/2026,05/03/2026,0,0,Yes,
+1550,USC - Ali 1213/1215 W 24th St,1215 W 24th St - Rm 1,"Zou, Shiyu",37824,Current,Financially Responsible,07/24/2025,,07/24/2025,07/25/2026,0,"1,589.00",Yes,
+1550,USC - Ali 1213/1215 W 24th St,1215 W 24th St - Rm 2,"Mou, Xiaoyi",36829,Current,Financially Responsible,08/10/2025,,08/10/2025,07/25/2026,0,"1,536.00",Yes,ID_Mengyu
+1550,USC - Ali 1213/1215 W 24th St,1215 W 24th St - Rm 3,"He, Yumeng",37426,Current,Financially Responsible,07/24/2025,,07/24/2025,07/25/2026,0,"1,505.00",Yes,ID_Miaoer
+1529,USC - Dale 1520 - 1522 Arapahoe St,1520 Arapahoe St - Rm 1,"Okhrimenko, Airbnb Alina",40777,Current,Financially Responsible,01/27/2026,,01/27/2026,,0,0,Yes,
+1529,USC - Dale 1520 - 1522 Arapahoe St,1520 Arapahoe St - Rm 3,"Nekendra Cook, Airbnb",40302,Current,Financially Responsible,11/29/2025,,11/29/2025,12/28/2025,0,0,Yes,
+1529,USC - Dale 1520 - 1522 Arapahoe St,1520 Arapahoe St - Rm 4,"Stoddard, Airbnb-Gavin",38038,Current,Financially Responsible,07/21/2025,,07/21/2025,09/21/2025,0,0,Yes,
+1529,USC - Dale 1520 - 1522 Arapahoe St,1520 Arapahoe St - Rm 5,"Akanour, Airbnb Ish",42380,Current,Financially Responsible,04/18/2026,,04/18/2026,,0,0,Yes,
+1529,USC - Dale 1520 - 1522 Arapahoe St,1520 1/2 Arapahoe St - Rm 1,"Su, Hao Chuan",34253,Current,Financially Responsible,04/15/2025,,02/03/2025,07/25/2026,"1,200.00","1,270.00",Yes,ID_Qishan
+1529,USC - Dale 1520 - 1522 Arapahoe St,1520 1/2 Arapahoe St - Rm 2,"Rahul Pokhrel, Airbnb",40622,Current,Financially Responsible,12/29/2025,,12/29/2025,07/30/2026,0,0,Yes,
+1529,USC - Dale 1520 - 1522 Arapahoe St,1520 1/2 Arapahoe St - Rm 3,"Hernandez, Airbnb Mauricio Esai",41003,Current,Financially Responsible,02/22/2026,,02/22/2026,,0,0,Yes,
+1529,USC - Dale 1520 - 1522 Arapahoe St,1520 1/2 Arapahoe St - Rm 4,"Mikell, Airbnb Reginald",41840,Current,Financially Responsible,03/03/2026,,03/03/2026,,0,0,Yes,
+1529,USC - Dale 1520 - 1522 Arapahoe St,1522 Arapahoe St - Rm 1,"Fox, Airbnb Mark",41826,Current,Financially Responsible,03/01/2026,,03/01/2026,,0,0,Yes,
+1529,USC - Dale 1520 - 1522 Arapahoe St,1522 Arapahoe St - Rm 2,"Vasconez, Chastidy",39979,Current,Financially Responsible,11/01/2025,,11/01/2025,07/25/2026,"1,270.00","1,340.00",Yes,ID-Cecilia
+1529,USC - Dale 1520 - 1522 Arapahoe St,1522 Arapahoe St - Rm 3,"Xing, Yuxi",34240,Current,Financially Responsible,04/15/2025,,08/10/2024,07/25/2026,"1,398.00","1,630.00",Yes,"Binbin, ID"
+1529,USC - Dale 1520 - 1522 Arapahoe St,1522 Arapahoe St - Rm 4,"Wall, Leah Nohemí",34242,Current,Financially Responsible,04/15/2025,,08/17/2024,07/25/2026,"1,250.00","1,560.00",Yes,"Qishan, ID"
+1529,USC - Dale 1520 - 1522 Arapahoe St,1522 1/2 Arapahoe St - 1522 1/2 Arapahoe St,Cho Luxury Rentals LLC,34251,Current,Financially Responsible,04/15/2025,,10/17/2024,07/31/2026,"3,000.00",0,Yes,
+1530,USC - Dale 1700/1702,1700 1/2 Arapahoe St - Rm 5,"James Wiley, Airbnb",40523,Current,Financially Responsible,12/21/2025,,12/21/2025,05/05/2026,0,0,Yes,
+1530,USC - Dale 1700/1702,1702 Arapahoe St - Rm 1,"Tucker, Airbnb Shawndra",41970,Current,Financially Responsible,03/13/2026,,03/13/2026,,0,0,Yes,
+1530,USC - Dale 1700/1702,1702 Arapahoe St - Rm 2,"Kozłowski, Airbnb Andy",41911,Current,Financially Responsible,02/24/2026,,02/24/2026,,0,0,Yes,
+1530,USC - Dale 1700/1702,1702 Arapahoe St - Rm 3,"Shadkam, Airbnb Susanna",42379,Current,Financially Responsible,04/18/2026,,04/18/2026,,0,0,Yes,
+1530,USC - Dale 1700/1702,1702 Arapahoe St - Rm 4,"Boyer, Airbnb Maxence",42449,Current,Financially Responsible,04/24/2026,,04/24/2026,,0,0,Yes,
+1530,USC - Dale 1700/1702,1702 Arapahoe St - Rm 5,"Jones, Airbnb Jaquare",41778,Current,Financially Responsible,02/27/2026,,02/27/2026,,0,0,Yes,
+1530,USC - Dale 1700/1702,1702 1/2 Arapahoe St - Rm 1,"Serkov, Airbnb Maxim",42105,Current,Financially Responsible,03/30/2026,,03/30/2026,,0,0,Yes,
+1530,USC - Dale 1700/1702,1702 1/2 Arapahoe St - Rm 2,"Havanna Foster, Airbnb",40672,Current,Financially Responsible,01/11/2026,,01/11/2026,,0,0,Yes,
+1530,USC - Dale 1700/1702,1702 1/2 Arapahoe St - Rm 3,"Mina Sam, Airbnb",40653,Current,Financially Responsible,01/08/2026,,01/08/2026,,0,0,Yes,
+1530,USC - Dale 1700/1702,1702 1/2 Arapahoe St - Rm 4,"Ju, Airbnb Dongho",42450,Current,Financially Responsible,04/24/2026,,04/24/2026,,0,0,Yes,
+1530,USC - Dale 1700/1702,1702 1/2 Arapahoe St - Rm 5,"Ruben De La Cruz Carvajal, Airbnb",39739,Current,Financially Responsible,09/24/2025,,09/24/2025,,0,0,Yes,
+1530,USC - Dale 1700/1702,1700 Arapahoe St - Rm 1,"Degges, Mary",34336,Current,Financially Responsible,04/16/2025,,03/04/2025,07/25/2026,"1,070.00","1,150.00",Yes,ID_Binbin
+1530,USC - Dale 1700/1702,1700 Arapahoe St - Rm 2,"Garcia, Airbnb Alicia Camez",42341,Current,Financially Responsible,04/17/2026,,04/17/2026,,0,0,Yes,
+1530,USC - Dale 1700/1702,1700 Arapahoe St - Rm 3,"Jael Wilson, Airbnb",40445,Current,Financially Responsible,02/27/2025,,02/27/2025,,0,0,Yes,
+1530,USC - Dale 1700/1702,1700 Arapahoe St - Rm 4,"Gomez, Bernargenis",34337,Current,Financially Responsible,04/16/2025,,02/22/2025,07/25/2026,830,900,Yes,ID_Erin
+1530,USC - Dale 1700/1702,1700 Arapahoe St - Rm 6,"Brown, Anthony",34335,Current,Financially Responsible,04/16/2025,,09/15/2024,07/25/2026,"1,240.00","1,310.00",Yes,"ID, Qishan"
+1530,USC - Dale 1700/1702,1700 Arapahoe St - Rm 7,"Ceren, Hugo",34329,Current,Financially Responsible,04/16/2025,,07/01/2023,07/25/2026,"1,350.00","1,470.00",Yes,"Amanda, ID"
+1530,USC - Dale 1700/1702,1700 1/2 Arapahoe St - Rm 1,"Kastrati, Airbnb Enzo",42092,Current,Financially Responsible,03/28/2026,,03/28/2026,,0,0,Yes,
+1530,USC - Dale 1700/1702,1700 1/2 Arapahoe St - Rm 2,"Flores, Airbnb Moises",41446,Current,Financially Responsible,02/25/2026,,02/25/2026,,0,0,Yes,
+1530,USC - Dale 1700/1702,1700 1/2 Arapahoe St - Rm 3,Tripalink Shortterm,34331,Current,Financially Responsible,04/16/2025,,06/25/2024,,0,0,Yes,
+1530,USC - Dale 1700/1702,1700 1/2 Arapahoe St - Rm 4,"Rabouz, Farhan",34330,Current,Financially Responsible,04/16/2025,,04/01/2024,07/25/2026,"1,310.00","1,360.00",Yes,ID
+1556,USC - Stern Family 1453,1451 W 36th Pl - Rm 1,"Michelle Arbeau, Airbnb",40283,Current,Financially Responsible,10/04/2025,,10/04/2025,03/31/2026,0,0,Yes,
+1556,USC - Stern Family 1453,1451 W 36th Pl - Rm 2,"Rogers, Booking Sergio",42400,Current,Financially Responsible,04/21/2026,,04/21/2026,,0,0,Yes,
+1556,USC - Stern Family 1453,1451 W 36th Pl - Rm 3,"Hall, Airbnb Shaquile",42537,Current,Financially Responsible,04/29/2026,,04/29/2026,,0,0,Yes,
+1556,USC - Stern Family 1453,1451 W 36th Pl - Rm 4,"Siem Wells, Airbnb",42162,Current,Financially Responsible,04/03/2026,,04/03/2026,05/03/2026,0,0,Yes,
+1556,USC - Stern Family 1453,1451 W 36th Pl - Rm 5,"Xu, Airbnb Steven",42391,Current,Financially Responsible,04/19/2026,,04/19/2026,,0,0,Yes,
+1556,USC - Stern Family 1453,1451 W 36th Pl - Rm 7,"Ibrahim Bah, Airbnb",40600,Current,Financially Responsible,01/01/2026,,01/01/2026,,0,0,Yes,
+1556,USC - Stern Family 1453,1453 W 36th Pl - Rm 1,"Beltran, Albert",34355,Current,Financially Responsible,04/16/2025,,08/31/2024,12/31/2026,"1,208.00","1,204.00",Yes,"Angel, ID"
+1556,USC - Stern Family 1453,1453 W 36th Pl - Rm 2,"Swanzy, Innocent",38088,Current,Financially Responsible,08/01/2025,,08/01/2025,07/31/2027,"1,198.00","1,198.00",Yes,
+1556,USC - Stern Family 1453,1453 W 36th Pl - Rm 3,"Balan, Jeff",38875,Current,Financially Responsible,09/15/2025,,09/15/2025,08/31/2026,"1,058.00","1,208.00",Yes,
+1556,USC - Stern Family 1453,1453 W 36th Pl - Rm 4,"Joshua, Miante",34348,Current,Financially Responsible,04/16/2025,,08/10/2024,07/25/2026,"1,246.00","1,246.00",Yes,"Binbin, ID"
+1556,USC - Stern Family 1453,1453 W 36th Pl - Rm 5,"Xu, Yilong",34356,Current,Financially Responsible,04/16/2025,,12/20/2024,12/31/2026,0,"1,058.00",Yes,ID_Mengyu
+1556,USC - Stern Family 1453,1453 W 36th Pl - Rm 7,"Torres, Jacqueline",40335,Current,Financially Responsible,12/05/2025,,12/05/2025,08/31/2026,"1,218.00","1,068.00",Yes,ID_Aldair
+1556,USC - Stern Family 1453,1453 W 36th Pl - Rm 8,"Mason, Garnett",34346,Current,Financially Responsible,04/16/2025,,07/25/2024,07/25/2026,"1,250.00","1,320.00",Yes,"Youyou, ID"
+1499,USC - TL 1224/1226 W 37th Pl,1224 W 37th Pl - Rm 201,"Cao, Xinlei",34825,Current,Financially Responsible,04/21/2025,,08/23/2024,07/25/2026,"1,418.00","1,462.00",Yes,"Mengyu, ID"
+1499,USC - TL 1224/1226 W 37th Pl,1224 W 37th Pl - Rm 202,"Abbasi, Nicholas",38537,Current,Financially Responsible,08/10/2025,,08/10/2025,07/25/2026,"1,398.00","1,398.00",Yes,ID_Erin
+1499,USC - TL 1224/1226 W 37th Pl,1224 W 37th Pl - Rm 203,"Dhir, Vinish",36142,Current,Financially Responsible,08/10/2025,,08/10/2025,07/25/2026,"1,378.00","1,378.00",Yes,ID_Erin
+1499,USC - TL 1224/1226 W 37th Pl,1224 W 37th Pl - Rm 301,"Fullerton, Faith",34833,Current,Financially Responsible,08/10/2025,,08/10/2025,07/25/2026,"1,428.00","1,428.00",Yes,
+1499,USC - TL 1224/1226 W 37th Pl,1224 W 37th Pl - Rm 302,"Li, Yuhua",34822,Current,Financially Responsible,04/21/2025,,08/10/2024,07/25/2026,"1,408.00","1,441.00",Yes,"Youyou, ID"
+1499,USC - TL 1224/1226 W 37th Pl,1224 W 37th Pl - Rm 303,"Eck, Lara",34814,Current,Financially Responsible,04/21/2025,,08/10/2024,07/25/2026,"1,388.00","1,592.00",Yes,"Jeremiah, ID"
+1499,USC - TL 1224/1226 W 37th Pl,1224 W 37th Pl - Rm 401,"Cleveland, Anthony",37896,Current,Financially Responsible,08/10/2025,,08/10/2025,07/25/2026,"1,408.00","1,408.00",Yes,ID_Binbin
+1499,USC - TL 1224/1226 W 37th Pl,1224 W 37th Pl - Rm 402,"Choi, Sukyung",38430,Current,Financially Responsible,08/10/2025,,08/10/2025,07/25/2026,"1,388.00","1,388.00",Yes,ID_Benjamin
+1499,USC - TL 1224/1226 W 37th Pl,1224 W 37th Pl - Rm 403,"Azom, Raeed",40480,Current,Financially Responsible,01/09/2026,,01/09/2026,05/31/2026,"1,398.00",0,Yes,
+1499,USC - TL 1224/1226 W 37th Pl,1224 1/2 W 37th Pl - Rm 201,"Jha, Rishabh",42181,Current,Financially Responsible,05/01/2026,,05/01/2026,07/25/2026,0,500,Yes,ID_Jobs
+1499,USC - TL 1224/1226 W 37th Pl,1224 1/2 W 37th Pl - Rm 202,"Yoo, Hosoo",37275,Current,Financially Responsible,08/10/2025,,08/10/2025,07/25/2026,"1,378.00","1,378.00",Yes,
+1499,USC - TL 1224/1226 W 37th Pl,1224 1/2 W 37th Pl - Rm 203,"Duan, Airbnb Michael",40746,Current,Financially Responsible,01/22/2026,,01/22/2026,,0,0,Yes,
+1499,USC - TL 1224/1226 W 37th Pl,1224 1/2 W 37th Pl - Rm 301,"Santamaria Martinez, Airbnb",42129,Current,Financially Responsible,03/31/2026,,03/31/2026,07/15/2026,0,0,Yes,
+1499,USC - TL 1224/1226 W 37th Pl,1224 1/2 W 37th Pl - Rm 302,"(Alexandria Gee), Airbnb Gwanzetta Anthony-Gee",41921,Current,Financially Responsible,02/28/2026,,02/28/2026,,0,0,Yes,
+1499,USC - TL 1224/1226 W 37th Pl,1224 1/2 W 37th Pl - Rm 303,"Nathan (Ritu Nathan's son), Airbnb Jay",40717,Current,Financially Responsible,01/17/2026,,01/17/2026,05/15/2027,0,0,Yes,
+1499,USC - TL 1224/1226 W 37th Pl,1224 1/2 W 37th Pl - Rm 402,"El Mamoune, Airbnb Nasser",40736,Current,Financially Responsible,01/21/2026,,01/21/2026,,0,0,Yes,
+1499,USC - TL 1224/1226 W 37th Pl,1224 1/2 W 37th Pl - Rm 403,"Sutton, Airbnb Paul",42110,Current,Financially Responsible,03/30/2026,,03/30/2026,,0,0,Yes,
+1499,USC - TL 1224/1226 W 37th Pl,1226 W 37th Pl - Rm 201,"Jahangiri, Hana",38708,Current,Financially Responsible,01/03/2026,,08/24/2025,07/25/2026,"1,438.00","1,438.00",Yes,ID_Yoyo
+1499,USC - TL 1224/1226 W 37th Pl,1226 W 37th Pl - Rm 202,"Mai, Jennifer",34809,Current,Financially Responsible,04/21/2025,,08/10/2024,07/25/2026,"1,438.00","1,452.00",Yes,"ID, Mack"
+1499,USC - TL 1224/1226 W 37th Pl,1226 W 37th Pl - Rm 203,"Kumari, Khushi",38563,Current,Financially Responsible,08/11/2025,,08/11/2025,07/25/2026,"1,448.00","1,448.00",Yes,ID-Cecilia
+1499,USC - TL 1224/1226 W 37th Pl,1226 W 37th Pl - Rm 301,"Yao, Ruoteng",38518,Current,Financially Responsible,08/08/2025,,08/08/2025,07/25/2026,"1,448.00","1,448.00",Yes,ID-Cecilia
+1499,USC - TL 1224/1226 W 37th Pl,1226 W 37th Pl - Rm 302,"Singh, Rajdeep",40689,Current,Financially Responsible,01/13/2026,,01/13/2026,05/31/2026,"1,448.00","1,448.00",Yes,ID_Aldair
+1499,USC - TL 1224/1226 W 37th Pl,1226 W 37th Pl - Rm 303,"Zhang, Wenxiao",40417,Current,Financially Responsible,01/09/2026,,01/09/2026,05/31/2026,"1,458.00","1,458.00",Yes,ID_Helen
+1499,USC - TL 1224/1226 W 37th Pl,1226 W 37th Pl - Rm 401,"Bashirtash, Behrad",34770,Current,Financially Responsible,04/21/2025,,05/05/2023,07/25/2026,"1,458.00","1,478.00",Yes,"Jose, ID"
+1499,USC - TL 1224/1226 W 37th Pl,1226 W 37th Pl - Rm 403,"Garcia, Richard",40428,Current,Financially Responsible,01/11/2026,,01/11/2026,07/25/2026,"1,468.00","1,408.00",Yes,"Relocation, ID_Jobs"
+1499,USC - TL 1224/1226 W 37th Pl,1226 1/2 W 37th Pl - 1226 1/2 W 37th Pl,"Halbe, Ayush",34829,Notice,Financially Responsible,08/10/2025,07/25/2026,08/10/2025,07/25/2026,"9,168.00","9,238.00",No,
+1499,USC - TL 1224/1226 W 37th Pl,1226 1/2 W 37th Pl - 1226 1/2 W 37th Pl,"Halen, Aryan",34829,Notice,Financially Responsible,08/10/2025,07/25/2026,08/10/2025,07/25/2026,"9,168.00","9,238.00",No,
+1499,USC - TL 1224/1226 W 37th Pl,1226 1/2 W 37th Pl - 1226 1/2 W 37th Pl,"Pungaliya, Rishi",34829,Notice,Financially Responsible,08/10/2025,07/25/2026,08/10/2025,07/25/2026,"9,168.00","9,238.00",No,
+1499,USC - TL 1224/1226 W 37th Pl,1226 1/2 W 37th Pl - 1226 1/2 W 37th Pl,"Jain, Arin",34829,Notice,Financially Responsible,08/10/2025,07/25/2026,08/10/2025,07/25/2026,"9,168.00","9,238.00",No,
+1499,USC - TL 1224/1226 W 37th Pl,1226 1/2 W 37th Pl - 1226 1/2 W 37th Pl,"Chaudhary, Shrey",34829,Notice,Financially Responsible,08/10/2025,07/25/2026,08/10/2025,07/25/2026,"9,168.00","9,238.00",Yes,
+1499,USC - TL 1224/1226 W 37th Pl,1226 1/2 W 37th Pl - 1226 1/2 W 37th Pl,"Torres, Jonah",34829,Notice,Financially Responsible,08/10/2025,07/25/2026,08/10/2025,07/25/2026,"9,168.00","9,238.00",No,
+1499,USC - TL 1224/1226 W 37th Pl,1226 1/2 W 37th Pl - Rm 201,"Arredondo, Amani",41844,Future,Financially Responsible,08/10/2026,,08/10/2026,07/25/2027,0,"1,508.00",Yes,ID_Helen
+1499,USC - TL 1224/1226 W 37th Pl,1226 1/2 W 37th Pl - Rm 202,"Baltera, Vincent",41845,Future,Financially Responsible,08/10/2026,,08/10/2026,07/25/2027,0,"1,538.00",Yes,ID_Helen
+1499,USC - TL 1224/1226 W 37th Pl,1226 1/2 W 37th Pl - Rm 301,"Rathi, Shreyas",41938,Future,Financially Responsible,08/10/2026,,08/10/2026,07/25/2027,0,"1,518.00",Yes,ID_Helen
+1499,USC - TL 1224/1226 W 37th Pl,1226 1/2 W 37th Pl - Rm 302,"Azevedo, Daniel",41847,Future,Financially Responsible,08/10/2026,,08/10/2026,07/25/2027,0,"1,538.00",Yes,
+1499,USC - TL 1224/1226 W 37th Pl,1226 1/2 W 37th Pl - Rm 401,"Crothall, Gabriel",41848,Future,Financially Responsible,08/10/2026,,08/10/2026,07/25/2027,0,"1,528.00",Yes,ID_Helen
+1499,USC - TL 1224/1226 W 37th Pl,1226 1/2 W 37th Pl - Rm 402,"Alizai, Issa",42190,Future,Financially Responsible,08/10/2026,,08/10/2026,07/25/2027,0,0,Yes,ID_Helen
+1520,USC - TL 1329 W 36th Street,1329 W 36th St - Rm 201,"Negre, Flora",42224,Future,Financially Responsible,08/10/2026,,08/10/2026,07/25/2027,0,"1,290.00",Yes,ID_Yinyue
+1520,USC - TL 1329 W 36th Street,1329 W 36th St - Rm 301,"Huynh, Airbnb Tuan",41969,Notice,Financially Responsible,03/13/2026,07/24/2026,03/13/2026,,0,0,Yes,
+1520,USC - TL 1329 W 36th Street,1329 W 36th St - Rm 301,"Chhibbar, Naman",42395,Future,Financially Responsible,07/25/2026,,07/25/2026,07/25/2027,0,"1,300.00",Yes,ID_Benjamin
+1520,USC - TL 1329 W 36th Street,1329 W 36th St - Rm 302,"Y, Airbnb Milly",42264,Current,Financially Responsible,04/13/2026,,04/13/2026,,0,0,Yes,
+1520,USC - TL 1329 W 36th Street,1329 W 36th St - Rm 303,"Anna Jankowicz, Airbnb",42251,Current,Financially Responsible,04/11/2026,,04/11/2026,05/16/2026,0,0,Yes,
+1520,USC - TL 1329 W 36th Street,1329 W 36th St - Rm 304,"Jajodia, Sankalp",34720,Current,Financially Responsible,08/10/2025,,08/10/2025,07/25/2026,"1,300.00","1,300.00",Yes,
+1520,USC - TL 1329 W 36th Street,1329 W 36th St - Rm 401,"Chhibbar, Naman",37414,Current,Financially Responsible,08/10/2025,,08/10/2025,07/25/2026,0,"1,300.00",Yes,ID_Erin
+1520,USC - TL 1329 W 36th Street,1329 W 36th St - Rm 402,"James Green, Airbnb",42083,Current,Financially Responsible,03/26/2026,,03/26/2026,04/26/2026,0,0,Yes,
+1520,USC - TL 1329 W 36th Street,1329 W 36th St - Rm 403,"Liu, Jingjing",40494,Current,Financially Responsible,01/13/2026,,01/13/2026,07/25/2026,"1,275.00","1,275.00",Yes,ID_Jobs
+1520,USC - TL 1329 W 36th Street,1329 W 36th St - Rm 404,"Xiefan, Wu",35787,Current,Financially Responsible,04/28/2025,,04/01/2025,07/25/2026,"1,300.00","1,359.00",Yes,"Mike, ID"
+1520,USC - TL 1329 W 36th Street,1329 1/2 W 36th St - Rm 301,"Lyu, Congkang",34697,Current,Financially Responsible,04/20/2025,,01/03/2025,07/25/2026,0,"1,300.00",Yes,transfer
+1520,USC - TL 1329 W 36th Street,1329 1/2 W 36th St - Rm 302,"Yin, Chaoyang",34699,Current,Financially Responsible,04/20/2025,,01/04/2025,07/25/2026,0,"1,270.00",Yes,"Mengyu, ID"
+1520,USC - TL 1329 W 36th Street,1329 1/2 W 36th St - Rm 303,"Cheng, Zhuoshen",34695,Current,Financially Responsible,04/20/2025,,12/26/2024,07/25/2026,0,"1,270.00",Yes,"Mengyu, ID"
+1520,USC - TL 1329 W 36th Street,1329 1/2 W 36th St - Rm 304,"Wang, Kunxian",37373,Current,Financially Responsible,08/10/2025,,08/10/2025,07/25/2026,0,"1,300.00",Yes,ID_Mike
+1520,USC - TL 1329 W 36th Street,1329 1/2 W 36th St - Rm 401,"Mugoya, Ian",40597,Current,Financially Responsible,01/07/2026,,01/07/2026,07/25/2026,"1,300.00","1,300.00",Yes,ID_Helen
+1520,USC - TL 1329 W 36th Street,1329 1/2 W 36th St - Rm 402,"Su, Chengran",34698,Current,Financially Responsible,04/20/2025,,01/10/2025,05/31/2027,0,"1,275.00",Yes,"Mike, ID"
+1520,USC - TL 1329 W 36th Street,1329 1/2 W 36th St - Rm 404,"Danaj, Gabriel",40584,Current,Financially Responsible,01/07/2026,,01/07/2026,07/25/2026,"1,300.00","1,320.00",Yes,ID_Helen
+1520,USC - TL 1329 W 36th Street,1331 W 36th St - Rm 201,"Burgees, Airbnb Nikko",41945,Current,Financially Responsible,03/10/2026,,03/10/2026,,0,0,Yes,
+1520,USC - TL 1329 W 36th Street,1331 W 36th St - Rm 301,"Gaertner, Skylar",34716,Notice,Financially Responsible,08/10/2025,07/25/2026,08/10/2025,07/25/2026,"1,300.00","1,300.00",Yes,
+1520,USC - TL 1329 W 36th Street,1331 W 36th St - Rm 302,"Budbazar, Airbnb Yesugen",42117,Current,Financially Responsible,03/31/2026,,03/31/2026,,0,0,Yes,
+1520,USC - TL 1329 W 36th Street,1331 W 36th St - Rm 303,"Adams, Airbnb Ryan",42177,Current,Financially Responsible,04/05/2026,,04/05/2026,,0,0,Yes,
+1520,USC - TL 1329 W 36th Street,1331 W 36th St - Rm 304,"Ye, Kelvin",37379,Current,Financially Responsible,08/10/2025,,08/10/2025,07/25/2026,0,"1,300.00",Yes,
+1520,USC - TL 1329 W 36th Street,1331 W 36th St - Rm 401,"Graves, Marshall",34719,Current,Financially Responsible,08/10/2025,,08/10/2025,07/25/2026,"1,300.00","1,300.00",Yes,
+1520,USC - TL 1329 W 36th Street,1331 W 36th St - Rm 403,"Trueborn, Airbnb Crystal",42172,Current,Financially Responsible,03/25/2026,,03/25/2026,,0,0,Yes,
+1520,USC - TL 1329 W 36th Street,1331 W 36th St - Rm 404,"Singh, Aniket",34717,Current,Financially Responsible,08/10/2025,,08/10/2025,07/25/2026,"1,300.00","1,320.00",Yes,
+1520,USC - TL 1329 W 36th Street,1331 1/2 W 36th St - Rm 301,"Basener, Neven",36711,Current,Financially Responsible,08/10/2025,,08/10/2025,07/25/2026,"1,300.00","1,300.00",Yes,
+1520,USC - TL 1329 W 36th Street,1331 1/2 W 36th St - Rm 302,"Jagadish, Tarun",36701,Current,Financially Responsible,07/01/2025,,07/01/2025,06/30/2026,"1,270.00","1,270.00",Yes,ID_Benjamin
+1520,USC - TL 1329 W 36th Street,1331 1/2 W 36th St - Rm 304,"Ali, Ahmad",38616,Current,Financially Responsible,08/15/2025,,08/15/2025,05/31/2026,"1,200.00",500,Yes,
+1520,USC - TL 1329 W 36th Street,1331 1/2 W 36th St - Rm 401,"Dudley, Lucas",34729,Current,Financially Responsible,08/01/2025,,08/01/2025,07/25/2026,"1,300.00","1,300.00",Yes,
+1520,USC - TL 1329 W 36th Street,1331 1/2 W 36th St - Rm 402,"Shi, Zhengqian",38569,Current,Financially Responsible,08/15/2025,,08/15/2025,05/31/2026,"1,200.00",500,Yes,
+1520,USC - TL 1329 W 36th Street,1331 1/2 W 36th St - Rm 403,"Aydin, Jonathan",34715,Current,Financially Responsible,08/10/2025,,08/10/2025,07/25/2026,"1,275.00","1,275.00",Yes,
+1520,USC - TL 1329 W 36th Street,1331 1/2 W 36th St - Rm 404,"Liu, Kuan",38091,Current,Financially Responsible,08/01/2025,,08/01/2025,07/25/2026,"1,300.00","1,300.00",Yes,
+1520,USC - TL 1329 W 36th Street,1331 1/4 W 36th St - Rm 101,"Broderick, Racquil",36025,Current,Financially Responsible,08/10/2025,,08/10/2025,07/25/2026,"1,395.00","1,395.00",Yes,youyou
+1520,USC - TL 1329 W 36th Street,1331 1/4 W 36th St - Rm 102,"Zaman, Rahamat",36267,Current,Financially Responsible,08/10/2025,,08/10/2025,07/25/2026,"1,425.00","1,425.00",Yes,ID_Benjamin
+1520,USC - TL 1329 W 36th Street,1331 1/4 W 36th St - Rm 103,"Cho, Jaehyung",36208,Current,Financially Responsible,08/10/2025,,08/10/2025,07/25/2026,0,"1,575.00",Yes,ID_Erin
+1520,USC - TL 1329 W 36th Street,1331 1/4 W 36th St - Rm 104,"Khwaja , Muhammad Shaaf",37712,Current,Financially Responsible,08/10/2025,,08/10/2025,07/25/2026,0,"1,375.00",Yes,ID_Yoyo
+1500,USC - TL 1351/1353 W 37th St,1351 W 37th St - Rm 1,"Carbajal, Airbnb Skye",42118,Current,Financially Responsible,03/31/2026,,03/31/2026,,0,0,Yes,
+1500,USC - TL 1351/1353 W 37th St,1351 W 37th St - Rm 2,"Kobe Kodachi, Airbnb",40676,Current,Financially Responsible,01/11/2026,,01/11/2026,,0,0,Yes,
+1500,USC - TL 1351/1353 W 37th St,1351 W 37th St - Rm 3,"Alex Ramos Huaman, Airbnb",42250,Current,Financially Responsible,04/11/2026,,04/11/2026,05/16/2026,0,0,Yes,
+1500,USC - TL 1351/1353 W 37th St,1351 W 37th St - Rm 4,"Green, Airbnb Nichole",42093,Current,Financially Responsible,03/28/2026,,03/28/2026,,0,0,Yes,
+1500,USC - TL 1351/1353 W 37th St,1351 W 37th St - Rm 5,"Marco Vera, Airbnb",42163,Current,Financially Responsible,04/03/2026,,04/03/2026,05/16/2026,0,0,Yes,
+1500,USC - TL 1351/1353 W 37th St,1351 W 37th St - Rm 6,"Adar Carver, Airbnb",40438,Current,Financially Responsible,12/11/2025,,12/11/2025,12/10/2026,0,0,Yes,
+1500,USC - TL 1351/1353 W 37th St,1351 W 37th St - Rm 7,"Case, Evelyn",35227,Current,Financially Responsible,08/10/2025,,08/10/2025,07/25/2027,"1,428.00","1,498.00",Yes,
+1500,USC - TL 1351/1353 W 37th St,1351 W 37th St - Rm 8,"Chandra Gavino, Airbnb",39131,Current,Financially Responsible,09/14/2025,,09/14/2025,,0,0,Yes,
+1500,USC - TL 1351/1353 W 37th St,1351 W 37th St - Rm 9,"Hernandez, Yehosua",41808,Current,Financially Responsible,03/06/2026,,03/06/2026,07/25/2026,"1,408.00","1,408.00",Yes,ID_Jobs
+1500,USC - TL 1351/1353 W 37th St,1353 W 37th St - Rm 2,"Chen, Guoting",38398,Current,Financially Responsible,08/10/2025,,08/10/2025,07/25/2026,"1,318.00","1,318.00",Yes,
+1500,USC - TL 1351/1353 W 37th St,1353 W 37th St - Rm 3,"Shi, Guangyao",35201,Notice,Financially Responsible,04/24/2025,07/25/2026,11/01/2023,07/25/2026,"1,338.00","1,408.00",Yes,"Amanda, ID"
+1500,USC - TL 1351/1353 W 37th St,1353 W 37th St - Rm 4,"Tang, Chengfeng",36059,Current,Financially Responsible,08/10/2025,,08/10/2025,07/25/2026,0,"1,328.00",Yes,ID_Mike
+1500,USC - TL 1351/1353 W 37th St,1353 W 37th St - Rm 5,"Hong, Yeho",42481,Future,Financially Responsible,08/10/2026,,08/10/2026,07/25/2027,0,"1,348.00",Yes,
+1500,USC - TL 1351/1353 W 37th St,1353 W 37th St - Rm 5,"Li, Xuecong",38137,Notice,Financially Responsible,08/10/2025,07/25/2026,08/10/2025,07/25/2026,0,"1,348.00",Yes,ID_Mengyu
+1500,USC - TL 1351/1353 W 37th St,1353 W 37th St - Rm 8,"Xiao, Qiming",38759,Current,Financially Responsible,08/24/2025,,08/24/2025,07/25/2026,"1,348.00","1,348.00",Yes,ID_Mike
+1500,USC - TL 1351/1353 W 37th St,1353 W 37th St - Rm 9,"Tu, Linzi",37684,Current,Financially Responsible,08/10/2025,,08/10/2025,07/25/2026,0,"1,358.00",Yes,ID_Mengyu
+1500,USC - TL 1351/1353 W 37th St,1353 1/2 W 37th St - Rm 1,"Currie, Airbnb Crystal",40856,Current,Financially Responsible,02/05/2026,,02/05/2026,,0,0,Yes,
+1500,USC - TL 1351/1353 W 37th St,1353 1/2 W 37th St - Rm 2,"Chavez, Airbnb Nia",41828,Current,Financially Responsible,03/01/2026,,03/01/2026,,0,0,Yes,
+1500,USC - TL 1351/1353 W 37th St,1353 1/2 W 37th St - Rm 3,"Merhi, Airbnb Roy",42614,Current,Financially Responsible,05/01/2026,,05/01/2026,,0,0,Yes,
+1500,USC - TL 1351/1353 W 37th St,1353 1/2 W 37th St - Rm 4,"Holland, Airbnb Kewon Demez",40825,Current,Financially Responsible,02/01/2026,,02/01/2026,,0,0,Yes,
+1500,USC - TL 1351/1353 W 37th St,1353 1/2 W 37th St - Rm 5,"Rhoades, Airbnb Michelle",42327,Current,Financially Responsible,04/15/2026,,04/15/2026,,0,0,Yes,
+1500,USC - TL 1351/1353 W 37th St,1353 1/2 W 37th St - Rm 6,"Mao, Ruiyi",35215,Current,Financially Responsible,04/24/2025,,08/10/2024,07/25/2026,"1,388.00","1,461.00",Yes,
+1500,USC - TL 1351/1353 W 37th St,1353 1/2 W 37th St - Rm 8,"Cherkashin, Egor",35217,Current,Financially Responsible,04/24/2025,,08/10/2024,07/25/2026,"1,418.00","1,421.00",Yes,"ID, Yoyo"
+1500,USC - TL 1351/1353 W 37th St,1353 1/2 W 37th St - Rm 9,"LeFlore, Airbnb Jasmine",42176,Current,Financially Responsible,04/05/2026,,04/05/2026,,0,0,Yes,
+1500,USC - TL 1351/1353 W 37th St,1353 1/4 W 37th St - Rm 1,"Kasliwal, Mehak",35223,Current,Financially Responsible,08/10/2025,,08/10/2025,07/25/2026,"1,458.00","1,528.00",Yes,ID_Yoyo
+1500,USC - TL 1351/1353 W 37th St,1353 1/4 W 37th St - Rm 2,"Lee (Joanne), Seohyeon",35226,Current,Financially Responsible,08/10/2025,,08/10/2025,07/25/2026,"1,458.00","1,458.00",Yes,"Renewal transfer, Yoyo"
+1500,USC - TL 1351/1353 W 37th St,1353 1/4 W 37th St - Rm 3,"Wan, Julie",35224,Current,Financially Responsible,08/10/2025,,08/10/2025,07/25/2026,"1,518.00","1,588.00",Yes,Renewal Transfer
+1500,USC - TL 1351/1353 W 37th St,1353 1/4 W 37th St - Rm 4,"Betancourt, Cecilia",35225,Current,Financially Responsible,08/10/2025,,08/10/2025,07/25/2026,"1,478.00","1,478.00",Yes,Renewal transfer
+1514,USC - TL 1360 W 35th St,1360 W 35th St - Rm 101,"Palmer, Airbnb Tokunbo",40946,Current,Financially Responsible,02/20/2026,,02/20/2026,,0,0,Yes,
+1514,USC - TL 1360 W 35th St,1360 W 35th St - Rm 102,"Solomon, Ribka",40755,Future,Financially Responsible,08/10/2026,,08/10/2026,07/25/2027,0,0,Yes,ID_Aldair
+1514,USC - TL 1360 W 35th St,1360 W 35th St - Rm 103,"Morales, Pablo",42168,Future,Financially Responsible,06/01/2026,,06/01/2026,07/25/2027,0,"1,098.00",Yes,ID_Benjamin
+1514,USC - TL 1360 W 35th St,1360 W 35th St - Rm 104,"Feliciano, Airbnb Sebastian",41854,Current,Financially Responsible,03/03/2026,,03/03/2026,,0,0,Yes,
+1514,USC - TL 1360 W 35th St,1360 W 35th St - Rm 202,"Shin, Eunbin",35230,Current,Financially Responsible,04/24/2025,,01/10/2025,05/31/2026,0,"1,068.00",Yes,"Yoyo, ID"
+1514,USC - TL 1360 W 35th St,1360 W 35th St - Rm 203,"Lemay, William",35231,Current,Financially Responsible,04/24/2025,,12/12/2024,07/25/2026,"1,108.00","1,138.00",Yes,ID_Yuanwu
+1514,USC - TL 1360 W 35th St,1360 W 35th St - Rm 204,"Bhatter, Keshav",42097,Future,Financially Responsible,08/10/2026,,08/10/2026,07/25/2027,0,"1,108.00",Yes,ID_Benjamin
+1514,USC - TL 1360 W 35th St,1360 W 35th St - Rm 205,"Gardner, Airbnb Johnathan",42340,Current,Financially Responsible,04/17/2026,,04/17/2026,,0,0,Yes,
+1514,USC - TL 1360 W 35th St,1360 W 35th St - Rm 206,"James, Airbn Gregory",42077,Current,Financially Responsible,03/25/2026,,03/25/2026,,0,0,Yes,
+1514,USC - TL 1360 W 35th St,1360 W 35th St - Rm 301,"Budiman, Rio",39060,Current,Financially Responsible,09/10/2025,,09/10/2025,07/25/2026,"1,108.00","1,108.00",Yes,ID_Yoyo
+1514,USC - TL 1360 W 35th St,1360 W 35th St - Rm 303,"Eden, Jayden",38519,Current,Financially Responsible,08/24/2025,,08/24/2025,07/25/2027,"1,108.00","1,108.00",Yes,ID_Helen
+1514,USC - TL 1360 W 35th St,1360 W 35th St - Rm 304,"Griffin, Kendall",38702,Current,Financially Responsible,09/01/2025,,09/01/2025,08/31/2026,"1,108.00","1,108.00",Yes,ID_Helen
+1514,USC - TL 1360 W 35th St,1360 W 35th St - Rm 305,"Wu, Chengze",41943,Future,Financially Responsible,07/22/2026,,07/22/2026,12/31/2026,0,0,Yes,"ID_Yoyo, Renewal transfer"
+1514,USC - TL 1360 W 35th St,1360 W 35th St - Rm 305,"Scott, Airbnb Alyssa",42452,Notice,Financially Responsible,04/24/2026,05/30/2026,04/24/2026,05/31/2026,0,0,Yes,
+1514,USC - TL 1360 W 35th St,1360 W 35th St - Rm 306,"NGALIMA, Esther",40568,Current,Financially Responsible,02/01/2026,,02/01/2026,02/28/2027,"1,218.00","1,178.00",Yes,"Renewal transfer, ID_Aldair"
+1514,USC - TL 1360 W 35th St,1360 W 35th St - Rm 401,"Sarvasiddhi, Malhar",42214,Future,Financially Responsible,08/10/2026,,08/10/2026,07/25/2027,0,"1,118.00",Yes,ID_Helen
+1514,USC - TL 1360 W 35th St,1360 W 35th St - Rm 402,"Ganesh, Prathul",42216,Future,Financially Responsible,08/10/2026,,08/10/2026,07/25/2027,0,"1,118.00",Yes,ID_Helen
+1514,USC - TL 1360 W 35th St,1360 W 35th St - Rm 402,"Hamoudeh, Airnbnb Besher",40821,Notice,Financially Responsible,02/01/2026,07/31/2026,02/01/2026,,0,0,Yes,
+1514,USC - TL 1360 W 35th St,1360 W 35th St - Rm 403,"Pruitt, Raphael",38682,Current,Financially Responsible,08/22/2025,,08/22/2025,07/25/2026,"1,118.00","1,118.00",Yes,ID_Yoyo
+1514,USC - TL 1360 W 35th St,1360 W 35th St - Rm 404,"Grady, Airbnb Matyla",42448,Current,Financially Responsible,04/24/2026,,04/24/2026,,0,0,Yes,
+1514,USC - TL 1360 W 35th St,1360 W 35th St - Rm 405,"Chang, Airbnb Sa Lang Enoch",41824,Current,Financially Responsible,03/01/2026,,03/01/2026,,0,0,Yes,
+1514,USC - TL 1360 W 35th St,1360 W 35th St - Rm 406,"Zunquti, Almajd",35263,Current,Financially Responsible,04/24/2025,,12/23/2024,07/25/2027,"1,228.00","1,258.00",Yes,ID_Erin
+1514,USC - TL 1360 W 35th St,1362 W 35th St - Rm 101,"Isles, Airbnb DeMario",42108,Current,Financially Responsible,03/30/2026,,03/30/2026,,0,0,Yes,
+1514,USC - TL 1360 W 35th St,1362 W 35th St - Rm 102,"Zakharchuk, Airbnb Serhii",40786,Current,Financially Responsible,01/28/2026,,01/28/2026,,0,0,Yes,
+1514,USC - TL 1360 W 35th St,1362 W 35th St - Rm 103,"Spiridonov, Filip",35266,Current,Financially Responsible,04/24/2025,,12/31/2024,07/25/2027,"1,128.00","1,158.00",Yes,"Binbin, ID"
+1514,USC - TL 1360 W 35th St,1362 W 35th St - Rm 201,"Sun, Shengjun",42038,Future,Financially Responsible,07/25/2026,,07/25/2026,12/25/2026,0,"1,168.00",Yes,ID_Yitong
+1514,USC - TL 1360 W 35th St,1362 W 35th St - Rm 202,"Budiman, Rio",42215,Current,Financially Responsible,04/08/2026,,04/08/2026,07/25/2026,"1,128.00",0,Yes,"Joshua, Relocation"
+1514,USC - TL 1360 W 35th St,1362 W 35th St - Rm 204,"Zuo, Zhaorui",42080,Future,Financially Responsible,08/10/2026,,08/10/2026,07/25/2027,0,"1,168.00",Yes,ID_Helen
+1514,USC - TL 1360 W 35th St,1362 W 35th St - Rm 301,"Ozturkmen, Emre",38681,Current,Financially Responsible,09/15/2025,,08/18/2025,07/25/2026,"1,128.00","1,128.00",Yes,
+1514,USC - TL 1360 W 35th St,1362 W 35th St - Rm 302,"Albertyn, Airbnb Elme",40762,Current,Financially Responsible,01/26/2026,,01/26/2026,,0,0,Yes,
+1514,USC - TL 1360 W 35th St,1362 W 35th St - Rm 303,"Purge, Zeni",40560,Notice,Financially Responsible,01/26/2026,06/30/2026,01/26/2026,06/30/2026,"1,138.00","1,138.00",Yes,ID_Aldair
+1514,USC - TL 1360 W 35th St,1362 W 35th St - Rm 303,"Tsai, Cheng-Jun",42600,Future,Financially Responsible,08/10/2026,,08/10/2026,12/25/2026,0,0,Yes,
+1514,USC - TL 1360 W 35th St,1362 W 35th St - Rm 304,"Ni, Tianlun",35300,Notice,Financially Responsible,08/10/2025,07/25/2026,08/10/2025,07/25/2026,0,"1,178.00",Yes,
+1514,USC - TL 1360 W 35th St,1362 W 35th St - Rm 304,"Unni, Advik",42079,Future,Financially Responsible,08/10/2026,,08/10/2026,12/31/2026,0,"1,228.00",Yes,ID_Benjamin
+1514,USC - TL 1360 W 35th St,1362 W 35th St - Rm 401,"Liu, Weike",40273,Current,Financially Responsible,01/10/2026,,01/10/2026,07/25/2027,0,"1,138.00",Yes,ID_Helen
+1514,USC - TL 1360 W 35th St,1362 W 35th St - Rm 402,"Qin, Chenshuhao",40277,Current,Financially Responsible,01/10/2026,,01/10/2026,12/25/2026,0,"1,148.00",Yes,ID_Helen
+1514,USC - TL 1360 W 35th St,1362 W 35th St - Rm 403,"Mudgal, Yogen",36217,Notice,Financially Responsible,05/19/2025,05/31/2026,05/19/2025,05/31/2026,"1,118.00","1,138.00",Yes,"Relocation, Yoyo"
+1514,USC - TL 1360 W 35th St,1362 W 35th St - Rm 404,"Kaul, Dhruv",42109,Future,Financially Responsible,08/10/2026,12/31/2026,08/10/2026,12/31/2026,0,"1,238.00",Yes,ID_Benjamin
+1514,USC - TL 1360 W 35th St,1362 W 35th St - Rm 404,"Lu, Xicheng",40272,Notice,Financially Responsible,01/10/2026,07/25/2026,01/10/2026,07/25/2026,0,"1,188.00",Yes,ID_Helen
+1514,USC - TL 1360 W 35th St,1362 1/2 W 35th St - Rm 101,"Ashutosh Kumar, Airbnb",40663,Current,Financially Responsible,01/09/2026,,01/09/2026,,0,0,Yes,
+1514,USC - TL 1360 W 35th St,1362 1/2 W 35th St - Rm 102,"Niazi, Airbnb-Zalmai",35236,Current,Financially Responsible,04/24/2025,,09/02/2025,11/30/2025,0,0,Yes,
+1514,USC - TL 1360 W 35th St,1362 1/2 W 35th St - Rm 103,"Alia Ashfaq, Airbnb",40543,Current,Financially Responsible,12/25/2025,,12/25/2025,,0,0,Yes,
+1514,USC - TL 1360 W 35th St,1362 1/2 W 35th St - Rm 201,"Jonathan Rivera, Airbnb",40668,Current,Financially Responsible,01/10/2026,,01/10/2026,,0,0,Yes,
+1514,USC - TL 1360 W 35th St,1362 1/2 W 35th St - Rm 202,"Adeline Charlize Chan, Airbnb",40012,Current,Financially Responsible,10/21/2025,,10/21/2025,12/10/2025,0,0,Yes,
+1514,USC - TL 1360 W 35th St,1362 1/2 W 35th St - Rm 203,"Kia Smith, Airbnb",40578,Current,Financially Responsible,12/30/2025,,12/30/2025,,0,0,Yes,
+1514,USC - TL 1360 W 35th St,1362 1/2 W 35th St - Rm 204,"Bynum, Roxie",41054,Current,Financially Responsible,04/04/2026,,04/04/2026,03/31/2027,"1,168.00","1,168.00",Yes,ID_Helen
+1514,USC - TL 1360 W 35th St,1362 1/2 W 35th St - Rm 301,"Carson, Airbnb Isaiah",42002,Current,Financially Responsible,03/17/2026,,03/17/2026,,0,0,Yes,
+1514,USC - TL 1360 W 35th St,1362 1/2 W 35th St - Rm 302,"Dillinger, Airbnb-Darin",35241,Current,Financially Responsible,04/24/2025,,08/16/2025,09/03/2025,0,0,Yes,
+1514,USC - TL 1360 W 35th St,1362 1/2 W 35th St - Rm 303,"Hall, Airbnb Harrison",41827,Current,Financially Responsible,03/01/2026,,03/01/2026,,0,0,Yes,
+1514,USC - TL 1360 W 35th St,1362 1/2 W 35th St - Rm 304,"Li, Xuecong",42302,Future,Financially Responsible,08/10/2026,,08/10/2026,12/25/2026,0,0,Yes,ID_Bo
+1514,USC - TL 1360 W 35th St,1362 1/2 W 35th St - Rm 401,"Trevor Ward, Airbnb",40674,Current,Financially Responsible,01/11/2026,,01/11/2026,,0,0,Yes,
+1514,USC - TL 1360 W 35th St,1362 1/2 W 35th St - Rm 402,"Rogers, Airbnb-Spencer",35242,Current,Financially Responsible,04/24/2025,,01/05/2025,09/01/2025,0,0,Yes,
+1514,USC - TL 1360 W 35th St,1362 1/2 W 35th St - Rm 403,"Chen, Airbnb Jiabin",41841,Current,Financially Responsible,03/03/2026,,03/03/2026,,0,0,Yes,
+1514,USC - TL 1360 W 35th St,1362 1/2 W 35th St - Rm 404,"Yuan, Airbnb Vivian",40758,Notice,Financially Responsible,01/25/2026,08/09/2026,01/25/2026,,0,0,Yes,
+1514,USC - TL 1360 W 35th St,1362 1/2 W 35th St - Rm 404,"D'Artell, Auburn",41251,Future,Financially Responsible,08/10/2026,,08/10/2026,07/25/2027,0,"1,188.00",Yes,ID_Helen
+1513,USC - TL 1361 W 35th St,1361 W 35th St - Rm 201,"Katacha, Lauren",40306,Future,Financially Responsible,08/10/2026,,08/10/2026,07/25/2027,0,0,Yes,ID_Aldair
+1513,USC - TL 1361 W 35th St,1361 W 35th St - Rm 201,"Sharma, Mukund",34571,Notice,Financially Responsible,04/18/2025,07/25/2026,05/08/2024,07/25/2026,"1,218.00","1,328.00",Yes,
+1513,USC - TL 1361 W 35th St,1361 W 35th St - Rm 301,"Jiminez, Nariah",40935,Future,Financially Responsible,08/10/2026,,08/10/2026,07/25/2027,0,0,Yes,ID_Helen
+1513,USC - TL 1361 W 35th St,1361 W 35th St - Rm 301,"Sarkar, Archishman",34572,Notice,Financially Responsible,04/18/2025,07/25/2026,05/08/2024,07/25/2026,"1,238.00","1,338.00",Yes,
+1513,USC - TL 1361 W 35th St,1361 W 35th St - Rm 302,"Isokariari, Olufumilayo",40304,Future,Financially Responsible,08/10/2026,,08/10/2026,07/25/2027,0,0,Yes,ID_Aldair
+1513,USC - TL 1361 W 35th St,1361 W 35th St - Rm 302,"Shekhar, Priyanshu",34599,Notice,Financially Responsible,04/18/2025,07/25/2026,07/25/2024,07/25/2026,"1,058.00","1,178.00",Yes,
+1513,USC - TL 1361 W 35th St,1361 W 35th St - Rm 303,"Cheng, Robert",34611,Notice,Financially Responsible,05/10/2025,05/31/2026,05/10/2025,05/31/2026,"1,068.00","1,068.00",Yes,
+1513,USC - TL 1361 W 35th St,1361 W 35th St - Rm 303,"Torres, Maya",40305,Future,Financially Responsible,08/10/2026,,08/10/2026,07/25/2027,0,"1,068.00",Yes,ID_Aldair
+1513,USC - TL 1361 W 35th St,1361 W 35th St - Rm 401,"Cabrera, Nisa",40288,Future,Financially Responsible,08/10/2026,,08/10/2026,07/25/2027,0,"1,248.00",Yes,ID_Aldair
+1513,USC - TL 1361 W 35th St,1361 W 35th St - Rm 401,"Das, Ayon",34573,Notice,Financially Responsible,04/18/2025,07/25/2026,07/23/2024,07/25/2026,"1,248.00","1,198.00",Yes,
+1513,USC - TL 1361 W 35th St,1361 W 35th St - Rm 402,"Wu, Chengze",34602,Current,Financially Responsible,04/18/2025,,01/01/2025,07/25/2026,0,"1,198.00",Yes,
+1513,USC - TL 1361 W 35th St,1361 W 35th St - Rm 403,"Nguyen, Brandon",37682,Notice,Financially Responsible,08/10/2025,07/25/2026,08/10/2025,07/25/2026,"1,078.00","1,078.00",Yes,
+1513,USC - TL 1361 W 35th St,1361 W 35th St - Rm 403,"Fu, Yangfan",34603,Evict,Financially Responsible,04/18/2025,07/25/2025,12/22/2024,07/25/2025,0,0,Yes,
+1513,USC - TL 1361 W 35th St,1361 W 35th St - Rm 403,"Tesfaye, Naomi",40593,Future,Financially Responsible,08/10/2026,,08/10/2026,07/25/2027,0,0,Yes,ID_Aldair
+1513,USC - TL 1361 W 35th St,1361 1/2 W 35th St - Rm 201,"Maravilla, Mario",36026,Current,Financially Responsible,08/10/2025,,08/10/2025,07/25/2027,"1,218.00","1,218.00",Yes,
+1513,USC - TL 1361 W 35th St,1361 1/2 W 35th St - Rm 301,"Zhang, Yijia",35976,Notice,Financially Responsible,08/10/2025,07/25/2026,08/10/2025,07/25/2026,0,"1,238.00",Yes,
+1513,USC - TL 1361 W 35th St,1361 1/2 W 35th St - Rm 301,"Joseph, Minu",42483,Future,Financially Responsible,08/10/2026,,08/10/2026,12/25/2026,0,0,Yes,ID_Helen
+1513,USC - TL 1361 W 35th St,1361 1/2 W 35th St - Rm 302,"Qian, Hong",34608,Current,Financially Responsible,07/20/2025,,07/20/2025,07/25/2026,"1,058.00","1,058.00",Yes,
+1513,USC - TL 1361 W 35th St,1361 1/2 W 35th St - Rm 303,"Siripurapu, Adhit",42303,Future,Financially Responsible,08/10/2026,,08/10/2026,12/25/2026,0,"1,068.00",Yes,
+1513,USC - TL 1361 W 35th St,1361 1/2 W 35th St - Rm 303,"Tan, Melissa",34609,Notice,Financially Responsible,07/20/2025,07/25/2026,07/20/2025,07/25/2026,"1,068.00","1,068.00",Yes,
+1513,USC - TL 1361 W 35th St,1361 1/2 W 35th St - Rm 401,"Diaz, Diego",34613,Current,Financially Responsible,08/10/2025,,08/10/2025,07/25/2027,"1,248.00","1,318.00",Yes,
+1513,USC - TL 1361 W 35th St,1361 1/2 W 35th St - Rm 402,"Orogbemi, Samuel",34612,Current,Financially Responsible,08/10/2025,,08/10/2025,07/25/2027,"1,068.00","1,068.00",Yes,
+1513,USC - TL 1361 W 35th St,1361 1/2 W 35th St - Rm 403,"Yuen, Kevyn",34610,Current,Financially Responsible,08/10/2025,,08/10/2025,07/25/2027,"1,078.00","1,078.00",Yes,
+1513,USC - TL 1361 W 35th St,1361 1/4 W 35th St (ADU) - Rm 1,"Li, Aster",35970,Notice,Financially Responsible,08/10/2025,07/25/2026,08/10/2025,07/25/2026,"1,378.00","1,378.00",Yes,
+1513,USC - TL 1361 W 35th St,1361 1/4 W 35th St (ADU) - Rm 1,"Tran, Derrick",42294,Future,Financially Responsible,08/10/2026,,08/10/2026,07/25/2027,0,"1,378.00",Yes,ID_Helen
+1513,USC - TL 1361 W 35th St,1361 1/4 W 35th St (ADU) - Rm 2,"Zhou, Emily",35900,Notice,Financially Responsible,08/10/2025,07/25/2026,08/10/2025,07/25/2026,"1,458.00","1,458.00",Yes,ID_Yoyo
+1513,USC - TL 1361 W 35th St,1361 1/4 W 35th St (ADU) - Rm 2,"Lui, Franklin",42296,Future,Financially Responsible,08/10/2026,,08/10/2026,07/25/2027,0,0,Yes,
+1513,USC - TL 1361 W 35th St,1361 1/4 W 35th St (ADU) - Rm 3,"Liu, Jiayu",36606,Notice,Financially Responsible,08/10/2025,07/25/2026,08/10/2025,07/25/2026,0,"1,408.00",Yes,ID_Mengyu
+1513,USC - TL 1361 W 35th St,1361 1/4 W 35th St (ADU) - Rm 3,"Divecha, Dheer",42317,Future,Financially Responsible,08/10/2026,,08/10/2026,07/25/2027,0,0,Yes,
+1513,USC - TL 1361 W 35th St,1363 W 35th St - Rm 201,"ROY, VAISNAV",34584,Current,Financially Responsible,04/18/2025,,07/25/2024,07/25/2026,0,"2,576.00",Yes,
+1513,USC - TL 1361 W 35th St,1363 W 35th St - Rm 301,"Chakkalakal, Sharble",38218,Current,Financially Responsible,07/25/2025,,07/25/2025,06/30/2026,"1,288.00","1,288.00",Yes,
+1513,USC - TL 1361 W 35th St,1363 W 35th St - Rm 303,"CHOY, AARON",40313,Current,Financially Responsible,12/01/2025,,12/01/2025,07/25/2026,"1,278.00","1,278.00",Yes,ID_Yinuo
+1513,USC - TL 1361 W 35th St,1363 W 35th St - Rm 304,"Lee, Joonseo",35790,Current,Financially Responsible,08/10/2025,,08/10/2025,07/25/2026,"1,298.00","1,298.00",Yes,
+1513,USC - TL 1361 W 35th St,1363 W 35th St - Rm 401,"Chen, Howard",34578,Current,Financially Responsible,04/18/2025,,08/10/2024,07/25/2026,"1,288.00","1,368.00",Yes,
+1513,USC - TL 1361 W 35th St,1363 W 35th St - Rm 403,"Barnes, Elija",34582,Current,Financially Responsible,04/18/2025,,07/24/2024,07/25/2026,"1,298.00","1,268.00",Yes,
+1513,USC - TL 1361 W 35th St,1363 W 35th St - Rm 404,"Lwin, Yamin",34577,Current,Financially Responsible,04/18/2025,,08/10/2024,07/25/2026,"1,288.00","1,358.00",Yes,
+1513,USC - TL 1361 W 35th St,1363 1/2 W 35th St - Rm 201,"Williams, Airbnb Tori",42165,Current,Financially Responsible,04/02/2026,,04/02/2026,,0,0,Yes,
+1513,USC - TL 1361 W 35th St,1363 1/2 W 35th St - Rm 301,"Moisa, Airbnb Marius",40712,Current,Financially Responsible,01/16/2026,,01/16/2026,,0,0,Yes,
+1513,USC - TL 1361 W 35th St,1363 1/2 W 35th St - Rm 302,"Savannah Kennon, Airbnb",40510,Current,Financially Responsible,12/19/2025,,12/19/2025,,0,0,Yes,
+1513,USC - TL 1361 W 35th St,1363 1/2 W 35th St - Rm 303,"Yash Sahitya, Airbnb",40577,Current,Financially Responsible,12/30/2025,,12/30/2025,,0,0,Yes,
+1513,USC - TL 1361 W 35th St,1363 1/2 W 35th St - Rm 304,"Pryce, Airbnb Dadria",40556,Current,Financially Responsible,12/28/2025,,12/28/2025,06/28/2026,0,0,Yes,
+1513,USC - TL 1361 W 35th St,1363 1/2 W 35th St - Rm 401,"Dwyer, Airbnb Trina",41925,Current,Financially Responsible,03/07/2026,,03/07/2026,,0,0,Yes,
+1513,USC - TL 1361 W 35th St,1363 1/2 W 35th St - Rm 402,"Barry, Airbnb-Shaun",38644,Current,Financially Responsible,08/15/2025,,08/15/2025,11/15/2025,0,0,Yes,
+1513,USC - TL 1361 W 35th St,1363 1/2 W 35th St - Rm 403,"MacKenzie, Airbnb JLee",40833,Current,Financially Responsible,02/02/2026,,02/02/2026,,0,0,Yes,
+1513,USC - TL 1361 W 35th St,1363 1/2 W 35th St - Rm 404,"Safari, Airbnb Pouya",40750,Current,Financially Responsible,01/23/2026,,01/23/2026,,0,0,Yes,
+1513,USC - TL 1361 W 35th St,1363 1/4 W 35th St - Rm 1,"Xiong, Yiming",40698,Current,Financially Responsible,01/20/2026,,01/20/2026,07/25/2026,0,"1,450.00",Yes,"Relocation, ID_Jobs"
+1513,USC - TL 1361 W 35th St,1363 1/4 W 35th St - Rm 2,"LOU, JIALIANG",40538,Current,Financially Responsible,01/20/2026,,01/20/2026,07/25/2026,0,"1,250.00",Yes,"Relocation, ID_Jobs"
+1513,USC - TL 1361 W 35th St,1363 1/4 W 35th St - Rm 3,"Guo, Haosen",40544,Current,Financially Responsible,01/20/2026,,01/20/2026,07/25/2026,0,"1,325.00",Yes,Relocation
+1513,USC - TL 1361 W 35th St,1363 1/4 W 35th St - Rm 4,"Li, Kaiwen",40545,Current,Financially Responsible,01/20/2026,,01/20/2026,07/25/2026,"1,368.00","1,395.00",Yes,Relocation
+1515,USC - TL 1366 W 35th St,1368 1/2 W 35th St - Rm 401,"Ene Agamah, Airbnb",39975,Current,Financially Responsible,10/17/2025,,10/17/2025,11/17/2026,0,0,Yes,
+1515,USC - TL 1366 W 35th St,1368 1/2 W 35th St - Rm 402,"QIANHUI TANG, Airbnb",40586,Current,Financially Responsible,12/31/2025,,12/31/2025,,0,0,Yes,
+1515,USC - TL 1366 W 35th St,1368 1/2 W 35th St - Rm 403,"Davis, Airbnb Tiffani",42174,Current,Financially Responsible,04/04/2026,,04/04/2026,,0,0,Yes,
+1515,USC - TL 1366 W 35th St,1366 W 35th St - Rm 201,"Tefera, Bruk",34948,Current,Financially Responsible,08/10/2025,,08/10/2025,07/25/2026,"1,268.00","1,268.00",Yes,
+1515,USC - TL 1366 W 35th St,1366 W 35th St - Rm 301,"Huang, Celine",34869,Current,Financially Responsible,04/22/2025,,12/22/2023,07/25/2026,"1,298.00","1,388.00",Yes,"Jose, ID"
+1515,USC - TL 1366 W 35th St,1366 W 35th St - Rm 302,"Li, Zuge",34886,Current,Financially Responsible,04/22/2025,,01/12/2024,07/25/2026,0,"2,616.00",Yes,"Yoyo, ID, 2installments"
+1515,USC - TL 1366 W 35th St,1366 W 35th St - Rm 304,"Pathak, Shekhar",34884,Current,Financially Responsible,04/22/2025,,01/04/2024,05/31/2026,"1,298.00","2,636.00",Yes,"Yoyo, ID"
+1515,USC - TL 1366 W 35th St,1366 W 35th St - Rm 402,"Dorer, Felix",40447,Current,Financially Responsible,01/07/2026,,01/07/2026,07/25/2026,"1,298.00","1,298.00",Yes,ID_Aldair
+1515,USC - TL 1366 W 35th St,1366 W 35th St - Rm 404,"Zhao, Zimo",34891,Current,Financially Responsible,04/22/2025,,04/15/2024,07/25/2027,"1,308.00","2,536.00",Yes,"Binbin, ID"
+1515,USC - TL 1366 W 35th St,1366 1/2 W 35th St - 1366 1/2 W 35th St,"He, Kyle",34943,Current,Financially Responsible,08/10/2025,,08/10/2025,07/25/2026,"11,632.00","11,632.00",No,
+1515,USC - TL 1366 W 35th St,1366 1/2 W 35th St - 1366 1/2 W 35th St,"Baweja, Amay",34943,Current,Financially Responsible,08/10/2025,,08/10/2025,07/25/2026,"11,632.00","11,632.00",Yes,
+1515,USC - TL 1366 W 35th St,1366 1/2 W 35th St - 1366 1/2 W 35th St,"Browning, Wallace",34943,Current,Financially Responsible,08/10/2025,,08/10/2025,07/25/2026,"11,632.00","11,632.00",No,
+1515,USC - TL 1366 W 35th St,1366 1/2 W 35th St - 1366 1/2 W 35th St,"Silva, Ryan",34943,Current,Financially Responsible,08/10/2025,,08/10/2025,07/25/2026,"11,632.00","11,632.00",No,
+1515,USC - TL 1366 W 35th St,1366 1/2 W 35th St - 1366 1/2 W 35th St,"Singh, Rajvir",34943,Current,Financially Responsible,08/10/2025,,08/10/2025,07/25/2026,"11,632.00","11,632.00",No,
+1515,USC - TL 1366 W 35th St,1366 1/2 W 35th St - 1366 1/2 W 35th St,"Sogani, Samarth",34943,Current,Financially Responsible,08/10/2025,,08/10/2025,07/25/2026,"11,632.00","11,632.00",No,
+1515,USC - TL 1366 W 35th St,1366 1/2 W 35th St - 1366 1/2 W 35th St,"Desai, Lakshya",34943,Current,Financially Responsible,08/10/2025,,08/10/2025,07/25/2026,"11,632.00","11,632.00",No,
+1515,USC - TL 1366 W 35th St,1366 1/2 W 35th St - 1366 1/2 W 35th St,"Vasudevan, Ekamresh",34943,Current,Financially Responsible,08/10/2025,,08/10/2025,07/25/2026,"11,632.00","11,632.00",No,
+1515,USC - TL 1366 W 35th St,1366 1/2 W 35th St - 1366 1/2 W 35th St,"Vij, Anshul",34943,Current,Financially Responsible,08/10/2025,,08/10/2025,07/25/2026,"11,632.00","11,632.00",No,
+1515,USC - TL 1366 W 35th St,1368 W 35th St - Rm 201,"Miao, Yunfei",36022,Current,Financially Responsible,08/10/2025,,08/10/2025,07/25/2026,0,"1,308.00",Yes,
+1515,USC - TL 1366 W 35th St,1368 W 35th St - Rm 202,"He, Belle",34941,Current,Financially Responsible,08/10/2025,,08/10/2025,07/25/2026,"1,308.00","1,308.00",Yes,"Mengyu, ID, Renewal transfer"
+1515,USC - TL 1366 W 35th St,1368 W 35th St - Rm 301,"Zhou, Qianlin",34894,Evict,Financially Responsible,04/22/2025,06/03/2025,08/10/2024,07/25/2025,0,0,Yes,"Mengyu, ID"
+1515,USC - TL 1366 W 35th St,1368 W 35th St - Rm 301,"Liu, Jiaxin",36615,Current,Financially Responsible,08/10/2025,,08/10/2025,07/25/2026,0,"1,298.00",Yes,
+1515,USC - TL 1366 W 35th St,1368 W 35th St - Rm 302,"Zhang, Yuqi",34898,Current,Financially Responsible,04/22/2025,,08/10/2024,07/25/2027,"1,318.00","1,318.00",Yes,ID_Mengyu
+1515,USC - TL 1366 W 35th St,1368 W 35th St - Rm 303,"Wang, Yuruo",36614,Current,Financially Responsible,08/10/2025,,08/10/2025,07/25/2026,0,"1,318.00",Yes,ID_Mengyu
+1515,USC - TL 1366 W 35th St,1368 W 35th St - Rm 401,"Yang, Wenji",39947,Current,Financially Responsible,10/13/2025,,10/13/2025,07/25/2026,"1,308.00","1,308.00",Yes,ID-Cecilia
+1515,USC - TL 1366 W 35th St,1368 W 35th St - Rm 403,"Jian, Niyu",34897,Current,Financially Responsible,07/26/2025,,08/10/2024,07/25/2026,"1,328.00","2,726.00",Yes,"Mengyu, ID"
+1515,USC - TL 1366 W 35th St,1368 1/2 W 35th St - Rm 201,"Siyang, Airbnb Siyang",41908,Current,Financially Responsible,03/05/2026,,03/05/2026,04/05/2026,0,0,Yes,
+1515,USC - TL 1366 W 35th St,1368 1/2 W 35th St - Rm 202,"재용 송, Airbnb",40461,Current,Financially Responsible,12/15/2025,,12/15/2025,01/15/2026,0,0,Yes,
+1515,USC - TL 1366 W 35th St,1368 1/2 W 35th St - Rm 302,"Fleming, Isaiah",40212,Current,Financially Responsible,11/12/2025,,11/12/2025,07/25/2026,"1,318.00","1,388.00",Yes,
+1515,USC - TL 1366 W 35th St,1368 1/2 W 35th St - Rm 303,"Jonathan Olsen, Airbnb",39988,Current,Financially Responsible,10/19/2025,,10/19/2025,11/19/2025,0,0,Yes,
+1483,USC - TL 1414 W 36th St,1414 W 36th St - Rm 202,"Thanh Lerynne, Airbnb",42024,Current,Financially Responsible,03/19/2026,,03/19/2026,04/19/2026,0,0,Yes,
+1483,USC - TL 1414 W 36th St,1414 W 36th St - Rm 203,"Shortterm, Tripalink",35190,Current,Financially Responsible,04/24/2025,,03/13/2025,,0,0,Yes,
+1483,USC - TL 1414 W 36th St,1414 W 36th St - Rm 204,"Hok Nam Li, Airbnb",39892,Current,Financially Responsible,10/07/2025,,10/07/2025,11/24/2025,0,0,Yes,
+1483,USC - TL 1414 W 36th St,1414 W 36th St - Rm 207,"Bernstein, Micah",35187,Current,Financially Responsible,08/10/2025,,08/10/2025,05/31/2026,"1,118.00","1,102.00",Yes,
+1483,USC - TL 1414 W 36th St,1414 W 36th St - Rm 301,"West, Kehlani",35167,Current,Financially Responsible,04/24/2025,,08/10/2023,10/31/2026,"1,118.00","1,138.00",Yes,"youyou, ID"
+1483,USC - TL 1414 W 36th St,1414 W 36th St - Rm 302,"York, Alan",35168,Current,Financially Responsible,04/24/2025,,08/10/2024,07/25/2027,"1,038.00","1,138.00",Yes,"ID, Amanda"
+1483,USC - TL 1414 W 36th St,1414 W 36th St - Rm 303,"Graham, Elizabeth",38172,Current,Financially Responsible,07/26/2025,,07/26/2025,07/25/2026,"1,108.00","1,188.00",Yes,
+1483,USC - TL 1414 W 36th St,1414 W 36th St - Rm 304,"Agoha, Michael",36093,Current,Financially Responsible,08/17/2025,,08/17/2025,05/31/2026,"1,108.00","1,108.00",Yes,youyou
+1483,USC - TL 1414 W 36th St,1414 W 36th St - Rm 305,"Stahl, Airbnb Sawyer",42539,Current,Financially Responsible,04/29/2026,,04/29/2026,,0,0,Yes,
+1483,USC - TL 1414 W 36th St,1414 W 36th St - Rm 306,"Oyetunji, Enoch",38223,Current,Financially Responsible,07/26/2025,,07/26/2025,07/25/2026,"1,118.00","1,118.00",Yes,
+1483,USC - TL 1414 W 36th St,1414 W 36th St - Rm 307,"Russell Carey, Airbnb",40390,Current,Financially Responsible,12/05/2025,,12/05/2025,07/24/2026,0,0,Yes,
+1483,USC - TL 1414 W 36th St,1416 W 36th St - Rm 201,"Sean Cory Cooper, Airbnb",42222,Current,Financially Responsible,04/09/2026,,04/09/2026,10/09/2026,0,0,Yes,
+1483,USC - TL 1414 W 36th St,1416 W 36th St - Rm 202,"Murilo Pasta, Airbnb",42209,Current,Financially Responsible,04/08/2026,,04/08/2026,05/12/2026,0,0,Yes,
+1483,USC - TL 1414 W 36th St,1416 W 36th St - Rm 203,"Munoz, Airbnb Andres",42316,Current,Financially Responsible,04/14/2026,,04/14/2026,,0,0,Yes,
+1483,USC - TL 1414 W 36th St,1416 W 36th St - Rm 204,"Jesus Rosas, Airbnb",40315,Current,Financially Responsible,12/01/2025,,12/01/2025,01/01/2026,0,0,Yes,
+1483,USC - TL 1414 W 36th St,1416 W 36th St - Rm 205,"成功 王, Airbnb",40728,Current,Financially Responsible,01/20/2026,,01/20/2026,,0,0,Yes,
+1483,USC - TL 1414 W 36th St,1416 W 36th St - Rm 206,"Johnson, Airbnb Dejah",42131,Current,Financially Responsible,04/01/2026,,04/01/2026,,0,0,Yes,
+1483,USC - TL 1414 W 36th St,1416 W 36th St - Rm 207,"Dar, Airbnb Gohar Hassan",42314,Current,Financially Responsible,04/14/2026,,04/14/2026,,0,0,Yes,
+1483,USC - TL 1414 W 36th St,1416 W 36th St - Rm 208,"Paz, Airbnb Tania",42376,Current,Financially Responsible,04/18/2026,,04/18/2026,,0,0,Yes,
+1483,USC - TL 1414 W 36th St,1416 W 36th St - Rm 301,"Kevin Sabellico, Airbnb",41217,Current,Financially Responsible,02/23/2026,,02/23/2026,06/04/2026,0,0,Yes,
+1483,USC - TL 1414 W 36th St,1416 W 36th St - Rm 302,"Aaron Hister, Airbnb",39847,Current,Financially Responsible,10/03/2025,,10/03/2025,11/04/2025,0,0,Yes,
+1483,USC - TL 1414 W 36th St,1416 W 36th St - Rm 303,"Kemone Bartley, Airbnb",40669,Current,Financially Responsible,01/10/2026,,01/10/2026,,0,0,Yes,
+1483,USC - TL 1414 W 36th St,1416 W 36th St - Rm 304,"Brando Campagna, Airbnb",40633,Current,Financially Responsible,01/06/2026,,01/06/2026,,0,0,Yes,
+1483,USC - TL 1414 W 36th St,1416 W 36th St - Rm 305,"Scott, Airbnb James",42161,Current,Financially Responsible,04/03/2026,,04/03/2026,,0,0,Yes,
+1483,USC - TL 1414 W 36th St,1416 W 36th St - Rm 306,"Kelly, Airbnb-Briana",38654,Current,Financially Responsible,08/15/2025,,08/15/2025,12/20/2025,0,0,Yes,
+1483,USC - TL 1414 W 36th St,1416 W 36th St - Rm 307,"Simpson, Justin (Tyler)",35178,Current,Financially Responsible,04/24/2025,,12/31/2024,12/31/2026,"1,128.00","1,122.00",Yes,ID_Yoyo
+1483,USC - TL 1414 W 36th St,1416 W 36th St - Rm 308,"Moreno-Riano, Airbnb Emily",42056,Current,Financially Responsible,03/24/2026,,03/24/2026,,0,0,Yes,
+1501,USC - TL 1430 W 37th St,1430 W 37th St - Rm 1,"Bohra, Venktesh",35065,Current,Financially Responsible,04/23/2025,,08/10/2024,07/25/2026,0,"1,163.00",Yes,"ID, Angel"
+1501,USC - TL 1430 W 37th St,1430 W 37th St - Rm 10,"Fnu, Ritu",36104,Current,Financially Responsible,08/10/2025,,08/10/2025,12/31/2026,"1,068.00","1,068.00",Yes,
+1501,USC - TL 1430 W 37th St,1430 W 37th St - Rm 11,"Sadeghian, Parniya",37443,Current,Financially Responsible,07/20/2025,,07/25/2025,07/25/2026,"1,118.00","1,118.00",Yes,ID_Yoyo
+1501,USC - TL 1430 W 37th St,1430 W 37th St - Rm 12,"Son, Emily",35126,Current,Financially Responsible,08/10/2025,,08/10/2025,07/25/2026,"1,068.00","1,068.00",Yes,ID_Qishan
+1501,USC - TL 1430 W 37th St,1430 W 37th St - Rm 13,"Law, Qiao Yuan Ann",35124,Current,Financially Responsible,08/10/2025,,08/10/2025,07/25/2026,"1,068.00","1,068.00",Yes,ID_Binbin
+1501,USC - TL 1430 W 37th St,1430 W 37th St - Rm 14,"Binti Shahril Ridza, Natalia Safa",35123,Current,Financially Responsible,06/10/2025,,06/10/2025,05/30/2026,0,"1,118.00",Yes,ID_Binbin
+1501,USC - TL 1430 W 37th St,1430 W 37th St - Rm 2,"Kim, John",35886,Current,Financially Responsible,08/10/2025,,08/10/2025,07/25/2026,"1,048.00","1,118.00",Yes,ID_Qishan
+1501,USC - TL 1430 W 37th St,1430 W 37th St - Rm 3,"Andrew, Arabella",35070,Current,Financially Responsible,04/23/2025,,10/27/2024,10/31/2026,"1,148.00","1,148.00",Yes,"Yoyo, ID"
+1501,USC - TL 1430 W 37th St,1430 W 37th St - Rm 4,"Reddy, Sahiti",42015,Current,Financially Responsible,03/19/2026,,03/19/2026,09/30/2026,"1,088.00","1,088.00",Yes,ID_Benjamin
+1501,USC - TL 1430 W 37th St,1430 W 37th St - Rm 4,"Dixon, Kerrington",35071,Evict,Financially Responsible,04/23/2025,01/31/2026,09/06/2023,01/31/2026,0,0,Yes,"Kimberly, ID"
+1501,USC - TL 1430 W 37th St,1430 W 37th St - Rm 5,"Vielbig, Zachary",35072,Evict,Financially Responsible,04/23/2025,,06/01/2024,07/25/2026,"1,048.00",950,Yes,"David, ID"
+1501,USC - TL 1430 W 37th St,1430 W 37th St - Rm 6,"Singh, Dhananjay",35125,Current,Financially Responsible,07/26/2025,,07/26/2025,07/25/2026,0,"1,098.00",Yes,
+1501,USC - TL 1430 W 37th St,1430 W 37th St - Rm 7,"Andon, Benedict",35122,Current,Financially Responsible,08/10/2025,,08/10/2025,07/25/2026,"1,058.00","1,128.00",Yes,
+1501,USC - TL 1430 W 37th St,1430 W 37th St - Rm 8,"Hernandez, Nathan",38226,Current,Financially Responsible,01/08/2026,,08/10/2025,05/31/2027,"1,058.00","1,058.00",Yes,youyou
+1501,USC - TL 1430 W 37th St,1430 W 37th St - Rm 9,"Truong, Andrew",35127,Current,Financially Responsible,08/10/2025,,08/10/2025,07/25/2026,"1,098.00","1,168.00",Yes,
+1501,USC - TL 1430 W 37th St,1430 1/2 W 37th St - Rm 1,"Cuffe, Airbnb Tara",41832,Current,Financially Responsible,02/28/2026,,02/28/2026,,0,0,Yes,
+1501,USC - TL 1430 W 37th St,1430 1/2 W 37th St - Rm 10,"Logan, Airbnb Constance",41839,Current,Financially Responsible,03/02/2026,,03/02/2026,,0,0,Yes,
+1501,USC - TL 1430 W 37th St,1430 1/2 W 37th St - Rm 11,"Coronado Peña, Alex Oswaldo",37665,Current,Financially Responsible,07/19/2025,,07/19/2025,01/31/2027,"1,148.00","1,148.00",No,
+1501,USC - TL 1430 W 37th St,1430 1/2 W 37th St - Rm 11,"De La Cerda, Taylor",37665,Current,Financially Responsible,07/19/2025,,07/19/2025,01/31/2027,"1,148.00","1,148.00",Yes,
+1501,USC - TL 1430 W 37th St,1430 1/2 W 37th St - Rm 12,"Nasto, Nikola",35076,Current,Financially Responsible,04/23/2025,,08/10/2024,07/26/2026,"1,112.00","1,112.00",Yes,"Youyou, ID"
+1501,USC - TL 1430 W 37th St,1430 1/2 W 37th St - Rm 15,"Chloe Alario, Airbnb",42018,Current,Financially Responsible,03/19/2026,,03/19/2026,04/19/2026,0,0,Yes,
+1501,USC - TL 1430 W 37th St,1430 1/2 W 37th St - Rm 17,"Rlia, Patrick",37837,Current,Financially Responsible,08/01/2025,,08/01/2025,07/25/2026,"1,148.00","1,148.00",Yes,
+1501,USC - TL 1430 W 37th St,1430 1/2 W 37th St - Rm 18,"Rubio, Jaelyn",35081,Current,Financially Responsible,04/23/2025,,12/02/2024,11/30/2026,"1,148.00","1,228.00",Yes,"ID, Morgan"
+1501,USC - TL 1430 W 37th St,1430 1/2 W 37th St - Rm 2,"Akamien, Evan",40122,Current,Financially Responsible,11/01/2025,,11/01/2025,05/31/2026,"1,088.00",500,Yes,ID-Cecilia
+1501,USC - TL 1430 W 37th St,1430 1/2 W 37th St - Rm 3,"Grier, Kari",35085,Current,Financially Responsible,04/23/2025,,08/10/2024,07/25/2026,"1,168.00",0,Yes,"guarantors.com, ID, Angel"
+1501,USC - TL 1430 W 37th St,1430 1/2 W 37th St - Rm 4,"Oduro, Stephen",41234,Current,Financially Responsible,02/25/2026,,02/25/2026,08/31/2027,"1,128.00","1,205.00",Yes,Relocation
+1501,USC - TL 1430 W 37th St,1430 1/2 W 37th St - Rm 5,"Bannon, Airbnb Nick",41927,Current,Financially Responsible,03/08/2026,,03/08/2026,,0,0,Yes,
+1501,USC - TL 1430 W 37th St,1430 1/2 W 37th St - Rm 6,"North, Airbnb Caleb",41922,Current,Financially Responsible,03/07/2026,,03/07/2026,,0,0,Yes,
+1501,USC - TL 1430 W 37th St,1430 1/2 W 37th St - Rm 8,"Yan, Xingzi",35095,Current,Financially Responsible,04/23/2025,,07/22/2024,08/31/2027,"1,078.00","1,122.00",Yes,"Morgan, ID"
+1501,USC - TL 1430 W 37th St,1430 1/2 W 37th St - Rm 9,"Sy, Airbnb Nat",42043,Current,Financially Responsible,03/22/2026,,03/22/2026,,0,0,Yes,
+1521,USC - TL 1431 W 37th St,1431 W 37th St - Rm 101,"Nwokocha, Chinasa Gift",39879,Evict,Financially Responsible,10/06/2025,,10/06/2025,09/30/2026,"1,158.00","1,158.00",Yes,ID-Cecilia
+1521,USC - TL 1431 W 37th St,1431 W 37th St - Rm 201,"Jackson, Robert",39882,Current,Financially Responsible,10/14/2025,,10/14/2025,09/30/2026,"1,168.00","1,238.00",Yes,ID_Yinuo
+1521,USC - TL 1431 W 37th St,1431 W 37th St - Rm 204,"Ban, Eun",39883,Current,Financially Responsible,10/13/2025,,10/13/2025,05/11/2026,"1,108.00","1,178.00",Yes,ID-Cecilia
+1521,USC - TL 1431 W 37th St,1433 W 37th St - 1433 W 37th St,"Han, James",33946,Current,Financially Responsible,04/12/2025,,10/01/2024,10/01/2026,0,0,No,
+1521,USC - TL 1431 W 37th St,1433 W 37th St - 1433 W 37th St,"Huang, Sophia",33946,Current,Financially Responsible,04/12/2025,,10/01/2024,10/01/2026,0,0,No,
+1521,USC - TL 1431 W 37th St,1433 W 37th St - 1433 W 37th St,"Cheng, Min",33946,Current,Financially Responsible,04/12/2025,,10/01/2024,10/01/2026,0,0,No,
+1521,USC - TL 1431 W 37th St,1433 W 37th St - 1433 W 37th St,"Li, Ray",33946,Current,Financially Responsible,04/12/2025,,10/01/2024,10/01/2026,0,0,No,
+1521,USC - TL 1431 W 37th St,1433 W 37th St - 1433 W 37th St,Cozy Living USA,33946,Current,Financially Responsible,04/12/2025,,10/01/2024,10/01/2026,0,0,Yes,
+1521,USC - TL 1431 W 37th St,1433 W 37th St - Rm 101,"Bennett, Airbnb Synicee",41986,Current,Financially Responsible,03/14/2026,,03/14/2026,,0,0,Yes,
+1521,USC - TL 1431 W 37th St,1433 W 37th St - Rm 102,"Shadkam, Airbnb Daniel",42008,Current,Financially Responsible,03/18/2026,,03/18/2026,,0,0,Yes,
+1521,USC - TL 1431 W 37th St,1433 W 37th St - Rm 103,"Mariah James, Airbnb",42192,Current,Financially Responsible,04/07/2026,,04/07/2026,05/14/2026,0,0,Yes,
+1521,USC - TL 1431 W 37th St,1433 W 37th St - Rm 104,"Aguirre, Airbnb Roxanne",42466,Current,Financially Responsible,04/26/2026,,04/26/2026,,0,0,Yes,
+1521,USC - TL 1431 W 37th St,1433 W 37th St - Rm 201,"Jackson, Airbnb Brenden",42031,Current,Financially Responsible,03/20/2026,,03/20/2026,,0,0,Yes,
+1521,USC - TL 1431 W 37th St,1433 W 37th St - Rm 202,"Ryan Graham, Airbnb",40517,Current,Financially Responsible,11/06/2025,,11/06/2025,03/06/2026,0,0,Yes,
+1521,USC - TL 1431 W 37th St,1433 W 37th St - Rm 203,"Reed, Airbnb Ryan",41901,Current,Financially Responsible,03/05/2026,,03/05/2026,,0,0,Yes,
+1521,USC - TL 1431 W 37th St,1433 W 37th St - Rm 204,"Wilson, Airbnb Deshawn",41903,Current,Financially Responsible,03/05/2026,,03/05/2026,,0,0,Yes,
+1521,USC - TL 1431 W 37th St,1433 W 37th St - Rm 205,"Adam, Elias",40149,Current,Financially Responsible,11/02/2025,,11/02/2025,,0,0,Yes,
+1521,USC - TL 1431 W 37th St,1433 W 37th St - Rm 206,"Gendron, Airbnb Matt",42055,Current,Financially Responsible,03/24/2026,,03/24/2026,,0,0,Yes,
+1521,USC - TL 1431 W 37th St,1433 W 37th St - Rm 301,"Förstler, Airbnb Leonie",40850,Current,Financially Responsible,02/05/2026,,02/05/2026,,0,0,Yes,
+1521,USC - TL 1431 W 37th St,1433 W 37th St - Rm 302,"Iovbak, Airbnb Eduard",40716,Current,Financially Responsible,01/18/2026,,01/18/2026,07/26/2026,0,0,Yes,
+1521,USC - TL 1431 W 37th St,1433 W 37th St - Rm 303,"Deshaun Coleman, Airbnb",40579,Current,Financially Responsible,12/30/2025,,12/30/2025,,0,0,Yes,
+1521,USC - TL 1431 W 37th St,1433 W 37th St - Rm 304,"Sharnika Power, Airbnb",40598,Current,Financially Responsible,01/01/2026,,01/01/2026,,0,0,Yes,
+1521,USC - TL 1431 W 37th St,1433 W 37th St - Rm 305,"Tung, Airbnb Jawad",42547,Current,Financially Responsible,04/29/2026,,04/29/2026,,0,0,Yes,
+1521,USC - TL 1431 W 37th St,1433 W 37th St - Rm 306,"Joshua Chatman, Airbnb",40234,Current,Financially Responsible,11/16/2025,,11/16/2025,01/16/2026,0,0,Yes,
+1484,USC - TL 1439 W 37th Dr,1439 W 37th Dr - Rm 201,"Muthui, Musangi",35467,Evict,Financially Responsible,04/25/2025,,10/01/2024,12/31/2025,"1,141.92","1,174.00",Yes,"ID, Erin"
+1484,USC - TL 1439 W 37th Dr,1439 W 37th Dr - Rm 202,"Fathi, Abbas",35468,Current,Financially Responsible,04/25/2025,,07/15/2023,02/28/2027,"1,198.00","1,198.00",Yes,"Kimberly, ID"
+1484,USC - TL 1439 W 37th Dr,1439 W 37th Dr - Rm 203,"Antania, Theressa",35469,Evict,Financially Responsible,04/25/2025,03/10/2026,08/28/2024,08/31/2025,0,0,Yes,"guarantors.com, ID, Yoyo"
+1484,USC - TL 1439 W 37th Dr,1439 W 37th Dr - Rm 203,"Pollaro, Isabella",42231,Current,Financially Responsible,05/01/2026,,05/01/2026,10/31/2026,"1,108.00","1,108.00",Yes,ID_Helen
+1484,USC - TL 1439 W 37th Dr,1439 W 37th Dr - Rm 204,"Okech, Sharon",40232,Current,Financially Responsible,11/29/2025,,11/29/2025,11/30/2026,"1,088.00","1,088.00",Yes,ID_Yinuo
+1484,USC - TL 1439 W 37th Dr,1439 W 37th Dr - Rm 205,"Nguyen, Ashley L.",35474,Current,Financially Responsible,04/25/2025,,07/20/2023,07/25/2027,"1,098.00","1,178.00",Yes,"Jose, ID"
+1484,USC - TL 1439 W 37th Dr,1439 W 37th Dr - Rm 206,"Carmona sanchez, Raydel",38974,Current,Financially Responsible,09/03/2025,,09/03/2025,08/31/2026,"1,098.00","1,098.00",No,"Relocation, helen"
+1484,USC - TL 1439 W 37th Dr,1439 W 37th Dr - Rm 206,"Lira Guzman, Edgar",38974,Current,Financially Responsible,09/03/2025,,09/03/2025,08/31/2026,"1,098.00","1,098.00",Yes,"Relocation, helen"
+1484,USC - TL 1439 W 37th Dr,1439 W 37th Dr - Rm 207,"Tassew, Isaac",35478,Current,Financially Responsible,04/25/2025,,09/01/2024,08/31/2026,"1,228.00","1,215.00",Yes,"Angel, ID"
+1484,USC - TL 1439 W 37th Dr,1439 W 37th Dr - Rm 208,"Seard, Vincent",40206,Current,Financially Responsible,11/17/2025,,11/17/2025,10/31/2026,"1,228.00","1,228.00",No,ID_Helen
+1484,USC - TL 1439 W 37th Dr,1439 W 37th Dr - Rm 208,"Tennison, Kristopher",40206,Current,Financially Responsible,11/17/2025,,11/17/2025,10/31/2026,"1,228.00","1,228.00",Yes,ID_Helen
+1484,USC - TL 1439 W 37th Dr,1439 W 37th Dr - Rm 301,"Caston, Kenneth",35481,Current,Financially Responsible,04/25/2025,,09/01/2024,08/31/2026,"1,184.00",0,Yes,"guarantors.com, ID, Yoyo"
+1484,USC - TL 1439 W 37th Dr,1439 W 37th Dr - Rm 302,"Featherstone, Joi",35483,Current,Financially Responsible,04/25/2025,,08/30/2024,08/31/2026,"1,108.00",875,Yes,"ID, Erin"
+1484,USC - TL 1439 W 37th Dr,1439 W 37th Dr - Rm 303,"Free, Aaron",40237,Current,Financially Responsible,12/05/2025,,12/05/2025,11/30/2026,"1,098.00","1,098.00",Yes,ID_Helen
+1484,USC - TL 1439 W 37th Dr,1439 W 37th Dr - Rm 304,"Campos, Richard",38081,Current,Financially Responsible,07/25/2025,,07/25/2025,07/25/2027,"1,098.00","1,118.00",Yes,
+1484,USC - TL 1439 W 37th Dr,1439 W 37th Dr - Rm 306,"Yakout, Ahmed",38432,Current,Financially Responsible,09/01/2025,,09/01/2025,08/30/2026,"1,108.00","1,163.00",Yes,ID_Erin
+1484,USC - TL 1439 W 37th Dr,1439 W 37th Dr - Rm 307,"Taylor, Evelyn",42233,Current,Financially Responsible,04/09/2026,,04/09/2026,08/31/2026,"1,098.00","1,164.00",Yes,"Shark, Relocation"
+1484,USC - TL 1439 W 37th Dr,1441 W 37th Dr - Rm 201,"Gesell, Tyler William",38016,Current,Financially Responsible,07/18/2025,,07/18/2025,07/25/2026,"1,098.00","1,098.00",Yes,ID_Helen
+1484,USC - TL 1439 W 37th Dr,1441 W 37th Dr - Rm 202,"Loos, Grant",35495,Current,Financially Responsible,04/25/2025,,07/20/2023,07/25/2026,"1,051.33","1,218.00",Yes,"Kimberly, ID"
+1484,USC - TL 1439 W 37th Dr,1441 W 37th Dr - Rm 203,"Xia, Yuan",37965,Current,Financially Responsible,07/23/2025,,07/23/2025,05/31/2026,"1,148.00","1,148.00",Yes,ID_Mengyu
+1484,USC - TL 1439 W 37th Dr,1441 W 37th Dr - Rm 205,"Lipscomb, Jeremiah",39236,Current,Financially Responsible,10/01/2025,,10/01/2025,09/30/2026,"1,128.00","1,128.00",Yes,ID_Helen
+1484,USC - TL 1439 W 37th Dr,1441 W 37th Dr - Rm 206,"Ma, Lingxiao",37964,Current,Financially Responsible,09/14/2025,,09/14/2025,06/30/2026,"1,098.00","1,118.00",Yes,ID_Mengyu
+1484,USC - TL 1439 W 37th Dr,1441 W 37th Dr - Rm 301,"Bennett, Darryl",35520,Current,Financially Responsible,05/19/2025,,05/19/2025,05/31/2027,"1,108.00","1,205.00",Yes,ID_Binbin
+1484,USC - TL 1439 W 37th Dr,1441 W 37th Dr - Rm 302,"Ayala, Yessenia",35503,Current,Financially Responsible,04/25/2025,,08/31/2024,08/31/2026,"1,128.00","1,215.00",Yes,"ID, youyou"
+1484,USC - TL 1439 W 37th Dr,1441 W 37th Dr - Rm 303,"Bittar, Eman",41956,Current,Financially Responsible,04/29/2026,,04/29/2026,10/31/2026,0,"1,158.00",Yes,ID_Helen
+1484,USC - TL 1439 W 37th Dr,1441 W 37th Dr - Rm 304,"Maldonado H, Kevin",38989,Current,Financially Responsible,09/03/2025,,09/03/2025,08/31/2026,"1,128.00","1,128.00",Yes,
+1484,USC - TL 1439 W 37th Dr,1441 W 37th Dr - Rm 305,"chen, Luhao",38924,Current,Financially Responsible,08/30/2025,,08/30/2025,05/31/2026,"1,128.00",500,Yes,ID_Yoyo
+1484,USC - TL 1439 W 37th Dr,1441 W 37th Dr - Rm 306,"Fernandez, Patrick",35507,Current,Financially Responsible,04/25/2025,,11/01/2023,10/31/2026,"1,218.00","1,218.00",Yes,"Kimberly, ID"
+1484,USC - TL 1439 W 37th Dr,1443 W 37th Dr - Rm 201,"Hamilton, James",35539,Current,Financially Responsible,04/25/2025,,11/01/2024,10/31/2026,"1,168.00","1,138.00",Yes,"ID, Erin"
+1484,USC - TL 1439 W 37th Dr,1443 W 37th Dr - Rm 202,"Osuna-iriarte, Luis",36124,Current,Financially Responsible,05/16/2025,,05/16/2025,12/31/2026,"1,188.00","1,138.00",Yes,ID_Erin
+1484,USC - TL 1439 W 37th Dr,1443 W 37th Dr - Rm 203,"De La Rosa, Suylen",35541,Current,Financially Responsible,04/25/2025,,08/10/2024,07/25/2026,"1,188.00","1,138.00",Yes,"ID, David"
+1484,USC - TL 1439 W 37th Dr,1443 W 37th Dr - Rm 204,"Stanford, Taniah",35543,Current,Financially Responsible,04/25/2025,,11/22/2024,06/30/2026,"1,188.00","1,208.00",Yes,ID_Yoyo
+1484,USC - TL 1439 W 37th Dr,1443 W 37th Dr - Rm 205,"Saint-vil, Nerline",38296,Current,Financially Responsible,06/01/2025,,06/01/2025,11/30/2026,"1,158.00","1,108.00",Yes,
+1484,USC - TL 1439 W 37th Dr,1443 W 37th Dr - Rm 206,"Baker, Kaylah",37973,Current,Financially Responsible,08/10/2025,,08/10/2025,07/25/2026,"1,168.00","1,168.00",Yes,
+1484,USC - TL 1439 W 37th Dr,1443 W 37th Dr - Rm 301,"Sarpong, Isaac",35549,Current,Financially Responsible,04/25/2025,,01/15/2024,12/31/2026,"1,178.00",0,Yes,"guarantors.com, Angel, ID"
+1484,USC - TL 1439 W 37th Dr,1443 W 37th Dr - Rm 302,"Tillett, Collinton",35551,Current,Financially Responsible,04/25/2025,,01/01/2024,06/30/2027,"1,198.00","2,396.00",Yes,"Angel, ID"
+1484,USC - TL 1439 W 37th Dr,1443 W 37th Dr - Rm 303,"Hudson, Terrell",35553,Current,Financially Responsible,04/25/2025,,07/25/2024,07/25/2027,"1,198.00","1,158.00",Yes,"ID, Angel"
+1484,USC - TL 1439 W 37th Dr,1443 W 37th Dr - Rm 304,"Michael, Booking Ethan",42375,Current,Financially Responsible,04/17/2026,,04/17/2026,,0,0,Yes,
+1484,USC - TL 1439 W 37th Dr,1443 W 37th Dr - Rm 305,"Dounia Tazi, Airbnb",42580,Current,Financially Responsible,04/30/2026,,04/30/2026,07/30/2026,0,0,Yes,
+1484,USC - TL 1439 W 37th Dr,1443 W 37th Dr - Rm 306,"Ojeda, Raul",37505,Current,Financially Responsible,06/25/2025,,06/25/2025,06/30/2026,"1,600.00","1,600.00",Yes,"Affordable Housing, Home Again Los Angeles"
+1484,USC - TL 1439 W 37th Dr,1443 W 37th Dr - Rm 307,"Cooper, Airbnb Trey",42489,Current,Financially Responsible,04/28/2026,,04/28/2026,,0,0,Yes,
+1484,USC - TL 1439 W 37th Dr,1443 1/2 W 37th Dr - Rm 202,"Williams, Timiza",35565,Evict,Financially Responsible,04/25/2025,,02/16/2024,04/30/2025,"1,128.00",500,Yes,"Angel, ID"
+1484,USC - TL 1439 W 37th Dr,1443 1/2 W 37th Dr - Rm 203,"Aguilar, Jose",37336,Evict,Financially Responsible,06/18/2025,,06/18/2025,06/30/2026,"1,600.00","1,600.00",Yes,"Affordable Housing, Home Again Los Angeles"
+1484,USC - TL 1439 W 37th Dr,1443 1/2 W 37th Dr - Rm 204,"Kim, Airbnb Chloe",42173,Current,Financially Responsible,04/04/2026,,04/04/2026,,0,0,Yes,
+1484,USC - TL 1439 W 37th Dr,1443 1/2 W 37th Dr - Rm 205,"Simmons-Okorom, Katina",40945,Current,Financially Responsible,04/01/2026,,04/01/2026,04/30/2027,"1,138.00","1,138.00",Yes,ID_Helen
+1484,USC - TL 1439 W 37th Dr,1443 1/2 W 37th Dr - Rm 205,"Dunnican, Antwan",35570,Evict,Financially Responsible,04/25/2025,01/15/2026,02/01/2025,01/31/2026,0,0,Yes,ID_Erin
+1484,USC - TL 1439 W 37th Dr,1443 1/2 W 37th Dr - Rm 206,"Carrera, Erik",35572,Current,Financially Responsible,04/25/2025,,10/15/2024,10/31/2026,"1,138.00",998,Yes,"ID, Yoyo"
+1484,USC - TL 1439 W 37th Dr,1443 1/2 W 37th Dr - Rm 207,"Li, Airbnb Jason",42096,Current,Financially Responsible,03/29/2026,,03/29/2026,,0,0,Yes,
+1484,USC - TL 1439 W 37th Dr,1443 1/2 W 37th Dr - Rm 208,"Jimenez, Airbnb Abril",42182,Current,Financially Responsible,04/06/2026,,04/06/2026,,0,0,Yes,
+1484,USC - TL 1439 W 37th Dr,1443 1/2 W 37th Dr - Rm 301,"Fofanah, Lamin",40329,Notice,Financially Responsible,12/03/2025,12/31/2026,12/03/2025,12/31/2026,"1,138.00","1,158.00",Yes,ID-Cecilia
+1484,USC - TL 1439 W 37th Dr,1443 1/2 W 37th Dr - Rm 302,"Cedillos, Airbnb Timothy",42068,Current,Financially Responsible,03/25/2026,,03/25/2026,,0,0,Yes,
+1484,USC - TL 1439 W 37th Dr,1443 1/2 W 37th Dr - Rm 303,"Jacqueline Espinosa, Airbnb",42193,Current,Financially Responsible,04/07/2026,,04/07/2026,05/08/2026,0,0,Yes,
+1484,USC - TL 1439 W 37th Dr,1443 1/2 W 37th Dr - Rm 304,"Mangat, Oliver",35579,Current,Financially Responsible,04/25/2025,,11/21/2024,07/25/2026,"1,071.33","1,122.00",Yes,"Carina, Relocation"
+1484,USC - TL 1439 W 37th Dr,1443 1/2 W 37th Dr - Rm 306,"Valenzuela, Robin",35581,Current,Financially Responsible,04/25/2025,,01/15/2024,05/31/2026,"1,148.00","1,168.00",Yes,"ID, Amanda"
+1484,USC - TL 1439 W 37th Dr,1443 1/2 W 37th Dr - Rm 307,"De Oliveira, Airbnb João Gabriel Godoy",42159,Current,Financially Responsible,04/03/2026,,04/03/2026,,0,0,Yes,
+1484,USC - TL 1439 W 37th Dr,1443 1/2 W 37th Dr - Rm 308,"Chen, Airbnb Yang",42175,Current,Financially Responsible,04/05/2026,,04/05/2026,,0,0,Yes,
+1484,USC - TL 1439 W 37th Dr,1443 1/4 W 37th Dr - 1443 1/4 W 37th Dr,"Belmontes, Airbnb Emilee",41902,Current,Financially Responsible,03/05/2026,,03/05/2026,,0,0,Yes,
+1485,USC - TL 1455 W 36th St,1455 W 36th St - Rm 101,"Williams, Airbnb Jaid",41960,Current,Financially Responsible,03/11/2026,,03/11/2026,,0,0,Yes,
+1485,USC - TL 1455 W 36th St,1455 W 36th St - Rm 102,"Smith, Airbnb Maci",41947,Current,Financially Responsible,03/10/2026,,03/10/2026,,0,0,Yes,
+1485,USC - TL 1455 W 36th St,1455 W 36th St - Rm 201,"Im, Airbnb Joseph",42383,Current,Financially Responsible,04/15/2026,,04/15/2026,,0,0,Yes,
+1485,USC - TL 1455 W 36th St,1455 W 36th St - Rm 202,"Prayscha, Beatrice",33929,Current,Financially Responsible,04/11/2025,,07/21/2024,05/31/2026,"1,112.00","2,224.00",Yes,"Binbin, ID"
+1485,USC - TL 1455 W 36th St,1455 W 36th St - Rm 203,"Days, Makai",35794,Current,Financially Responsible,04/28/2025,,04/24/2025,04/30/2027,"1,218.00","1,184.00",Yes,ID_Qishan
+1485,USC - TL 1455 W 36th St,1455 W 36th St - Rm 303,"Fenton, Erickson",33922,Current,Financially Responsible,04/11/2025,,07/15/2024,07/26/2027,"1,158.00","1,278.00",Yes,"Katrina, ID"
+1485,USC - TL 1455 W 36th St,1455 W 36th St - Rm 304,"Davion Smith, Airbnb",41967,Current,Financially Responsible,03/12/2026,,03/12/2026,04/12/2026,0,0,Yes,
+1485,USC - TL 1455 W 36th St,1455 W 36th St - Rm 305,"Dave Lee, Airbnb",42030,Current,Financially Responsible,03/13/2026,,03/13/2026,05/01/2026,0,0,Yes,
+1485,USC - TL 1455 W 36th St,1455 1/2 W 36th St - Rm 101,"Isabella Wang, Airbnb",40145,Current,Financially Responsible,11/02/2025,,,,0,0,Yes,
+1485,USC - TL 1455 W 36th St,1455 1/2 W 36th St - Rm 102,"Sanchez, Airbnb Mitchell",41895,Current,Financially Responsible,03/05/2026,,03/05/2026,,0,0,Yes,
+1485,USC - TL 1455 W 36th St,1455 1/2 W 36th St - Rm 103,"Rajwinder Mahal, Airbnb",40671,Current,Financially Responsible,01/10/2026,,01/10/2026,03/07/2026,0,0,Yes,
+1485,USC - TL 1455 W 36th St,1455 1/2 W 36th St - Rm 104,"Bailey, Airbnb Chris",40812,Current,Financially Responsible,01/31/2026,,01/31/2026,03/03/2027,0,0,Yes,
+1485,USC - TL 1455 W 36th St,1455 1/2 W 36th St - Rm 104,"McTigue, Mitchell",33942,Evict,Financially Responsible,04/11/2025,08/31/2025,01/01/2025,09/30/2025,0,0,Yes,"Binbin, ID"
+1485,USC - TL 1455 W 36th St,1455 1/2 W 36th St - Rm 201,"França, Airbnb Natália",40836,Current,Financially Responsible,02/03/2026,,02/03/2026,,0,0,Yes,
+1485,USC - TL 1455 W 36th St,1455 1/2 W 36th St - Rm 203,"Mehmet Tunç, Airbnb",40482,Current,Financially Responsible,12/17/2025,,12/17/2025,12/16/2026,0,0,Yes,
+1485,USC - TL 1455 W 36th St,1455 1/2 W 36th St - Rm 204,"Akbas, Airbnb Onur Kadir",41984,Current,Financially Responsible,03/14/2026,,03/14/2026,,0,0,Yes,
+1485,USC - TL 1455 W 36th St,1455 1/2 W 36th St - Rm 205,"Wilkes, Airbnb Jarod",42158,Current,Financially Responsible,04/03/2026,,04/03/2026,,0,0,Yes,
+1485,USC - TL 1455 W 36th St,1455 1/2 W 36th St - Rm 301,"Ian Kowalski, Airbnb",40661,Current,Financially Responsible,01/09/2026,,01/09/2026,,0,0,Yes,
+1485,USC - TL 1455 W 36th St,1455 1/2 W 36th St - Rm 302,"Jerome Jackson, Airbnb",40408,Current,Financially Responsible,12/09/2025,,12/09/2025,,0,0,Yes,
+1485,USC - TL 1455 W 36th St,1455 1/2 W 36th St - Rm 303,"B, Airbnb Nae",42552,Current,Financially Responsible,04/30/2026,,04/30/2026,,0,0,Yes,
+1505,USC - TL 1458/1460 W 37th St,1458 W 37th St - Rm 201,"Marina Rain, Airbnb",42234,Current,Financially Responsible,04/09/2026,,04/09/2026,05/11/2026,0,0,Yes,
+1505,USC - TL 1458/1460 W 37th St,1458 W 37th St - Rm 202,"Ashley Salim, Airbnb",40499,Current,Financially Responsible,12/18/2025,,12/18/2025,01/18/2026,0,0,Yes,
+1505,USC - TL 1458/1460 W 37th St,1458 W 37th St - Rm 203,"和英世, Airbnb 珠力澄",42390,Current,Financially Responsible,04/19/2026,,04/19/2026,,0,0,Yes,
+1505,USC - TL 1458/1460 W 37th St,1458 W 37th St - Rm 204,"Wright , Airbnb Dwayne",42141,Current,Financially Responsible,04/01/2026,,04/01/2026,,0,0,Yes,
+1505,USC - TL 1458/1460 W 37th St,1458 W 37th St - Rm 205,"Rogers, Caleb",33975,Evict,Financially Responsible,04/12/2025,01/06/2026,03/01/2024,02/28/2026,0,0,Yes,"Angel, ID"
+1505,USC - TL 1458/1460 W 37th St,1458 W 37th St - Rm 206,"Giselle Ponce, Airbnb",39951,Current,Financially Responsible,10/14/2025,,10/14/2025,11/15/2025,0,0,Yes,
+1505,USC - TL 1458/1460 W 37th St,1458 W 37th St - Rm 207,"Thomas Rostan, Airbnb",42207,Current,Financially Responsible,04/08/2026,,04/08/2026,06/30/2026,0,0,Yes,
+1505,USC - TL 1458/1460 W 37th St,1458 W 37th St - Rm 301,"Severinsen, Airbnb Therésé",40840,Current,Financially Responsible,02/03/2026,,02/03/2026,,0,0,Yes,
+1505,USC - TL 1458/1460 W 37th St,1458 W 37th St - Rm 303,"Andrew Gudino, Airbnb",41963,Current,Financially Responsible,03/12/2026,,03/12/2026,05/12/2026,0,0,Yes,
+1505,USC - TL 1458/1460 W 37th St,1458 W 37th St - Rm 304,"Tara Cuffe, Airbnb",40933,Current,Financially Responsible,02/18/2026,,02/18/2026,05/29/2026,0,0,Yes,
+1505,USC - TL 1458/1460 W 37th St,1458 W 37th St - Rm 304,"Dunahoo, Nicholas",33992,Evict,Financially Responsible,04/12/2025,12/26/2025,08/21/2024,02/28/2026,0,0,Yes,"Erin, ID"
+1505,USC - TL 1458/1460 W 37th St,1458 W 37th St - Rm 305,"Ezenagu, Airbnb Jordan",42617,Current,Financially Responsible,05/01/2026,,05/01/2026,,0,0,Yes,
+1505,USC - TL 1458/1460 W 37th St,1458 W 37th St - Rm 306,"Ulak, Airbnb Tufan",40845,Current,Financially Responsible,02/04/2026,,02/04/2026,03/07/2027,0,0,Yes,
+1505,USC - TL 1458/1460 W 37th St,1458 W 37th St - Rm 307,"Lorenzoni, Airbnb Evangelina",41985,Current,Financially Responsible,03/14/2026,,03/14/2026,,0,0,Yes,
+1505,USC - TL 1458/1460 W 37th St,1460 W 37th St - Rm 201,"David Bagdasarian, Airbnb",42208,Current,Financially Responsible,04/08/2026,,04/08/2026,05/09/2026,0,0,Yes,
+1505,USC - TL 1458/1460 W 37th St,1460 W 37th St - Rm 202,"Ezequiel Acosta, Airbnb",40526,Current,Financially Responsible,12/22/2025,,12/22/2025,,0,0,Yes,
+1505,USC - TL 1458/1460 W 37th St,1460 W 37th St - Rm 203,"Kristian, Airbnb",41910,Current,Financially Responsible,03/06/2026,,03/06/2026,,0,0,Yes,
+1505,USC - TL 1458/1460 W 37th St,1460 W 37th St - Rm 204,"Campbell, Airbnb Shakina",41831,Current,Financially Responsible,03/02/2026,,03/02/2026,,0,0,Yes,
+1505,USC - TL 1458/1460 W 37th St,1460 W 37th St - Rm 206,"Erkol, Airbnb Ali",41802,Current,Financially Responsible,02/28/2026,,02/28/2026,,0,0,Yes,
+1505,USC - TL 1458/1460 W 37th St,1460 W 37th St - Rm 207,"Thio, Airbnb Frederik",40709,Current,Financially Responsible,01/16/2026,,01/16/2026,,0,0,Yes,
+1505,USC - TL 1458/1460 W 37th St,1460 W 37th St - Rm 208,"Drozdovska, Airbnb Mariia",42362,Current,Financially Responsible,04/17/2026,,04/17/2026,,0,0,Yes,
+1505,USC - TL 1458/1460 W 37th St,1460 W 37th St - Rm 209,"Ju, Airbnb Minjeong",40951,Current,Financially Responsible,02/21/2026,,02/21/2026,,0,0,Yes,
+1505,USC - TL 1458/1460 W 37th St,1460 W 37th St - Rm 301,"Stephen Woo, Airbnb",40619,Current,Financially Responsible,01/04/2026,,01/04/2026,02/23/2026,0,0,Yes,
+1505,USC - TL 1458/1460 W 37th St,1460 W 37th St - Rm 302,"Lamini, Airbnb Enzo",40765,Current,Financially Responsible,01/26/2026,,01/26/2026,,0,0,Yes,
+1505,USC - TL 1458/1460 W 37th St,1460 W 37th St - Rm 303,"Scanlon, Airbnb Grace",40881,Current,Financially Responsible,02/07/2026,,02/07/2026,,0,0,Yes,
+1505,USC - TL 1458/1460 W 37th St,1460 W 37th St - Rm 304,"Seyedmehdi Mousavi, Airbnb",40101,Current,Financially Responsible,10/28/2025,,10/28/2025,11/27/2025,0,0,Yes,
+1505,USC - TL 1458/1460 W 37th St,1460 W 37th St - Rm 305,"인, Airbnb 아영",42183,Current,Financially Responsible,04/06/2026,,04/06/2026,,0,0,Yes,
+1505,USC - TL 1458/1460 W 37th St,1460 W 37th St - Rm 306,"Volkan Yılmaz, Airbnb",40563,Current,Financially Responsible,12/29/2025,,12/29/2025,,0,0,Yes,
+1505,USC - TL 1458/1460 W 37th St,1460 W 37th St - Rm 307,"Legua, Arnel",33993,Current,Financially Responsible,04/12/2025,,04/01/2025,03/31/2027,"1,203.00","1,203.00",Yes,ID_Erin
+1505,USC - TL 1458/1460 W 37th St,1460 W 37th St - Rm 309,"Simpson-Clifton, Airbnb Gena",41948,Current,Financially Responsible,03/10/2026,,03/10/2026,,0,0,Yes,
+1506,USC - TL 1471 W 37th St,1471 W 37th St - Rm 101,"Muniz, Priscilla",40846,Current,Financially Responsible,02/08/2026,,02/08/2026,02/28/2027,"1,128.00","1,128.00",Yes,ID_Helen
+1506,USC - TL 1471 W 37th St,1471 W 37th St - Rm 102,"Hardgraves, Shamia",34309,Evict,Financially Responsible,04/15/2025,06/24/2025,11/25/2024,10/31/2025,0,0,Yes,ID_Erin
+1506,USC - TL 1471 W 37th St,1471 W 37th St - Rm 103,"Morales, Sarah",40642,Current,Financially Responsible,01/07/2026,,01/07/2026,01/31/2027,"1,128.00","1,128.00",Yes,ID_Aldair
+1506,USC - TL 1471 W 37th St,1471 W 37th St - Rm 104,"Quintanilla, Bryan D.",40644,Notice,Financially Responsible,03/04/2026,02/28/2027,02/16/2026,02/28/2027,"1,168.00","1,168.00",No,ID_Aldair
+1506,USC - TL 1471 W 37th St,1471 W 37th St - Rm 104,"Chavez, Marisol",40644,Current,Financially Responsible,02/16/2026,,02/16/2026,02/28/2027,"1,168.00","1,168.00",Yes,ID_Aldair
+1506,USC - TL 1471 W 37th St,1471 W 37th St - Rm 201,"Wang, Shangshang",37718,Current,Financially Responsible,07/23/2025,,07/23/2025,07/25/2027,0,"1,138.00",Yes,
+1506,USC - TL 1471 W 37th St,1471 W 37th St - Rm 202,"Dragon, Joseph",42442,Future,Financially Responsible,05/03/2026,,05/03/2026,05/31/2027,0,"1,208.00",Yes,ID_Bo
+1506,USC - TL 1471 W 37th St,1471 W 37th St - Rm 203,"Solomko, Alexander",34301,Current,Financially Responsible,04/15/2025,,09/28/2024,05/31/2026,"1,158.00","1,228.00",Yes,
+1506,USC - TL 1471 W 37th St,1471 W 37th St - Rm 204,"Ogunorunyinka, Oluwabukola",41891,Current,Financially Responsible,03/06/2026,,03/06/2026,03/31/2027,"1,128.00","1,128.00",Yes,ID_Bo
+1506,USC - TL 1471 W 37th St,1471 W 37th St - Rm 301,"Xie, Zhenyi",35809,Current,Financially Responsible,08/10/2025,,08/10/2025,07/31/2026,0,"1,148.00",Yes,
+1506,USC - TL 1471 W 37th St,1471 W 37th St - Rm 302,"Olimjonov, Jasurbek",40859,Current,Financially Responsible,02/28/2026,,02/28/2026,03/31/2027,"1,148.00","1,178.00",Yes,ID_Helen
+1506,USC - TL 1471 W 37th St,1471 W 37th St - Rm 304,"Ben Hassen, Mohamed",34292,Current,Financially Responsible,04/15/2025,,12/04/2024,11/30/2026,"1,138.00",70,Yes,"guarantors.com, ID_Erin"
+1506,USC - TL 1471 W 37th St,1471 W 37th St - Rm 304,"Tanfouri, Meriem",34292,Current,Financially Responsible,04/15/2025,,12/04/2024,11/30/2026,"1,138.00",70,No,"guarantors.com, ID_Erin"
+1506,USC - TL 1471 W 37th St,1471 1/2 W 37th St - Rm 102,"Abdulwahab, Airbnb Ahmed",42011,Current,Financially Responsible,03/18/2026,,03/18/2026,,0,0,Yes,
+1506,USC - TL 1471 W 37th St,1471 1/2 W 37th St - Rm 103,"Tweneboah Koduah, Isaac",40650,Current,Financially Responsible,01/10/2026,,01/10/2026,07/25/2027,"1,128.00","1,218.00",Yes,ID_Aldair
+1506,USC - TL 1471 W 37th St,1471 1/2 W 37th St - Rm 104,"Dubinin, Viacheslav",34313,Current,Financially Responsible,04/15/2025,,12/13/2024,11/30/2026,"1,138.00","1,088.00",Yes,ID_Erin
+1506,USC - TL 1471 W 37th St,1471 1/2 W 37th St - Rm 201,"Rosalina, Wendolin",34304,Current,Financially Responsible,04/15/2025,,10/25/2024,10/31/2026,"1,158.00","1,158.00",Yes,"Qishan, ID"
+1506,USC - TL 1471 W 37th St,1471 1/2 W 37th St - Rm 203,"Rodas, Airbnb Steven",42148,Current,Financially Responsible,04/01/2026,,04/01/2026,,0,0,Yes,
+1506,USC - TL 1471 W 37th St,1471 1/2 W 37th St - Rm 204,"McCarthy, Airbnb Trevor",42139,Current,Financially Responsible,04/01/2026,,04/01/2026,,0,0,Yes,
+1506,USC - TL 1471 W 37th St,1471 1/2 W 37th St - Rm 301,"Ruiz, Josue",37234,Current,Financially Responsible,09/01/2025,,09/01/2025,08/31/2026,"1,040.00","1,040.00",Yes,
+1506,USC - TL 1471 W 37th St,1471 1/2 W 37th St - Rm 302,"Lu, Airbnb Louis",42007,Current,Financially Responsible,03/18/2026,,03/18/2026,,0,0,Yes,
+1506,USC - TL 1471 W 37th St,1471 1/2 W 37th St - Rm 303,"Hall, Airbnb Shaquile",42102,Current,Financially Responsible,03/30/2026,,03/30/2026,,0,0,Yes,
+1506,USC - TL 1471 W 37th St,1471 1/2 W 37th St - Rm 304,"Ajanaku, Ademamola",34308,Current,Financially Responsible,04/15/2025,,12/01/2024,11/30/2026,"1,138.00","1,088.00",Yes,"ID, Yoyo"
+1506,USC - TL 1471 W 37th St,1471 1/2 W 37th St - Rm 305,"Sirui Guo, Airbnb",40525,Current,Financially Responsible,12/21/2025,,12/21/2025,04/01/2026,0,0,Yes,
+1486,USC - TL 1476 W 35th St,1476 1/2 W 35th St - Rm 301,"Salcedo, Gary",34522,Current,Financially Responsible,04/17/2025,,01/31/2025,01/31/2027,"1,238.00","1,081.00",Yes,ID_Qishan
+1486,USC - TL 1476 W 35th St,1476 1/2 W 35th St - Rm 302,"Rodriguez, Daniel",41890,Current,Financially Responsible,03/29/2026,,03/29/2026,04/30/2027,"1,168.00","1,168.00",Yes,ID_Yongheng
+1486,USC - TL 1476 W 35th St,1476 1/2 W 35th St - Rm 303,"Arroyo, Airbnb Tallulah",42120,Current,Financially Responsible,03/31/2026,,03/31/2026,,0,0,Yes,
+1486,USC - TL 1476 W 35th St,1476 1/2 W 35th St - Rm 304,"Ortiz, Andres",34512,Current,Financially Responsible,04/17/2025,,08/24/2024,07/25/2026,"1,178.00","1,060.00",Yes,"Erin, ID"
+1486,USC - TL 1476 W 35th St,1476 1/2 W 35th St - Rm 305,"Holt-Outlaw, Jayde",37590,Current,Financially Responsible,07/05/2025,,07/05/2025,07/25/2026,"1,071.00","1,071.00",Yes,
+1486,USC - TL 1476 W 35th St,1476 1/2 W 35th St - Rm 306,"Rodrigues, Julio",37266,Current,Financially Responsible,06/13/2025,,06/13/2025,06/30/2026,"1,060.00","1,060.00",Yes,ID_Benjamin
+1486,USC - TL 1476 W 35th St,1476 1/2 W 35th St - Rm 401,"Navies, Airbnb Jessica",42377,Current,Financially Responsible,04/18/2026,,04/18/2026,,0,0,Yes,
+1486,USC - TL 1476 W 35th St,1476 1/2 W 35th St - Rm 402,"Guzman, Juan",34540,Current,Financially Responsible,04/17/2025,,08/10/2022,07/25/2027,"1,198.00","1,088.00",Yes,"Matteo, Payment Plan"
+1486,USC - TL 1476 W 35th St,1476 1/2 W 35th St - Rm 403,"Kelly, Airbnb Joshua",42034,Current,Financially Responsible,03/20/2026,,03/20/2026,,0,0,Yes,
+1486,USC - TL 1476 W 35th St,1476 1/2 W 35th St - Rm 404,"Sato, Airbnb Amane",42397,Current,Financially Responsible,04/20/2026,,04/20/2026,,0,0,Yes,
+1486,USC - TL 1476 W 35th St,1476 1/2 W 35th St - Rm 405,"Pallotti, Alexia",34464,Current,Financially Responsible,04/17/2025,,01/18/2023,08/31/2027,"1,138.00","1,098.00",Yes,"Amanda, transfer, Xiaoding"
+1486,USC - TL 1476 W 35th St,1476 1/2 W 35th St - Rm 406,"Keke, Kenneth",34518,Current,Financially Responsible,04/17/2025,,11/01/2024,10/31/2026,"1,113.00","1,071.00",Yes,"Erin, ID"
+1486,USC - TL 1476 W 35th St,1482 W 35th St - Rm 201,"Taveras, Joel",41935,Current,Financially Responsible,03/09/2026,,03/09/2026,03/31/2027,"1,158.00","1,158.00",Yes,ID_Yitong
+1486,USC - TL 1476 W 35th St,1482 W 35th St - Rm 202,"Obadan, Oluwagbenga",40077,Current,Financially Responsible,10/27/2025,,10/27/2025,10/31/2026,"1,148.00","1,148.00",Yes,ID_Benjamin
+1486,USC - TL 1476 W 35th St,1482 W 35th St - Rm 203,"Bernard, Joshua",34469,Current,Financially Responsible,05/13/2025,,08/10/2023,07/25/2026,"1,091.00","1,278.00",Yes,"Amanda, ID"
+1486,USC - TL 1476 W 35th St,1482 W 35th St - Rm 204,"Jackson II, Dwayne",34521,Current,Financially Responsible,04/17/2025,,01/04/2025,12/31/2026,"1,092.00","1,050.00",Yes,ID_Erin
+1486,USC - TL 1476 W 35th St,1482 W 35th St - Rm 301,"Seymour, Brittney",34517,Current,Financially Responsible,04/17/2025,,10/31/2024,10/31/2026,"1,168.00","1,060.00",Yes,"ID, Yoyo"
+1486,USC - TL 1476 W 35th St,1482 W 35th St - Rm 302,"Bermejo, Caitlin",34489,Current,Financially Responsible,04/17/2025,,08/10/2024,07/25/2026,"1,168.00","1,120.00",Yes,"Yoyo, ID"
+1486,USC - TL 1476 W 35th St,1482 W 35th St - Rm 303,"Albert Bosch, Osvaldo",40947,Current,Financially Responsible,02/20/2026,,02/20/2026,02/28/2027,"1,158.00","1,158.00",Yes,ID_Helen
+1486,USC - TL 1476 W 35th St,1482 W 35th St - Rm 304,"Aguilera, Daniel",37836,Current,Financially Responsible,08/10/2025,,08/10/2025,07/25/2026,"1,198.00","1,198.00",Yes,
+1486,USC - TL 1476 W 35th St,1482 W 35th St - Rm 305,"Hopkins, Mia",36058,Current,Financially Responsible,05/16/2025,,05/16/2025,05/31/2027,"1,158.00","1,120.00",Yes,ID_Yoyo
+1486,USC - TL 1476 W 35th St,1482 W 35th St - Rm 402,"Francocci, Theo",34532,Current,Financially Responsible,04/17/2025,,04/05/2025,04/30/2027,"1,178.00","1,081.00",Yes,ID_Qishan
+1486,USC - TL 1476 W 35th St,1482 W 35th St - Rm 403,"Tong, Anh-khoa",42485,Current,Financially Responsible,05/01/2026,,05/01/2026,05/31/2027,0,"1,188.00",Yes,ID_Benjamin
+1486,USC - TL 1476 W 35th St,1482 W 35th St - Rm 404,"Escobar, Cesar",34529,Current,Financially Responsible,04/17/2025,,03/10/2025,02/28/2027,"1,081.00","1,081.00",Yes,ID_Qishan
+1486,USC - TL 1476 W 35th St,1482 1/2 W 35th St - Rm 101,"Roche, Tiara Ivania",34488,Current,Financially Responsible,04/17/2025,,06/01/2024,08/31/2027,"1,148.00","1,110.00",Yes,
+1486,USC - TL 1476 W 35th St,1482 1/2 W 35th St - Rm 102,"Mark Beshay, Airbnb",42210,Current,Financially Responsible,04/08/2026,,04/08/2026,05/12/2026,0,0,Yes,
+1486,USC - TL 1476 W 35th St,1482 1/2 W 35th St - Rm 103,"Garduque, Kristopher",37794,Current,Financially Responsible,07/18/2025,,07/18/2025,06/30/2026,"1,050.00","1,050.00",Yes,ID_Binbin
+1486,USC - TL 1476 W 35th St,1482 1/2 W 35th St - Rm 104,"BINUYA, RONALDO",34508,Current,Financially Responsible,04/17/2025,,08/06/2024,07/25/2027,"1,178.00","1,060.00",Yes,"Yoyo, ID"
+1486,USC - TL 1476 W 35th St,1482 1/2 W 35th St - Rm 202,"Patterson, Steven",34531,Current,Financially Responsible,04/17/2025,,03/14/2025,08/31/2026,"1,038.00","1,050.00",Yes,ID_Yoyo
+1486,USC - TL 1476 W 35th St,1482 1/2 W 35th St - Rm 203,"Dexter, Fredonia",34535,Evict,Financially Responsible,04/17/2025,06/30/2025,08/18/2024,07/25/2025,0,0,Yes,"guarantors.com, Morgan, ID"
+1486,USC - TL 1476 W 35th St,1482 1/2 W 35th St - Rm 203,"Watkins, Airbnb Arianna",42436,Current,Financially Responsible,04/23/2026,,04/23/2026,,0,0,Yes,
+1486,USC - TL 1476 W 35th St,1482 1/2 W 35th St - Rm 204,"Poetic Justice, Airbnb",42399,Current,Financially Responsible,04/20/2026,,04/20/2026,05/11/2026,0,0,Yes,
+1486,USC - TL 1476 W 35th St,1482 1/2 W 35th St - Rm 301,"Harris, Airbnb Keegan",42613,Current,Financially Responsible,05/01/2026,,05/01/2026,,0,0,Yes,
+1486,USC - TL 1476 W 35th St,1482 1/2 W 35th St - Rm 302,"Myint Than, Shun Lai",34506,Current,Financially Responsible,04/17/2025,,08/10/2024,05/31/2026,"1,092.00","1,050.00",Yes,"Erin, ID"
+1486,USC - TL 1476 W 35th St,1482 1/2 W 35th St - Rm 303,"Ochoa Rodarte, Tomas",34528,Current,Financially Responsible,04/17/2025,,04/17/2025,05/31/2026,"1,092.00","1,050.00",Yes,ID_Qishan
+1486,USC - TL 1476 W 35th St,1482 1/2 W 35th St - Rm 304,"Alahmadi, Bassam",38635,Current,Financially Responsible,08/15/2025,,08/15/2025,07/25/2026,"1,178.00","1,178.00",Yes,ID_Helen
+1486,USC - TL 1476 W 35th St,1482 1/2 W 35th St - Rm 306,"Medina, Isabella",38688,Current,Financially Responsible,09/01/2025,,09/01/2025,08/31/2026,"1,238.00","1,238.00",Yes,ID-Cecilia
+1486,USC - TL 1476 W 35th St,1482 1/2 W 35th St - Rm 401,"Khomiv, Ruslan",34467,Current,Financially Responsible,04/17/2025,,02/11/2023,12/31/2026,"1,218.00","2,146.00",Yes,"transfer, Jose"
+1486,USC - TL 1476 W 35th St,1482 1/2 W 35th St - Rm 402,"Estey, Xenia",34478,Current,Financially Responsible,04/17/2025,,08/10/2023,07/25/2026,"1,121.00","1,078.00",Yes,"Amanda, ID"
+1486,USC - TL 1476 W 35th St,1482 1/2 W 35th St - Rm 403,"Woodard, Airbnb Christian",42407,Current,Financially Responsible,04/21/2026,,04/21/2026,10/04/2026,0,0,Yes,
+1486,USC - TL 1476 W 35th St,1482 1/2 W 35th St - Rm 404,"Cole Raitt, Ely",34482,Current,Financially Responsible,04/17/2025,,11/05/2023,07/25/2026,"1,188.00","1,078.00",Yes,"Amanda, ID"
+1486,USC - TL 1476 W 35th St,1476 W 35th St - Rm 101,"Rodriguez, Rogelio",35935,Current,Financially Responsible,08/10/2025,,08/10/2025,05/31/2026,"1,098.00","1,098.00",Yes,ID_Jobs
+1486,USC - TL 1476 W 35th St,1476 W 35th St - Rm 102,"Ojeda Ramos, Jennifer",34524,Current,Financially Responsible,04/17/2025,,02/24/2025,01/31/2027,"1,134.00","1,091.00",Yes,ID_Binbin
+1486,USC - TL 1476 W 35th St,1476 W 35th St - Rm 103,"Bambasi, Rubilita",40831,Current,Financially Responsible,02/10/2026,,02/10/2026,07/31/2026,"1,148.00","1,148.00",Yes,
+1486,USC - TL 1476 W 35th St,1476 W 35th St - Rm 103,"Hipolito, Rebecca",40831,Current,Financially Responsible,02/10/2026,,02/10/2026,07/31/2026,"1,148.00","1,148.00",No,
+1486,USC - TL 1476 W 35th St,1476 W 35th St - Rm 104,"Beadle, Anthony",37613,Current,Financially Responsible,07/01/2025,,07/01/2025,06/30/2026,"1,071.00","1,071.00",Yes,
+1486,USC - TL 1476 W 35th St,1476 W 35th St - Rm 201,"Foster, Kaden",40147,Current,Financially Responsible,11/05/2025,,11/05/2025,10/31/2026,"1,128.00","1,128.00",Yes,ID_Benjamin
+1486,USC - TL 1476 W 35th St,1476 W 35th St - Rm 202,"Martinez, Elias",34514,Current,Financially Responsible,04/17/2025,,09/25/2024,08/31/2026,"1,178.00","1,102.00",Yes,"Morgan, ID"
+1486,USC - TL 1476 W 35th St,1476 W 35th St - Rm 203,"Reyes, Agustin",34468,Current,Financially Responsible,01/15/2026,,08/10/2023,07/25/2026,"1,158.00","1,098.00",Yes,"Jose, ID, transfer"
+1486,USC - TL 1476 W 35th St,1476 W 35th St - Rm 204,"Hikida, Rui",37537,Current,Financially Responsible,08/10/2025,,08/10/2025,07/25/2026,"1,128.00","1,128.00",Yes,ID_Erin
+1486,USC - TL 1476 W 35th St,1476 W 35th St - Rm 301,"Bice, Christopher",42037,Current,Financially Responsible,04/03/2026,,04/03/2026,04/30/2027,"1,138.00","1,138.00",Yes,ID_Benjamin
+1486,USC - TL 1476 W 35th St,1476 W 35th St - Rm 302,"Novoselov, Vladimir",34456,Current,Financially Responsible,04/17/2025,,08/10/2022,07/26/2027,"1,188.00","1,088.00",Yes,"Xiaoding, ID"
+1486,USC - TL 1476 W 35th St,1476 W 35th St - Rm 303,"Tabrizi, Amir",34490,Current,Financially Responsible,04/17/2025,,07/01/2024,07/25/2026,"1,168.00","1,168.00",Yes,"Binbin, ID"
+1486,USC - TL 1476 W 35th St,1476 W 35th St - Rm 304,"Burgess, Sabrina",37762,Current,Financially Responsible,08/10/2025,,08/10/2025,07/25/2026,"1,138.00","1,138.00",Yes,ID_Benjamin
+1486,USC - TL 1476 W 35th St,1476 W 35th St - Rm 305,"Alabre, Analy",38564,Current,Financially Responsible,08/31/2025,,08/31/2025,08/31/2026,"1,108.00","1,108.00",Yes,
+1486,USC - TL 1476 W 35th St,1476 W 35th St - Rm 305,"Alabre, Briane",38564,Current,Financially Responsible,08/31/2025,,08/31/2025,08/31/2026,"1,108.00","1,108.00",No,
+1486,USC - TL 1476 W 35th St,1476 W 35th St - Rm 401,"Caceres, Dimas",34533,Current,Financially Responsible,04/17/2025,,04/03/2025,04/30/2027,"1,148.00","1,091.00",Yes,ID_Yoyo
+1486,USC - TL 1476 W 35th St,1476 W 35th St - Rm 402,"Falcon, Adrian",37862,Current,Financially Responsible,08/25/2025,,08/25/2025,08/31/2026,"1,148.00","1,148.00",Yes,ID_Yoyo
+1486,USC - TL 1476 W 35th St,1476 W 35th St - Rm 403,"Alexandre, Shenidy",39978,Current,Financially Responsible,11/01/2025,,11/01/2025,10/31/2026,"1,148.00","1,148.00",Yes,ID_Aldair
+1486,USC - TL 1476 W 35th St,1476 W 35th St - Rm 404,"Latimore, Roderick",34460,Current,Financially Responsible,04/23/2025,,08/10/2022,07/25/2026,"1,168.00","1,098.00",Yes,"Jingmei, transfer"
+1486,USC - TL 1476 W 35th St,1476 1/2 W 35th St - Rm 101,"Murphy, Rebel",37190,Current,Financially Responsible,06/09/2025,,06/09/2025,06/30/2027,"1,050.00","1,050.00",Yes,ID_Erin
+1486,USC - TL 1476 W 35th St,1476 1/2 W 35th St - Rm 102,"Cooper, Elana Yvette",34466,Current,Financially Responsible,04/17/2025,,02/03/2023,11/30/2026,"1,168.00","1,028.00",Yes,Hans
+1486,USC - TL 1476 W 35th St,1476 1/2 W 35th St - Rm 103,"Diaz, Alexa Valeria H.",34473,Current,Financially Responsible,06/01/2025,,08/10/2023,07/25/2026,"1,138.00","1,058.00",Yes,Jennifer
+1486,USC - TL 1476 W 35th St,1476 1/2 W 35th St - Rm 104,"Palomino, Marco",34485,Current,Financially Responsible,04/17/2025,,02/01/2024,04/30/2027,"1,148.00","1,128.00",Yes,"Angel, ID"
+1486,USC - TL 1476 W 35th St,1476 1/2 W 35th St - Rm 201,"Edmond, Loudwige",37879,Current,Financially Responsible,07/25/2025,,07/25/2025,02/28/2027,"1,158.00",500,Yes,
+1486,USC - TL 1476 W 35th St,1476 1/2 W 35th St - Rm 202,"Taiwo, Olusegun",40688,Current,Financially Responsible,02/01/2026,,02/01/2026,02/28/2027,"1,168.00","1,168.00",Yes,ID_Jocelyn
+1486,USC - TL 1476 W 35th St,1476 1/2 W 35th St - Rm 203,"France, Airbnb Skylar",42322,Current,Financially Responsible,04/15/2026,,04/15/2026,,0,0,Yes,
+1486,USC - TL 1476 W 35th St,1476 1/2 W 35th St - Rm 204,"Zagitov, Daniil",40166,Current,Financially Responsible,11/05/2025,,11/05/2025,10/31/2026,"1,208.00","1,208.00",Yes,ID-Cecilia
+1486,USC - TL 1476 W 35th St,1476 1/2 W 35th St - Rm 205,"Overton, Jamill",34481,Evict,Financially Responsible,04/17/2025,,11/01/2023,07/25/2026,"1,198.00",0,Yes,"guarantors.com, Veronica, ID"
+1492,USC - TL 1534 W 35th St,1534 W 35th St Unit A - Rm A2,"Shekoni, Airbnb Yusuf",41988,Current,Financially Responsible,03/15/2026,,03/15/2026,,0,0,Yes,
+1492,USC - TL 1534 W 35th St,1534 W 35th St Unit A - Rm A3,"Espinoza, Antonio",37252,Current,Financially Responsible,08/10/2025,,08/10/2025,05/31/2026,"1,188.00","1,188.00",Yes,ID_Yoyo
+1492,USC - TL 1534 W 35th St,1534 W 35th St Unit A - Rm A4,"Marina Rain, Airbnb",42227,Current,Financially Responsible,04/09/2026,,04/09/2026,05/11/2026,0,0,Yes,
+1492,USC - TL 1534 W 35th St,1534 W 35th St Unit C - Rm C2,"Shelton, Sydney",39806,Current,Financially Responsible,11/01/2025,,11/01/2025,10/31/2026,"1,178.00","1,178.00",Yes,ID_Yinuo
+1492,USC - TL 1534 W 35th St,1534 W 35th St Unit C - Rm C3,"Cicek, Burak",38514,Current,Financially Responsible,08/19/2025,,08/19/2025,08/31/2026,"1,208.00","1,208.00",Yes,"ID-Cecilia, Payment Plan Disable"
+1492,USC - TL 1534 W 35th St,1534 W 35th St Unit C - Rm C5,"Chan, Chi Wang",37741,Current,Financially Responsible,07/10/2025,,07/10/2025,07/09/2026,0,"1,208.00",Yes,ID_Mengyu
+1492,USC - TL 1534 W 35th St,1534 W 35th St Unit E - Rm E1,"Artison, Ahvital",38981,Current,Financially Responsible,09/02/2025,,09/02/2025,05/31/2026,"1,178.00","1,198.00",Yes,
+1492,USC - TL 1534 W 35th St,1534 W 35th St Unit E - Rm E2,"Sawadogo, Rahinatou",35434,Notice,Financially Responsible,08/10/2025,06/01/2026,08/10/2025,07/25/2026,"1,188.00","1,188.00",Yes,ID_Yoyo
+1492,USC - TL 1534 W 35th St,1534 W 35th St Unit E - Rm E3,"Redmond, Maliek",35393,Current,Financially Responsible,04/25/2025,,08/10/2024,01/31/2027,"1,218.00","1,225.00",Yes,"ID, Angel"
+1492,USC - TL 1534 W 35th St,1534 W 35th St Unit E - Rm E5,"Umar, Halima",35938,Current,Financially Responsible,06/01/2025,,06/01/2025,08/31/2026,"1,218.00","1,218.00",Yes,ID_Yoyo
+1492,USC - TL 1534 W 35th St,1534 1/2 W 35th St Unit B - Rm B1,"Njonjo, Devon",40793,Current,Financially Responsible,02/01/2026,,02/01/2026,07/25/2026,"1,288.00","1,266.00",Yes,Relocation
+1492,USC - TL 1534 W 35th St,1534 1/2 W 35th St Unit B - Rm B2,"Smiley, Isaiah",40803,Current,Financially Responsible,02/01/2026,,02/01/2026,07/25/2026,"1,308.00","1,256.00",Yes,Relocation
+1492,USC - TL 1534 W 35th St,1534 1/2 W 35th St Unit B - Rm B3,"Quintero-Osborne, Daniel",40804,Current,Financially Responsible,02/01/2026,,02/01/2026,07/25/2026,"1,308.00","1,266.00",Yes,Relocation
+1492,USC - TL 1534 W 35th St,1534 1/2 W 35th St Unit B - Rm B4,"Basurto, Landon",40805,Current,Financially Responsible,02/01/2026,,02/01/2026,07/25/2026,"1,288.00","1,266.00",Yes,Relocation
+1492,USC - TL 1534 W 35th St,1534 1/2 W 35th St Unit D - Rm D2,"Tran, Jacqueline",37334,Current,Financially Responsible,07/15/2025,,07/15/2025,06/30/2026,"1,163.00","1,233.00",Yes,ID_Binbin
+1492,USC - TL 1534 W 35th St,1534 1/2 W 35th St Unit D - Rm D3,"KIM, JISUN",37344,Current,Financially Responsible,06/19/2025,,06/19/2025,06/30/2026,"1,153.00","1,153.00",Yes,ID_Yoyo
+1492,USC - TL 1534 W 35th St,1534 1/2 W 35th St Unit D - Rm D6,"Wong, Dominic",37343,Current,Financially Responsible,06/02/2025,,06/02/2025,07/25/2026,0,0,Yes,
+1492,USC - TL 1534 W 35th St,1534 1/2 W 35th St Unit D - Rm D6,"Chan, CheukWa",37343,Current,Financially Responsible,06/02/2025,,06/02/2025,07/25/2026,0,0,No,
+1492,USC - TL 1534 W 35th St,1534 1/2 W 35th St Unit F - Rm F1,"Gossett, Christian",40649,Current,Financially Responsible,02/06/2026,,02/06/2026,02/28/2027,"1,218.00","1,218.00",Yes,ID_Jocelyn
+1492,USC - TL 1534 W 35th St,1534 1/2 W 35th St Unit F - Rm F2,"Konstantin, Klevtsov",40027,Current,Financially Responsible,10/31/2025,,10/31/2025,10/30/2026,"1,198.00","1,268.00",Yes,ID_Yinuo
+1492,USC - TL 1534 W 35th St,1534 1/2 W 35th St Unit F - Rm F3,"Hilliard, Airbnb Nicholas",42254,Current,Financially Responsible,04/12/2026,,04/12/2026,,0,0,Yes,
+1492,USC - TL 1534 W 35th St,1534 1/2 W 35th St Unit F - Rm F4,"Yılmaz, Airbnb Volkan",42171,Current,Financially Responsible,04/04/2026,,04/04/2026,,0,0,Yes,
+1492,USC - TL 1534 W 35th St,1534 1/2 W 35th St Unit F - Rm F6,"Diego Torres, Juan",40886,Current,Financially Responsible,02/16/2026,,02/16/2026,08/31/2026,"1,208.00","1,208.00",Yes,ID_Helen
+1516,USC - TL 1545 W 36th Pl,3618 S Denker Ave - Rm 1,"Abdullah, Airbnb Ada",42384,Current,Financially Responsible,04/18/2026,,04/18/2026,,0,0,Yes,
+1516,USC - TL 1545 W 36th Pl,3620 S Denker Ave - Rm 101,"Karatas, Ismail",35363,Current,Financially Responsible,04/24/2025,,07/03/2024,07/25/2026,"1,148.00","1,091.00",Yes,"Youyou, ID"
+1516,USC - TL 1545 W 36th Pl,3620 S Denker Ave - Rm 102,"Angulo, Holanda O.",35378,Current,Financially Responsible,04/24/2025,,02/02/2024,03/31/2026,0,"1,258.00",Yes,"Eddie, ID"
+1516,USC - TL 1545 W 36th Pl,3620 S Denker Ave - Rm 103,"Nnuro, Comfort",40848,Current,Financially Responsible,02/05/2026,,02/05/2026,02/28/2027,"1,148.00","1,148.00",Yes,ID_Helen
+1516,USC - TL 1545 W 36th Pl,3620 S Denker Ave - Rm 104,"Perez, Alberto",35376,Current,Financially Responsible,04/24/2025,,02/28/2025,02/28/2027,"1,158.00","1,112.00",Yes,ID_Binbin
+1516,USC - TL 1545 W 36th Pl,3620 S Denker Ave - Rm 201,"Camaroon, Phichamon",35365,Current,Financially Responsible,04/24/2025,,09/10/2024,08/31/2026,"1,068.00",0,Yes,"guarantors.com, ID, Morgan"
+1516,USC - TL 1545 W 36th Pl,3620 S Denker Ave - Rm 202,"Manga, Inocencio Nguema",35369,Current,Financially Responsible,04/24/2025,,01/19/2025,01/31/2027,"1,068.00","1,060.00",Yes,ID_Qishan
+1516,USC - TL 1545 W 36th Pl,3620 S Denker Ave - Rm 203,"West, Roger",35379,Evict,Financially Responsible,04/24/2025,04/29/2026,05/04/2023,08/31/2025,0,"1,078.00",Yes,"Jocelyn, transfer"
+1516,USC - TL 1545 W 36th Pl,3620 S Denker Ave - Rm 204,"Isaeva, Asemai",39802,Current,Financially Responsible,10/01/2025,,10/01/2025,09/30/2026,"1,078.00","1,078.00",Yes,ID_Benjamin
+1516,USC - TL 1545 W 36th Pl,3620 S Denker Ave - Rm 205,"Shanklin, Trevonne",38500,Evict,Financially Responsible,08/06/2025,,08/06/2025,07/25/2026,"1,078.00","1,078.00",Yes,ID_Erin
+1516,USC - TL 1545 W 36th Pl,3620 S Denker Ave - Rm 206,"Tucker, Maria",35359,Current,Financially Responsible,04/24/2025,,11/15/2022,05/31/2026,"1,188.00","1,148.00",Yes,"guarantors.com, Hans, ID"
+1516,USC - TL 1545 W 36th Pl,3620 S Denker Ave - Rm 207,"Buluc, Ali",40864,Current,Financially Responsible,02/09/2026,,02/09/2026,02/28/2027,"1,238.00","1,238.00",Yes,ID_Yoyo
+1516,USC - TL 1545 W 36th Pl,3620 S Denker Ave - Rm 301,"Carmichael, Johnathan",35380,Evict,Financially Responsible,04/24/2025,05/31/2025,07/02/2024,06/30/2025,0,0,Yes,"guarantors.com, ID, Yoyo"
+1516,USC - TL 1545 W 36th Pl,3620 S Denker Ave - Rm 301,"Kandah Mendoza, Heidi",38400,Current,Financially Responsible,08/10/2025,,08/10/2025,08/31/2027,"1,078.00","1,078.00",Yes,ID_Miaoer
+1516,USC - TL 1545 W 36th Pl,3620 S Denker Ave - Rm 302,"Parsmehr, Alvand",35346,Current,Financially Responsible,04/24/2025,,11/08/2022,04/30/2027,"1,038.00","1,088.00",Yes,"Amanda, ID"
+1516,USC - TL 1545 W 36th Pl,3620 S Denker Ave - Rm 303,"Eriksson Weber, Cecilia",40931,Current,Financially Responsible,02/19/2026,,02/19/2026,02/28/2027,"1,088.00","1,088.00",Yes,ID_Helen
+1516,USC - TL 1545 W 36th Pl,3620 S Denker Ave - Rm 304,"Alyshev, Azamat",40871,Evict,Financially Responsible,02/06/2026,,02/06/2026,05/31/2026,"1,168.00",0,Yes,Relocation
+1516,USC - TL 1545 W 36th Pl,3620 S Denker Ave - Rm 305,"Barksdale, Jerquan",38512,Current,Financially Responsible,09/01/2025,,09/01/2025,08/31/2026,"1,088.00","1,088.00",Yes,
+1516,USC - TL 1545 W 36th Pl,3620 S Denker Ave - Rm 306,"Ngnibogha, Nadtine",40896,Current,Financially Responsible,02/22/2026,,02/22/2026,02/28/2027,0,"1,088.00",Yes,ID_Helen
+1516,USC - TL 1545 W 36th Pl,3620 S Denker Ave - Rm 307,"Maghraby , Ahmed S.",35340,Current,Financially Responsible,04/24/2025,,11/01/2022,07/31/2026,"1,088.00","2,216.00",Yes,Amanda
+1516,USC - TL 1545 W 36th Pl,1545 W 36th Pl - Rm 101,"Wong, Dominic",35593,Notice,Financially Responsible,04/25/2025,07/25/2026,08/01/2024,07/25/2026,"1,108.00","1,161.00",Yes,"Binbin, ID"
+1516,USC - TL 1545 W 36th Pl,1545 W 36th Pl - Rm 101,"Chan, Cheuk Wa",35593,Notice,Financially Responsible,07/26/2025,07/25/2026,08/01/2024,07/25/2026,"1,108.00","1,161.00",No,"Binbin, ID"
+1516,USC - TL 1545 W 36th Pl,1545 W 36th Pl - Rm 103,"Ayers, Daybrea",38565,Current,Financially Responsible,08/18/2025,,08/18/2025,08/31/2026,"1,108.00","1,108.00",Yes,ID_Yoyo
+1516,USC - TL 1545 W 36th Pl,1545 W 36th Pl - Rm 105,"karunwi, Olabode",36786,Current,Financially Responsible,07/01/2025,,07/01/2025,06/30/2026,"1,050.00","1,050.00",Yes,ID_Yoyo
+1516,USC - TL 1545 W 36th Pl,1545 W 36th Pl - Rm 202,"Novikov, Artem",40470,Current,Financially Responsible,01/05/2026,,01/05/2026,01/31/2027,"1,118.00","1,118.00",Yes,ID_Yinuo
+1516,USC - TL 1545 W 36th Pl,1545 W 36th Pl - Rm 203,"Francisco, Chiamaka Colette",37963,Current,Financially Responsible,07/23/2025,,07/23/2025,07/25/2027,"1,118.00","1,118.00",Yes,
+1516,USC - TL 1545 W 36th Pl,1545 W 36th Pl - Rm 204,"Lawrence, Deja",42196,Current,Financially Responsible,04/10/2026,,04/10/2026,04/30/2027,"1,158.00","1,158.00",Yes,ID_Helen
+1516,USC - TL 1545 W 36th Pl,1545 W 36th Pl - Rm 301,"Nwade, Chioma",38139,Current,Financially Responsible,07/26/2025,,07/26/2025,07/25/2026,"1,128.00","1,128.00",Yes,ID_Helen
+1516,USC - TL 1545 W 36th Pl,1545 W 36th Pl - Rm 303,"Aerolla, Aashish",35327,Current,Financially Responsible,04/24/2025,,11/01/2022,07/25/2027,"1,128.00","1,128.00",Yes,"Yiyuan, ID"
+1516,USC - TL 1545 W 36th Pl,1545 W 36th Pl - Rm 304,"Bartlett, Tyler",35377,Current,Financially Responsible,04/24/2025,,02/28/2025,05/31/2026,"1,168.00","1,153.00",Yes,ID_Binbin
+1516,USC - TL 1545 W 36th Pl,1545 W 36th Pl - Rm 305,"Pullman, Yvette",35362,Current,Financially Responsible,04/24/2025,,07/01/2024,07/31/2026,"1,098.00","1,078.00",Yes,"ID, Erin"
+1493,USC - TL 1587 W 35 St,1587 West 35th Street - Rm 202,"Adam Mohamed Gamil Alla, Mutasim",41917,Current,Financially Responsible,03/06/2026,,03/06/2026,03/31/2027,"1,068.00","1,068.00",Yes,ID_Bo
+1493,USC - TL 1587 W 35 St,1587 West 35th Street - Rm 204,"Greene, Veranique",42197,Current,Financially Responsible,04/17/2026,,04/17/2026,05/31/2027,"1,068.00","1,068.00",Yes,ID_Helen
+1493,USC - TL 1587 W 35 St,1587 West 35th Street - Rm 206,"Young, Kayla",38707,Current,Financially Responsible,09/01/2025,,09/01/2025,08/31/2026,"1,188.00","1,188.00",No,ID_Helen
+1493,USC - TL 1587 W 35 St,1587 West 35th Street - Rm 206,"Edison, Joshua",38707,Current,Financially Responsible,09/01/2025,,09/01/2025,08/31/2026,"1,188.00","1,188.00",Yes,ID_Helen
+1493,USC - TL 1587 W 35 St,1587 West 35th Street - Rm 208,"Quratulain, Quratulain",40623,Current,Financially Responsible,01/27/2026,,01/27/2026,06/30/2026,"1,078.00","1,078.00",No,ID_Helen
+1493,USC - TL 1587 W 35 St,1587 West 35th Street - Rm 208,"Thebo, Raja Roy Diyach",40623,Current,Financially Responsible,01/27/2026,,01/27/2026,06/30/2026,"1,078.00","1,078.00",Yes,ID_Helen
+1493,USC - TL 1587 W 35 St,1587 West 35th Street - Rm 301,"No, Eugene",37888,Current,Financially Responsible,07/20/2025,,07/20/2025,07/25/2026,"1,108.00","1,108.00",Yes,
+1493,USC - TL 1587 W 35 St,1587 West 35th Street - Rm 302,"Nnamuchi, Junior",40507,Current,Financially Responsible,12/13/2025,,12/13/2025,07/25/2026,"1,068.00","1,068.00",Yes,
+1493,USC - TL 1587 W 35 St,1587 West 35th Street - Rm 303,"Mcdonald, Alfon",36567,Current,Financially Responsible,07/14/2025,,05/30/2025,05/31/2026,"1,078.00","1,078.00",Yes,ID_Yoyo
+1493,USC - TL 1587 W 35 St,1587 West 35th Street - Rm 304,"Hemeydi, El housseine",40877,Current,Financially Responsible,02/09/2026,,02/09/2026,02/28/2027,"1,078.00","1,078.00",Yes,ID_Helen
+1493,USC - TL 1587 W 35 St,1587 West 35th Street - Rm 305,"Bellock, Italian",34047,Current,Financially Responsible,04/12/2025,,04/26/2024,10/31/2026,"1,058.00","1,118.00",Yes,"David, ID"
+1493,USC - TL 1587 W 35 St,1587 West 35th Street - Rm 306,"Chaloud, Gaston",34048,Current,Financially Responsible,04/12/2025,,06/28/2024,06/30/2026,"1,098.00","1,098.00",Yes,"ID_Yoyo, Youyou, ID"
+1493,USC - TL 1587 W 35 St,1587 West 35th Street - Rm 307,"Jones, Ronnieka",34060,Current,Financially Responsible,04/13/2025,,04/04/2025,03/31/2027,"1,058.00","1,108.00",Yes,ID_Erin
+1493,USC - TL 1587 W 35 St,1587 West 35th Street - Rm 307,"Dean, Jhavonte",34060,Current,Financially Responsible,04/13/2025,,04/04/2025,03/31/2027,"1,058.00","1,108.00",No,ID_Erin
+1493,USC - TL 1587 W 35 St,1587 West 35th Street - Rm 308,"Burke, Chase",38818,Current,Financially Responsible,09/01/2025,,09/01/2025,11/30/2026,"1,088.00",500,Yes,ID_Helen
+1493,USC - TL 1587 W 35 St,1587 1/2 West 35th Street - Rm 201,"Sahel Gheblehsafran, Booking",41962,Current,Financially Responsible,03/11/2026,,03/11/2026,04/06/2026,0,0,Yes,
+1493,USC - TL 1587 W 35 St,1587 1/2 West 35th Street - Rm 202,"Aldridge, Booking Thomas",42100,Current,Financially Responsible,03/28/2026,,03/28/2026,,0,0,Yes,
+1493,USC - TL 1587 W 35 St,1587 1/2 West 35th Street - Rm 203,"Izak, Booking Asiam",41979,Current,Financially Responsible,03/13/2026,,03/13/2026,,0,0,Yes,
+1493,USC - TL 1587 W 35 St,1587 1/2 West 35th Street - Rm 204,"Toscano, Antonio",34045,Current,Financially Responsible,04/12/2025,,01/01/2024,07/31/2026,"1,078.00","1,168.00",Yes,"youyou, ID"
+1493,USC - TL 1587 W 35 St,1587 1/2 West 35th Street - Rm 205,"Chaw, Alvin",38301,Current,Financially Responsible,08/01/2025,,08/01/2025,07/25/2026,"1,078.00","1,148.00",Yes,"Affordable Housing, Butterfly's Haven"
+1493,USC - TL 1587 W 35 St,1587 1/2 West 35th Street - Rm 301,"Polania Romero, Jeison",39044,Current,Financially Responsible,09/15/2025,,09/15/2025,09/30/2026,"1,068.00","1,068.00",Yes,ID_Benjamin
+1493,USC - TL 1587 W 35 St,1587 1/2 West 35th Street - Rm 302,"WU, TINGJI",35812,Evict,Financially Responsible,04/28/2025,08/15/2025,01/08/2024,12/31/2024,0,0,Yes,"Angel, ID, guarantors.com"
+1493,USC - TL 1587 W 35 St,1587 1/2 West 35th Street - Rm 302,"Jeon, Yubin",40691,Current,Financially Responsible,02/01/2026,,02/01/2026,06/30/2026,0,"1,158.00",Yes,
+1493,USC - TL 1587 W 35 St,1587 1/2 West 35th Street - Rm 303,"Gunay, Aysin",34057,Evict,Financially Responsible,04/13/2025,,01/19/2025,10/31/2025,0,500,Yes,"Erin, ID"
+1493,USC - TL 1587 W 35 St,1587 1/2 West 35th Street - Rm 304,"Cacuango, Marco",37894,Current,Financially Responsible,08/01/2025,,08/01/2025,07/25/2026,"1,088.00",0,Yes,"ID_Yoyo, guarantors.com"
+1493,USC - TL 1587 W 35 St,1587 1/2 West 35th Street - Rm 305,"Paul Gouzalch, Booking",42599,Future,Financially Responsible,06/05/2026,,06/05/2026,08/15/2026,0,0,Yes,
+1493,USC - TL 1587 W 35 St,1587 1/2 West 35th Street - Rm 306,"Arbelaez, Andres",34059,Evict,Financially Responsible,04/13/2025,02/28/2026,02/19/2025,01/31/2026,0,0,Yes,"ID_Binbin, Payment Plan Disable"
+1493,USC - TL 1587 W 35 St,1587 1/2 West 35th Street - Rm 306,"Johnson, Booking Corbin",42385,Current,Financially Responsible,04/18/2026,,04/18/2026,,0,0,Yes,
+1493,USC - TL 1587 W 35 St,1587 1/2 West 35th Street - Rm 307,"Soto, Jose",37493,Current,Financially Responsible,06/25/2025,,06/25/2025,06/30/2026,"1,600.00","1,600.00",Yes,"ID_Yoyo, Affordable Housing, Home Again Los Angeles"
+1494,USC - TL 1600 West 35th Street,1600 W 35TH ST - Rm 101,"Carlos Salinas, José",38983,Current,Financially Responsible,10/01/2025,,10/01/2025,09/30/2026,"1,218.00",0,Yes,"ID_Erin, Guarantors"
+1494,USC - TL 1600 West 35th Street,1600 W 35TH ST - Rm 201,"Crim-Herron, Jourdyn",40694,Current,Financially Responsible,02/01/2026,,02/01/2026,02/28/2027,"1,128.00","1,048.00",Yes,"ID_Aldair, Renewal transfer"
+1494,USC - TL 1600 West 35th Street,1600 W 35TH ST - Rm 202,"Malysh, Roman",38872,Current,Financially Responsible,09/01/2025,,09/01/2025,08/31/2026,"1,178.00","1,178.00",Yes,ID_Yoyo
+1494,USC - TL 1600 West 35th Street,1600 W 35TH ST - Rm 204,"Witty, Kyle",38436,Current,Financially Responsible,09/06/2025,,09/06/2025,08/31/2026,"1,098.00","1,098.00",Yes,"ID_Binbin, Payment Plan Disable"
+1494,USC - TL 1600 West 35th Street,1600 W 35TH ST - Rm 205,"Byrd, Alisa",38651,Current,Financially Responsible,08/16/2025,,08/16/2025,08/31/2026,"1,098.00","1,098.00",Yes,
+1494,USC - TL 1600 West 35th Street,1600 W 35TH ST - Rm 206,"Washington, Alana",42415,Current,Financially Responsible,05/01/2026,,05/01/2026,05/31/2027,"1,168.00","1,168.00",Yes,"ID_Bo, Renewal transfer"
+1494,USC - TL 1600 West 35th Street,1600 W 35TH ST - Rm 207,"Jackson, Freddie",35491,Evict,Financially Responsible,04/25/2025,04/28/2026,10/04/2024,09/30/2025,0,0,Yes,"guarantors.com, ID, Yoyo"
+1494,USC - TL 1600 West 35th Street,1600 W 35TH ST - Rm 208,"J Cacuango, Alvaro",40603,Evict,Financially Responsible,01/02/2026,,01/02/2026,09/30/2026,"1,098.00",0,Yes,
+1494,USC - TL 1600 West 35th Street,1600 W 35TH ST - Rm 301,"Charles, Myter-my",39817,Current,Financially Responsible,10/03/2025,,10/03/2025,09/30/2026,"1,108.00","1,108.00",Yes,ID_Aldair
+1494,USC - TL 1600 West 35th Street,1600 W 35TH ST - Rm 302,"TMP RELCT, Enoch Oyetunji",42009,Current,Financially Responsible,04/01/2026,,04/01/2026,,0,0,Yes,
+1494,USC - TL 1600 West 35th Street,1600 W 35TH ST - Rm 303,"Muhammed, Fatimoh",38380,Current,Financially Responsible,07/29/2025,,07/29/2025,07/25/2026,"1,138.00","1,138.00",Yes,ID_Erin
+1494,USC - TL 1600 West 35th Street,1600 W 35TH ST - Rm 304,"Romero, Elias",35934,Current,Financially Responsible,05/19/2025,,05/19/2025,11/30/2026,"1,068.00","1,068.00",Yes,ID_Qishan
+1494,USC - TL 1600 West 35th Street,1600 W 35TH ST - Rm 305,"Wu, Rangjie",39887,Current,Financially Responsible,10/11/2025,,10/11/2025,09/30/2026,"1,108.00","1,108.00",Yes,ID_Benjamin
+1494,USC - TL 1600 West 35th Street,1600 W 35TH ST - Rm 306,"Shchytov, Yurii",35522,Current,Financially Responsible,04/25/2025,,11/03/2024,10/31/2026,"1,108.00","1,068.00",Yes,"Binbin, ID"
+1494,USC - TL 1600 West 35th Street,1600 W 35TH ST - Rm 307,"SAHIN, Faruk",39005,Evict,Financially Responsible,09/05/2025,,09/05/2025,10/31/2025,"1,128.00","1,128.00",Yes,ID_Yoyo
+1494,USC - TL 1600 West 35th Street,1600 W 35TH ST - Rm 308,"Gomez Garzon, Alexander",35524,Current,Financially Responsible,04/25/2025,,01/01/2025,12/31/2026,"1,108.00","1,068.00",Yes,ID_Qishan
+1494,USC - TL 1600 West 35th Street,1600 W 35TH ST - Rm 309,"Payne, Laila",35945,Current,Financially Responsible,05/19/2025,,05/19/2025,04/30/2027,"1,108.00","1,068.00",Yes,ID_Binbin
+1494,USC - TL 1600 West 35th Street,1602 W 35TH ST - Rm 201,"Baker, Airbnb Cj",42480,Current,Financially Responsible,04/26/2026,,04/26/2026,,0,0,Yes,
+1494,USC - TL 1600 West 35th Street,1602 W 35TH ST - Rm 202,"Rodriguez, Alyanna Robin",40558,Current,Financially Responsible,02/01/2026,,02/01/2026,02/28/2027,"1,128.00","1,128.00",Yes,"Shark, Renewal transfer"
+1494,USC - TL 1600 West 35th Street,1602 W 35TH ST - Rm 204,"Huynh, Dylan",40824,Current,Financially Responsible,02/01/2026,,02/01/2026,05/31/2026,"1,098.00","1,098.00",Yes,
+1494,USC - TL 1600 West 35th Street,1602 W 35TH ST - Rm 205,"Okedina, Airbnb Omolola Omowunmi",42467,Current,Financially Responsible,04/27/2026,,04/27/2026,,0,0,Yes,
+1494,USC - TL 1600 West 35th Street,1602 W 35TH ST - Rm 207,"Cepon-Geier, Airbnb Jeanine",42381,Current,Financially Responsible,04/18/2026,,04/18/2026,,0,0,Yes,
+1494,USC - TL 1600 West 35th Street,1602 W 35TH ST - Rm 301,"Wilkins, Katherine",40861,Current,Financially Responsible,02/03/2026,,02/03/2026,10/31/2026,"1,098.00","1,058.00",Yes,
+1494,USC - TL 1600 West 35th Street,1602 W 35TH ST - Rm 302,"Khan, Airbnb Muhammad Sherzaman",41980,Current,Financially Responsible,03/13/2026,,03/13/2026,,0,0,Yes,
+1494,USC - TL 1600 West 35th Street,1602 W 35TH ST - Rm 303,"Chong, Airbnb Victor",42540,Current,Financially Responsible,04/29/2026,,04/29/2026,,0,0,Yes,
+1494,USC - TL 1600 West 35th Street,1602 W 35TH ST - Rm 304,"McKoy, Airbnb Danielle",42464,Current,Financially Responsible,04/25/2026,,04/25/2026,,0,0,Yes,
+1494,USC - TL 1600 West 35th Street,1602 W 35TH ST - Rm 305,"Ezekiel, Henry",38082,Current,Financially Responsible,08/01/2025,,08/01/2025,07/25/2026,"1,108.00","1,108.00",Yes,
+1494,USC - TL 1600 West 35th Street,1602 W 35TH ST - Rm 306,"Puente Sanchez, Alfred",35496,Current,Financially Responsible,04/25/2025,,10/01/2024,09/30/2026,"1,108.00","1,108.00",Yes,"ID, Binbin"
+1494,USC - TL 1600 West 35th Street,1602 W 35TH ST - Rm 307,"Yohannes, Mikael",35535,Current,Financially Responsible,04/25/2025,,04/01/2025,09/30/2026,"1,138.00","1,098.00",Yes,ID_Yuanwu
+1508,USC - TL 1620/1618 W 35th Pl,1618 W 35th Pl - Rm 101,"Flores, Jeanine",35661,Current,Financially Responsible,04/26/2025,,10/16/2024,09/30/2026,"1,102.00","1,102.00",Yes,"Youyou, ID"
+1508,USC - TL 1620/1618 W 35th Pl,1618 W 35th Pl - Rm 102,"Lauaki, Samiuela",40078,Current,Financially Responsible,11/01/2025,,11/01/2025,10/31/2026,0,"1,158.00",Yes,ID_Yinuo
+1508,USC - TL 1620/1618 W 35th Pl,1618 W 35th Pl - Rm 201,"Purkson, Khristopher",40796,Current,Financially Responsible,02/01/2026,,02/01/2026,04/30/2027,"1,138.00","1,060.00",Yes,
+1508,USC - TL 1620/1618 W 35th Pl,1618 W 35th Pl - Rm 203,"Byrd, Marian",37943,Current,Financially Responsible,07/31/2025,,07/31/2025,07/25/2026,"1,060.00",0,Yes,
+1508,USC - TL 1620/1618 W 35th Pl,1618 W 35th Pl - Rm 204,"Marshall, Aaliyah",38084,Current,Financially Responsible,09/01/2025,,09/01/2025,09/30/2027,"1,078.00","1,148.00",Yes,
+1508,USC - TL 1620/1618 W 35th Pl,1618 W 35th Pl - Rm 301,"Nguyen, Victor",38614,Current,Financially Responsible,08/15/2025,,08/15/2025,08/31/2026,"1,098.00","1,168.00",No,ID_Benjamin
+1508,USC - TL 1620/1618 W 35th Pl,1618 W 35th Pl - Rm 301,"Land, Joel",38614,Current,Financially Responsible,08/15/2025,,08/15/2025,08/31/2026,"1,098.00","1,168.00",Yes,ID_Benjamin
+1508,USC - TL 1620/1618 W 35th Pl,1618 W 35th Pl - Rm 303,"Quilumbaquin, Bladimir",40157,Current,Financially Responsible,11/01/2025,,11/01/2025,10/31/2026,"1,098.00",70,Yes,"ID_Aldair, Guarantors"
+1508,USC - TL 1620/1618 W 35th Pl,1618 W 35th Pl - Rm 303,"Reyes, Carlos",35678,Evict,Financially Responsible,04/26/2025,06/30/2025,05/31/2024,06/30/2025,0,0,Yes,"Angel, ID"
+1508,USC - TL 1620/1618 W 35th Pl,1618 W 35th Pl - Rm 304,"Tsai, Yu",38704,Current,Financially Responsible,08/24/2025,,08/24/2025,07/25/2026,"1,088.00","1,088.00",Yes,
+1508,USC - TL 1620/1618 W 35th Pl,1618 W 35th Pl - Rm 305,"Mitchell, Riley",35681,Current,Financially Responsible,04/01/2026,,12/08/2024,06/30/2026,"1,088.00","1,060.00",Yes,"Renewal transfer, Yoyo"
+1508,USC - TL 1620/1618 W 35th Pl,1620 W 35th Pl - Rm 101,"Amezola, Fred",36688,Current,Financially Responsible,05/30/2025,,05/30/2025,05/31/2026,"1,050.00","1,120.00",Yes,ID_Yoyo
+1508,USC - TL 1620/1618 W 35th Pl,1620 W 35th Pl - Rm 102,"David Bowie, Booking",41965,Current,Financially Responsible,03/12/2026,,03/12/2026,04/11/2026,0,0,Yes,
+1508,USC - TL 1620/1618 W 35th Pl,1620 W 35th Pl - Rm 105,"Abrego, Jose Wilmer Trujillo",40437,Current,Financially Responsible,02/01/2026,,02/01/2026,01/31/2027,"1,058.00","1,058.00",Yes,"ID_Aldair, Relocation"
+1508,USC - TL 1620/1618 W 35th Pl,1620 W 35th Pl - Rm 201,"Paing, Mya Thet",35712,Current,Financially Responsible,04/26/2025,,02/01/2025,02/28/2027,"1,048.00","1,050.00",Yes,ID_Binbin
+1508,USC - TL 1620/1618 W 35th Pl,1620 W 35th Pl - Rm 204,"Darji, Rambahadur",35715,Current,Financially Responsible,04/26/2025,,06/09/2024,07/25/2026,"1,091.00","1,091.00",Yes,"Binbin, ID"
+1508,USC - TL 1620/1618 W 35th Pl,1620 W 35th Pl - Rm 205,"Ma, Tao",35716,Current,Financially Responsible,04/26/2025,,08/10/2024,07/25/2026,"1,068.00","1,102.00",Yes,"Youyou, ID"
+1508,USC - TL 1620/1618 W 35th Pl,1620 W 35th Pl - Rm 301,"KC, Samyam",35717,Current,Financially Responsible,04/26/2025,,07/01/2024,07/31/2027,"1,009.00","1,060.00",Yes,"Youyou, ID"
+1508,USC - TL 1620/1618 W 35th Pl,1620 W 35th Pl - Rm 302,"Singh, Drishank",35718,Current,Financially Responsible,04/26/2025,,07/01/2024,06/30/2026,"1,058.00","1,071.00",Yes,"Youyou, ID"
+1508,USC - TL 1620/1618 W 35th Pl,1620 W 35th Pl - Rm 303,"Metehri, Ridha",37882,Current,Financially Responsible,07/20/2025,,07/20/2025,07/25/2026,"1,081.00","1,151.00",Yes,
+1508,USC - TL 1620/1618 W 35th Pl,1620 W 35th Pl - Rm 304,"Castanaza, Oscar",35722,Current,Financially Responsible,04/26/2025,,07/25/2026,07/25/2027,"1,058.00","1,102.00",Yes,"ID, Binbin"
+1508,USC - TL 1620/1618 W 35th Pl,1620 W 35th Pl - Rm 305,"Rodriguez, Wilmer",35723,Current,Financially Responsible,04/26/2025,,05/01/2024,07/25/2026,"1,078.00",0,Yes,"guarantors.com, Angel, ID"
+1496,USC - TL 1622 W 35th St,1622 W 35th St - Rm 1,"Martinez, Thaliya",41055,Current,Financially Responsible,03/18/2026,,03/18/2026,12/31/2026,"1,048.00","1,048.00",Yes,ID_Helen
+1496,USC - TL 1622 W 35th St,1622 W 35th St - Rm 10,"McCormack, Brendan",42073,Current,Financially Responsible,05/01/2026,,05/01/2026,05/31/2027,"1,098.00","1,098.00",Yes,ID_Helen
+1496,USC - TL 1622 W 35th St,1622 W 35th St - Rm 11,"Nguyen, Mike",34678,Current,Financially Responsible,04/19/2025,,08/10/2024,07/25/2026,"1,068.00","1,088.00",Yes,"Jeremiah, ID"
+1496,USC - TL 1622 W 35th St,1622 W 35th St - Rm 12,"Ngindu, Jimmy",40392,Current,Financially Responsible,12/15/2025,,12/15/2025,12/31/2026,"1,088.00","1,088.00",Yes,ID_Helen
+1496,USC - TL 1622 W 35th St,1622 W 35th St - Rm 13,"Duclair, Gregor",34672,Current,Financially Responsible,04/19/2025,,08/25/2024,08/31/2026,"1,108.00","1,091.00",Yes,"Youyou, ID"
+1496,USC - TL 1622 W 35th St,1622 W 35th St - Rm 14,"Knox, Skylar",34676,Evict,Financially Responsible,04/19/2025,02/13/2026,06/01/2024,05/31/2026,"1,085.00","1,617.00",Yes,"Ethan, ID"
+1496,USC - TL 1622 W 35th St,1622 W 35th St - Rm 15,"Ojha, Nitin",38878,Current,Financially Responsible,09/01/2025,,09/01/2025,08/31/2026,"1,108.00","1,108.00",Yes,
+1496,USC - TL 1622 W 35th St,1622 W 35th St - Rm 3,"Urquia, Jose",41916,Current,Financially Responsible,03/24/2026,,03/24/2026,03/31/2027,"1,088.00",0,Yes,ID_Helen
+1496,USC - TL 1622 W 35th St,1622 W 35th St - Rm 6,"Nunez, Joeval",41052,Current,Financially Responsible,03/01/2026,,03/01/2026,08/31/2026,"1,058.00","1,058.00",Yes,ID_Helen
+1496,USC - TL 1622 W 35th St,1622 W 35th St - Rm 8,"Tavarez, Alexis",34658,Current,Financially Responsible,04/19/2025,,08/10/2024,07/25/2026,"1,098.00",975,No,"Binbin, ID, Payment Plan Disable"
+1496,USC - TL 1622 W 35th St,1622 W 35th St - Rm 8,"Del Papa, Cristian",34658,Current,Financially Responsible,04/19/2025,,08/10/2024,07/25/2026,"1,098.00",975,Yes,"Binbin, ID, Payment Plan Disable"
+1496,USC - TL 1622 W 35th St,1622 W 35th St - Rm 9,"Smith, Desiree",34684,Current,Financially Responsible,04/19/2025,,12/02/2023,11/30/2026,"1,088.00",0,Yes,"guarantors.com, Matteo, ID"
+1496,USC - TL 1622 W 35th St,1622 1/2 W 35th St - Rm 1,"Bell, Aldis",34662,Evict,Financially Responsible,04/19/2025,12/31/2025,08/10/2023,12/31/2025,0,0,Yes,"Jose, ID"
+1496,USC - TL 1622 W 35th St,1622 1/2 W 35th St - Rm 1,"Jeison franco, Booking",42249,Current,Financially Responsible,04/10/2026,,04/10/2026,05/10/2026,0,0,Yes,
+1496,USC - TL 1622 W 35th St,1622 1/2 W 35th St - Rm 1,"Tshanda, Daniel",34662,Evict,Financially Responsible,04/19/2025,12/31/2025,08/10/2023,12/31/2025,0,0,No,"Jose, ID"
+1496,USC - TL 1622 W 35th St,1622 1/2 W 35th St - Rm 10,"Ileana, Booking Siguenza",42122,Current,Financially Responsible,03/31/2026,,03/31/2026,,0,0,Yes,
+1496,USC - TL 1622 W 35th St,1622 1/2 W 35th St - Rm 11,"Sisk, Booking Donte",42045,Current,Financially Responsible,03/23/2026,,03/23/2026,,0,0,Yes,
+1496,USC - TL 1622 W 35th St,1622 1/2 W 35th St - Rm 12,"Cannon, Akela",37731,Current,Financially Responsible,07/12/2025,,07/12/2025,07/25/2026,"1,071.00","1,141.00",Yes,ID_Benjamin
+1496,USC - TL 1622 W 35th St,1622 1/2 W 35th St - Rm 13,"Ramirez , Alfonso",34661,Evict,Financially Responsible,04/19/2025,,10/17/2022,07/25/2026,"1,068.00","1,048.00",Yes,"Yiyuan, ID"
+1496,USC - TL 1622 W 35th St,1622 1/2 W 35th St - Rm 15,"Essien, Zachary",34663,Current,Financially Responsible,04/19/2025,,08/10/2023,07/25/2026,"1,098.00","1,198.00",Yes,"Jose, ID"
+1496,USC - TL 1622 W 35th St,1622 1/2 W 35th St - Rm 2,"Jacobs, Destinee",34675,Current,Financially Responsible,04/19/2025,,09/10/2024,08/31/2026,"1,078.00",875,Yes,"Grant, ID"
+1496,USC - TL 1622 W 35th St,1622 1/2 W 35th St - Rm 3,"Braun, Kayla",38701,Current,Financially Responsible,09/13/2025,,09/13/2025,09/30/2026,"1,088.00","1,088.00",Yes,ID-Cecilia
+1496,USC - TL 1622 W 35th St,1622 1/2 W 35th St - Rm 4,"Quezada, Guadalupe",34669,Current,Financially Responsible,04/19/2025,,11/01/2023,10/31/2026,"1,071.00","1,088.00",Yes,"Amanda, ID"
+1496,USC - TL 1622 W 35th St,1622 1/2 W 35th St - Rm 5,"Cameron, Alyssa Hailey",38807,Current,Financially Responsible,10/01/2025,,08/27/2025,08/31/2026,"1,098.00","1,098.00",Yes,
+1496,USC - TL 1622 W 35th St,1622 1/2 W 35th St - Rm 6,"Aleman, Booking Sergio Daniel Escamilla",42329,Current,Financially Responsible,04/15/2026,,04/15/2026,,0,0,Yes,
+1496,USC - TL 1622 W 35th St,1622 1/2 W 35th St - Rm 7,"Bond, Booking Joseph",42123,Current,Financially Responsible,03/31/2026,,03/31/2026,,0,0,Yes,
+1496,USC - TL 1622 W 35th St,1622 1/2 W 35th St - Rm 9,"Ayisi, Bright",38373,Current,Financially Responsible,08/01/2025,,08/01/2025,07/25/2026,"1,088.00","1,088.00",Yes,"Shark, Relocation"
+1497,USC - TL 1654 W 35th St,1654 W 35th St - Rm 201,"Williams, Marc",35129,Current,Financially Responsible,04/23/2025,,09/01/2023,11/30/2026,"1,098.00","1,098.00",Yes,"Xiaoding, ID"
+1497,USC - TL 1654 W 35th St,1654 W 35th St - Rm 202,"Cooper, Airbnb Jj",42392,Current,Financially Responsible,04/19/2026,,04/19/2026,,0,0,Yes,
+1497,USC - TL 1654 W 35th St,1654 W 35th St - Rm 203,"Kendrick, Airbnb Kenya",41924,Current,Financially Responsible,03/07/2026,,03/07/2026,,0,0,Yes,
+1497,USC - TL 1654 W 35th St,1654 W 35th St - Rm 204,"Houston, Naarah",35148,Current,Financially Responsible,04/23/2025,,11/01/2024,10/31/2026,"1,088.00",0,Yes,"Guarantors, ID, Yoyo"
+1497,USC - TL 1654 W 35th St,1654 W 35th St - Rm 205,"Tshikenda, Ives",38441,Current,Financially Responsible,08/02/2025,,08/02/2025,08/31/2027,"1,098.00","1,098.00",Yes,ID_Helen
+1497,USC - TL 1654 W 35th St,1654 W 35th St - Rm 206,"Walmsley, Cheyenne",35145,Current,Financially Responsible,04/23/2025,,10/19/2024,10/31/2026,"1,158.00","1,143.00",Yes,"Yoyo, ID"
+1497,USC - TL 1654 W 35th St,1654 W 35th St - Rm 208,"Canchola, Airbnb Alexis",41940,Current,Financially Responsible,03/09/2026,,03/09/2026,,0,0,Yes,
+1497,USC - TL 1654 W 35th St,1654 W 35th St - Rm 301,"Martinez, Gianna",36084,Current,Financially Responsible,06/01/2025,,06/01/2025,11/30/2026,"1,102.00","1,102.00",Yes,ID_Yoyo
+1497,USC - TL 1654 W 35th St,1654 W 35th St - Rm 302,"Cordero, Airbnb Daniel",42417,Current,Financially Responsible,04/21/2026,,04/21/2026,,0,0,Yes,
+1497,USC - TL 1654 W 35th St,1654 W 35th St - Rm 303,"Piper, Airbnb Royce",42389,Current,Financially Responsible,04/19/2026,,04/19/2026,,0,0,Yes,
+1497,USC - TL 1654 W 35th St,1654 W 35th St - Rm 304,"Delgado, Carlos",35143,Current,Financially Responsible,04/23/2025,,09/06/2024,08/31/2026,"1,098.00","1,091.00",Yes,"ID, Yoyo"
+1497,USC - TL 1654 W 35th St,1654 W 35th St - Rm 305,"Moura, Bruno",35136,Current,Financially Responsible,04/23/2025,,04/30/2024,07/25/2027,"1,118.00","1,118.00",Yes,"ID, Angel"
+1497,USC - TL 1654 W 35th St,1654 W 35th St - Rm 306,"Edalat, Airbnb Behnood",42098,Current,Financially Responsible,03/29/2026,,03/29/2026,,0,0,Yes,
+1497,USC - TL 1654 W 35th St,1654 W 35th St - Rm 308,"Rojas, Airbnb Carolina Andrea Castro",41929,Current,Financially Responsible,03/08/2026,,03/08/2026,,0,0,Yes,
+1497,USC - TL 1654 W 35th St,1656 W 35th St - Rm 201,"Burke Jr, Airbnb Karis",42145,Current,Financially Responsible,04/01/2026,,04/01/2026,,0,0,Yes,
+1497,USC - TL 1654 W 35th St,1656 W 35th St - Rm 202,"Payne, Airbnb Calia",42050,Current,Financially Responsible,03/23/2026,,03/23/2026,,0,0,Yes,
+1497,USC - TL 1654 W 35th St,1656 W 35th St - Rm 203,"Jimmy Gonzales, Airbnb",42150,Current,Financially Responsible,04/02/2026,,04/02/2026,05/04/2026,0,0,Yes,
+1497,USC - TL 1654 W 35th St,1656 W 35th St - Rm 204,"Hart, Robert",35130,Current,Financially Responsible,04/23/2025,,09/06/2023,05/31/2026,"1,098.00","1,098.00",Yes,"Amanda, ID"
+1497,USC - TL 1654 W 35th St,1656 W 35th St - Rm 205,"Hardin, Marquis",35150,Current,Financially Responsible,04/23/2025,,01/30/2025,01/31/2027,"1,098.00","1,081.00",Yes,ID_Yoyo
+1497,USC - TL 1654 W 35th St,1656 W 35th St - Rm 206,"Ezenna, Chidubem",39045,Current,Financially Responsible,09/11/2025,,09/11/2025,12/31/2026,"1,098.00",998,Yes,
+1497,USC - TL 1654 W 35th St,1656 W 35th St - Rm 207,"Choi, Airbnb Yuseong",42047,Current,Financially Responsible,03/23/2026,,03/23/2026,03/22/2027,0,0,Yes,
+1497,USC - TL 1654 W 35th St,1656 W 35th St - Rm 301,"Zepeda, Brayan",35133,Current,Financially Responsible,04/23/2025,,10/26/2023,10/31/2026,"1,098.00",0,Yes,"guarantors.com, Jose, ID"
+1497,USC - TL 1654 W 35th St,1656 W 35th St - Rm 303,"Augustin, Airbnb Tabia",42612,Current,Financially Responsible,05/01/2026,,05/01/2026,,0,0,Yes,
+1497,USC - TL 1654 W 35th St,1656 W 35th St - Rm 304,"Салимьянова, Airbnb Юлия",42427,Current,Financially Responsible,04/22/2026,,04/22/2026,,0,0,Yes,
+1497,USC - TL 1654 W 35th St,1656 W 35th St - Rm 305,"Crawford, Anthony",35135,Current,Financially Responsible,04/23/2025,,09/19/2023,03/31/2027,"1,108.00","1,118.00",Yes,"Amanda, ID"
+1497,USC - TL 1654 W 35th St,1656 W 35th St - Rm 306,"Ogunde, Halima",35152,Current,Financially Responsible,04/23/2025,,03/01/2025,06/30/2027,"1,108.00","1,108.00",Yes,ID_Yoyo
+1497,USC - TL 1654 W 35th St,1656 W 35th St - Rm 307,"Sumitro, Bhre",38468,Current,Financially Responsible,08/05/2025,,08/05/2025,01/31/2027,"1,108.00","1,178.00",Yes,ID_Helen
+1479,USC - TL 1664/1666 W 37th St,1664 W 37th St Unit A - Rm A1,"Xie, Airbnb Yujie",42611,Current,Financially Responsible,05/01/2026,,05/01/2026,,0,0,Yes,
+1479,USC - TL 1664/1666 W 37th St,1664 W 37th St Unit A - Rm A2,"Pham, Airbnb Annie",40719,Current,Financially Responsible,01/18/2026,,01/18/2026,,0,0,Yes,
+1479,USC - TL 1664/1666 W 37th St,1664 W 37th St Unit A - Rm A3,"Blaine, Airbnb-Rich",38939,Current,Financially Responsible,09/01/2025,,09/01/2025,01/01/2026,0,0,Yes,
+1479,USC - TL 1664/1666 W 37th St,1664 W 37th St Unit A - Rm A4,"Eklund, Airbnb Johan",41898,Current,Financially Responsible,03/05/2026,,03/05/2026,,0,0,Yes,
+1479,USC - TL 1664/1666 W 37th St,1664 W 37th St Unit C - Rm C1,"To, Anh Tuyet",35617,Current,Financially Responsible,08/10/2025,,08/10/2025,07/31/2026,"1,198.00","1,198.00",Yes,Erin
+1479,USC - TL 1664/1666 W 37th St,1664 W 37th St Unit C - Rm C2,"Alzghoul, Ahmad",42554,Current,Financially Responsible,05/01/2026,,05/01/2026,07/31/2026,"1,278.00","1,348.00",Yes,ID_Bo
+1479,USC - TL 1664/1666 W 37th St,1664 W 37th St Unit C - Rm C3,"Thurston, Akiyah",39888,Current,Financially Responsible,10/07/2025,,10/07/2025,07/25/2026,"1,168.00","1,168.00",Yes,
+1479,USC - TL 1664/1666 W 37th St,1664 W 37th St Unit C - Rm C4,"Mooh-Mooh, Ivan",35599,Current,Financially Responsible,04/25/2025,,08/10/2024,07/25/2026,"1,138.00","1,238.00",Yes,"Kimberly, ID"
+1479,USC - TL 1664/1666 W 37th St,1664 W 37th St Unit E - Rm E1,"James King, Airbnb",42029,Current,Financially Responsible,03/19/2026,,03/19/2026,04/30/2026,0,0,Yes,
+1479,USC - TL 1664/1666 W 37th St,1664 W 37th St Unit E - Rm E2,"Gregg, Airbnb Jaedyn",41976,Current,Financially Responsible,03/13/2026,,03/13/2026,,0,0,Yes,
+1479,USC - TL 1664/1666 W 37th St,1664 W 37th St Unit E - Rm E3,"Konstantin Sidorenko, Airbnb",39717,Current,Financially Responsible,09/25/2025,,09/25/2025,12/23/2025,0,0,Yes,
+1479,USC - TL 1664/1666 W 37th St,1664 W 37th St Unit E - Rm E4,"Mudaliar, Airbnb Vinay",41829,Current,Financially Responsible,03/01/2026,,03/01/2026,,0,0,Yes,
+1479,USC - TL 1664/1666 W 37th St,1666 W 37th St Unit B - Rm B1,"Avalos Falcones, Airbnb Samantha",40715,Current,Financially Responsible,01/17/2026,,01/17/2026,07/17/2027,0,0,Yes,
+1479,USC - TL 1664/1666 W 37th St,1666 W 37th St Unit B - Rm B2,"Fitzgerald, Airbnb Jonathan",41804,Current,Financially Responsible,02/28/2026,,02/28/2026,,0,0,Yes,
+1479,USC - TL 1664/1666 W 37th St,1666 W 37th St Unit B - Rm B3,"Folorunso, Oluwaseyi",35607,Current,Financially Responsible,04/25/2025,,08/10/2024,01/31/2027,"1,148.00","1,163.00",Yes,"ID, Angel"
+1479,USC - TL 1664/1666 W 37th St,1666 W 37th St Unit B - Rm B4,"Ronald Sather, Airbnb",40519,Current,Financially Responsible,12/20/2025,,12/20/2025,,0,0,Yes,
+1479,USC - TL 1664/1666 W 37th St,1666 W 37th St Unit D - Rm D2,"Vu, Phuong",35610,Current,Financially Responsible,04/25/2025,,08/10/2024,07/25/2026,0,"2,306.00",Yes,"ID, Yoyo"
+1479,USC - TL 1664/1666 W 37th St,1666 W 37th St Unit D - Rm D3,"De Leon, Edna",35618,Current,Financially Responsible,08/10/2025,,08/10/2025,07/25/2026,"1,168.00","1,168.00",Yes,
+1479,USC - TL 1664/1666 W 37th St,1666 W 37th St Unit D - Rm D4,"Pinkney, Gary",35613,Current,Financially Responsible,04/25/2025,,09/16/2024,06/30/2026,"1,138.00","1,143.00",Yes,"ID, Yoyo"
+1479,USC - TL 1664/1666 W 37th St,1666 W 37th St Unit D - Rm D5,"Taylor, Drake",39948,Current,Financially Responsible,11/01/2025,,11/01/2025,10/31/2026,"1,138.00","1,138.00",Yes,ID_Aldair
+1479,USC - TL 1664/1666 W 37th St,1666 W 37th St Unit D - Rm D6,"Pisa, Steve",35615,Current,Financially Responsible,04/25/2025,,08/22/2024,08/31/2026,"1,068.00",0,Yes,"guarantors.com, Yoyo, ID"
+1479,USC - TL 1664/1666 W 37th St,1666 W 37th St Unit F - Rm F2,"Gizamba, Jacob M.",35614,Current,Financially Responsible,04/26/2025,,08/10/2023,07/25/2027,"1,138.00","1,168.00",Yes,"Amanda, ID"
+1479,USC - TL 1664/1666 W 37th St,1666 W 37th St Unit F - Rm F3,"Tamajong, Irene",35612,Current,Financially Responsible,04/26/2025,,07/31/2020,01/31/2027,"1,178.00","1,100.00",Yes,Xiaoding
+1479,USC - TL 1664/1666 W 37th St,1666 W 37th St Unit F - Rm F6,"Feleke, Yordanos",39805,Current,Financially Responsible,09/30/2025,,09/30/2025,09/30/2026,0,"1,248.00",Yes,
+1524,USC - TL 2642 Brighton Avenue,Unit 101 - Rm 101,"Fesik, Airbnb Denis",41799,Current,Financially Responsible,02/28/2026,,02/28/2026,,0,0,Yes,
+1524,USC - TL 2642 Brighton Avenue,Unit 101 - Rm 102,"Cox, Airbnb- Judia",35026,Current,Financially Responsible,04/13/2025,,04/13/2025,,0,0,Yes,
+1524,USC - TL 2642 Brighton Avenue,Unit 101 - Rm 103,"shortterm, tripalink",35027,Current,Financially Responsible,04/21/2025,,04/21/2025,,0,0,Yes,
+1524,USC - TL 2642 Brighton Avenue,Unit 101 - Rm 202,"Difeng Zhang, Airbnb",40937,Current,Financially Responsible,02/18/2026,,02/18/2026,06/01/2026,0,0,Yes,
+1524,USC - TL 2642 Brighton Avenue,Unit 101 - Rm 203,"Biddle, Airbnb Jared",41780,Current,Financially Responsible,02/27/2026,,02/27/2026,,0,0,Yes,
+1524,USC - TL 2642 Brighton Avenue,Unit 101 - Rm 204,"Chavez, Connor",34038,Current,Financially Responsible,04/12/2025,,02/07/2025,05/31/2026,"1,078.00","1,038.00",No,ID_Qishan
+1524,USC - TL 2642 Brighton Avenue,Unit 101 - Rm 204,"Cummings, Kaylee",34038,Current,Financially Responsible,04/12/2025,,02/07/2025,05/31/2026,"1,078.00","1,038.00",Yes,ID_Qishan
+1524,USC - TL 2642 Brighton Avenue,Unit 201 - Rm 202,"Nashed, Airbnb Marina",40760,Current,Financially Responsible,01/24/2026,,01/24/2026,,0,0,Yes,
+1524,USC - TL 2642 Brighton Avenue,Unit 201 - Rm 203,"Mosley, Airbnb Chrystal",42095,Current,Financially Responsible,03/29/2026,,03/29/2026,,0,0,Yes,
+1524,USC - TL 2642 Brighton Avenue,Unit 201 - Rm 301,"Kaung, Min",34039,Current,Financially Responsible,04/12/2025,,02/28/2025,08/31/2026,0,"1,708.00",Yes,ID_Yuanwu
+1524,USC - TL 2642 Brighton Avenue,Unit 301 - Unit 301,Cho Luxury Rentals LLC,34034,Current,Financially Responsible,04/12/2025,,12/01/2024,07/31/2026,"6,750.00",0,Yes,
+1524,USC - TL 2642 Brighton Avenue,Unit 302 - Unit 302,Cho Luxury Rentals LLC,34035,Current,Financially Responsible,04/12/2025,,12/01/2024,07/31/2026,"5,250.00",0,Yes,
+1510,USC - TL 2909/2911 Kenwood Ave,2909 Kenwood Ave - Rm 101,"Zheng, Xiaotian",35321,Current,Financially Responsible,04/24/2025,,01/04/2025,07/25/2026,0,"1,198.00",Yes,ID_Mike
+1510,USC - TL 2909/2911 Kenwood Ave,2909 Kenwood Ave - Rm 201,"Mekonen, Samuel",40484,Current,Financially Responsible,12/23/2025,,12/23/2025,07/25/2026,"1,248.00",957,Yes,"ID_Aldair, Renewal transfer"
+1510,USC - TL 2909/2911 Kenwood Ave,2909 Kenwood Ave - Rm 202,"Xiang, Sitao",38516,Current,Financially Responsible,08/10/2025,,08/10/2025,05/31/2026,"1,228.00","1,228.00",Yes,ID_Erin
+1510,USC - TL 2909/2911 Kenwood Ave,2909 Kenwood Ave - Rm 301,"Wudhinitikornkij, Ngamprom",37955,Current,Financially Responsible,08/10/2025,,08/10/2025,07/25/2026,0,"1,258.00",Yes,ID_Benjamin
+1510,USC - TL 2909/2911 Kenwood Ave,2909 Kenwood Ave - Rm 302,"Su, Tianyao",35324,Current,Financially Responsible,04/24/2025,,08/19/2024,07/25/2026,0,"1,098.00",Yes,ID_Mengyu
+1510,USC - TL 2909/2911 Kenwood Ave,2909 Kenwood Ave - Rm 401,"Barton, Daivion",40595,Current,Financially Responsible,01/01/2026,,01/01/2026,07/25/2026,"1,268.00","1,268.00",Yes,ID_Aldair
+1510,USC - TL 2909/2911 Kenwood Ave,2909 1/2 Kenwood Ave - Rm 201,"Lu, Yanbai",35328,Current,Financially Responsible,04/24/2025,,08/20/2024,07/25/2026,0,"1,098.00",Yes,"Binbin, ID"
+1510,USC - TL 2909/2911 Kenwood Ave,2909 1/2 Kenwood Ave - Rm 202,"Harden, Isaiah",35329,Current,Financially Responsible,04/24/2025,,07/25/2024,07/25/2027,"1,228.00","1,288.00",Yes,"ID, Erin"
+1510,USC - TL 2909/2911 Kenwood Ave,2909 1/2 Kenwood Ave - Rm 301,"Nioradze, Airbnb Eteri",42089,Current,Financially Responsible,03/27/2026,,03/27/2026,,0,0,Yes,
+1510,USC - TL 2909/2911 Kenwood Ave,2909 1/2 Kenwood Ave - Rm 401,"Riddels, Airbnb Tasha",42486,Current,Financially Responsible,04/28/2026,,04/28/2026,,0,0,Yes,
+1510,USC - TL 2909/2911 Kenwood Ave,2909 1/2 Kenwood Ave - Rm 402,"Wu, Mengxi",35332,Current,Financially Responsible,04/24/2025,,07/26/2024,07/25/2027,"1,248.00","1,298.00",Yes,
+1510,USC - TL 2909/2911 Kenwood Ave,2911 Kenwood Ave - Rm 201,"Dunlap, Airbnb Joseph",42042,Current,Financially Responsible,03/22/2026,,03/22/2026,,0,0,Yes,
+1510,USC - TL 2909/2911 Kenwood Ave,2911 Kenwood Ave - Rm 301,"Speights, Airbnb Regina",42535,Current,Financially Responsible,04/29/2026,,04/29/2026,,0,0,Yes,
+1510,USC - TL 2909/2911 Kenwood Ave,2911 Kenwood Ave - Rm 302,"Arakawa, Airbnb Elias Mateo",42069,Current,Financially Responsible,03/25/2026,,03/25/2026,,0,0,Yes,
+1510,USC - TL 2909/2911 Kenwood Ave,2911 Kenwood Ave - Rm 303,"Srinivas, Vir",36072,Current,Financially Responsible,07/26/2025,,07/26/2025,07/25/2026,"1,248.00","1,248.00",Yes,
+1510,USC - TL 2909/2911 Kenwood Ave,2911 Kenwood Ave - Rm 401,"Spadoni, Airbnb Sofia",42071,Current,Financially Responsible,03/25/2026,,03/25/2026,,0,0,Yes,
+1510,USC - TL 2909/2911 Kenwood Ave,2911 Kenwood Ave - Rm 402,"Woods, Airbnb Xzharyana",42051,Current,Financially Responsible,03/23/2026,,03/23/2026,,0,0,Yes,
+1510,USC - TL 2909/2911 Kenwood Ave,2911 Kenwood Ave - Rm 403,"Bymaster, Ben",35353,Current,Financially Responsible,07/26/2025,,07/26/2025,07/25/2026,"1,278.00","1,278.00",Yes,
+1510,USC - TL 2909/2911 Kenwood Ave,2911 1/2 Kenwood Ave - 2911 1/2 Kenwood Ave,"Purba, Adrian",42558,Future,Financially Responsible,08/10/2026,,08/10/2026,07/25/2027,0,0,No,
+1510,USC - TL 2909/2911 Kenwood Ave,2911 1/2 Kenwood Ave - 2911 1/2 Kenwood Ave,"Huh, Justin",42558,Future,Financially Responsible,08/10/2026,,08/10/2026,07/25/2027,0,0,No,
+1510,USC - TL 2909/2911 Kenwood Ave,2911 1/2 Kenwood Ave - 2911 1/2 Kenwood Ave,"Chang, Andrew",42558,Future,Financially Responsible,08/10/2026,,08/10/2026,07/25/2027,0,0,Yes,
+1510,USC - TL 2909/2911 Kenwood Ave,2911 1/2 Kenwood Ave - 2911 1/2 Kenwood Ave,"Le, Bryant",42558,Future,Financially Responsible,08/10/2026,,08/10/2026,07/25/2027,0,0,No,
+1510,USC - TL 2909/2911 Kenwood Ave,2911 1/2 Kenwood Ave - 2911 1/2 Kenwood Ave,"Sohn, Temin",42558,Future,Financially Responsible,08/10/2026,,08/10/2026,07/25/2027,0,0,No,
+1510,USC - TL 2909/2911 Kenwood Ave,2911 1/2 Kenwood Ave - 2911 1/2 Kenwood Ave,"Tao, Jeffrey",42558,Future,Financially Responsible,08/10/2026,,08/10/2026,07/25/2027,0,0,No,
+1510,USC - TL 2909/2911 Kenwood Ave,2911 1/2 Kenwood Ave - 2911 1/2 Kenwood Ave,"To, Chun",42558,Future,Financially Responsible,08/10/2026,,08/10/2026,07/25/2027,0,0,No,
+1510,USC - TL 2909/2911 Kenwood Ave,2911 1/2 Kenwood Ave - Rm 201,"Huynh, Julie",37641,Notice,Financially Responsible,08/20/2025,07/25/2026,08/20/2025,07/25/2026,"1,258.00","1,318.00",Yes,ID_Yoyo
+1510,USC - TL 2909/2911 Kenwood Ave,2911 1/2 Kenwood Ave - Rm 302,"Edward, Theodora",38138,Current,Financially Responsible,08/01/2025,,08/01/2025,07/25/2026,"1,248.00","1,248.00",Yes,ID_Binbin
+1510,USC - TL 2909/2911 Kenwood Ave,2911 1/2 Kenwood Ave - Rm 303,"Lai, Tsz Nok Enoch",35344,Notice,Financially Responsible,04/24/2025,07/25/2026,07/25/2024,07/25/2026,"1,268.00","2,716.00",Yes,guarantors.com
+1510,USC - TL 2909/2911 Kenwood Ave,2911 1/2 Kenwood Ave - Rm 401,"Salvador, Airbnb Wura",42160,Current,Financially Responsible,04/03/2026,,04/03/2026,,0,0,Yes,
+1510,USC - TL 2909/2911 Kenwood Ave,2911 1/2 Kenwood Ave - Rm 402,"Ikeocha, Mary",35347,Notice,Financially Responsible,04/24/2025,07/25/2026,07/26/2024,07/25/2026,"1,238.00","1,338.00",Yes,"ID, Binbin"
+1510,USC - TL 2909/2911 Kenwood Ave,2911 1/2 Kenwood Ave - Rm 403,"Bedoya, Andre",37797,Notice,Financially Responsible,08/10/2025,07/25/2026,08/10/2025,07/25/2026,"1,278.00","1,348.00",Yes,youyou
+1510,USC - TL 2909/2911 Kenwood Ave,2911 3/4 Kenwood Ave - 2911 3/4 Kenwood Ave,"Gaye, Fatou",40898,Future,Financially Responsible,08/10/2026,,08/10/2026,07/25/2027,0,"2,723.00",No,ID_Helen
+1510,USC - TL 2909/2911 Kenwood Ave,2911 3/4 Kenwood Ave - 2911 3/4 Kenwood Ave,"Camp-Lane, Madison",40898,Future,Financially Responsible,08/10/2026,,08/10/2026,07/25/2027,0,"2,723.00",Yes,ID_Helen
+1510,USC - TL 2909/2911 Kenwood Ave,2911 3/4 Kenwood Ave - 2911 3/4 Kenwood Ave,"Comeau, Emilise",40898,Future,Financially Responsible,08/10/2026,,08/10/2026,07/25/2027,0,"2,723.00",No,ID_Helen
+1510,USC - TL 2909/2911 Kenwood Ave,2911 3/4 Kenwood Ave - Rm 101,"Li, Longkun",36603,Notice,Financially Responsible,08/10/2025,07/25/2026,08/10/2025,07/25/2026,0,"1,368.00",Yes,ID_Mengyu
+1510,USC - TL 2909/2911 Kenwood Ave,2911 3/4 Kenwood Ave - Rm 102,"Zhang, Zeyu",36069,Notice,Financially Responsible,08/10/2025,07/25/2026,08/10/2025,07/25/2026,0,"1,368.00",Yes,ID_Mengyu
+1510,USC - TL 2909/2911 Kenwood Ave,2911 3/4 Kenwood Ave - Rm 103,"Li, Jiate",36105,Notice,Financially Responsible,08/10/2025,07/25/2026,08/10/2025,07/25/2026,0,"1,358.00",Yes,ID_Mengyu
+,,,,,,,,,,,,,,
+Total,,,,,,,,,,,,,,
