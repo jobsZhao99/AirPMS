@@ -54,13 +54,7 @@ function buildUnitRows(unit) {
   const rooms = sortRooms(unit.rooms || []);
 
   if (!rooms.length) {
-    return [
-      {
-        unit,
-        rooms: [],
-        type: "unitOnly",
-      },
-    ];
+    return [{ unit, rooms: [], type: "unitOnly" }];
   }
 
   if (allRoomsAreThreeDigit(rooms)) {
@@ -98,6 +92,7 @@ function statusClass(status) {
   if (value.includes("airbnb rented")) return "airbnb-rented";
   if (value.includes("booking.com rented")) return "booking-rented";
   if (value === "vacant") return "vacant";
+  if (value.includes("long term")) return "long-term";
   if (value.includes("rented")) return "rented";
   if (value.includes("available")) return "available";
   if (value.includes("occupied")) return "occupied";
@@ -110,11 +105,6 @@ function statusClass(status) {
   if (value.includes("error")) return "error";
 
   return "default";
-}
-
-function firstNoteLine(note) {
-  if (!note) return "";
-  return String(note).split("\n")[0];
 }
 
 async function loadDashboard() {
@@ -141,9 +131,7 @@ onMounted(loadDashboard);
         <p>Property / Unit / Room inventory overview</p>
       </div>
 
-      <button @click="loadDashboard">
-        Refresh
-      </button>
+      <button @click="loadDashboard">Refresh</button>
     </div>
 
     <div v-if="loading" class="loading">
@@ -188,19 +176,14 @@ onMounted(loadDashboard);
                 >
                   {{ unit.status }}
                 </div>
-
-                <div
-                  v-if="unit.note"
-                  class="unit-note"
-                >
-                  {{ firstNoteLine(unit.note) }}
-                </div>
               </div>
             </div>
 
             <div
               v-if="row.type === 'unitOnly'"
               class="room-cell empty-room-cell"
+              :class="statusClass(unit.status)"
+              :title="unit.note || ''"
             >
               <div class="room-name">
                 Whole Unit / No Rooms
@@ -211,13 +194,6 @@ onMounted(loadDashboard);
                 class="room-status"
               >
                 {{ unit.status }}
-              </div>
-
-              <div
-                v-if="unit.note"
-                class="room-note"
-              >
-                {{ firstNoteLine(unit.note) }}
               </div>
             </div>
 
@@ -234,13 +210,6 @@ onMounted(loadDashboard);
 
               <div class="room-status">
                 {{ room.status }}
-              </div>
-
-              <div
-                v-if="room.note"
-                class="room-note"
-              >
-                {{ firstNoteLine(room.note) }}
               </div>
             </div>
           </div>
@@ -349,14 +318,6 @@ onMounted(loadDashboard);
   font-weight: 500;
 }
 
-.unit-note {
-  font-size: 11px;
-  color: #6b7280;
-  margin-top: 4px;
-  white-space: pre-line;
-  font-weight: 400;
-}
-
 .room-cell {
   width: 130px;
   min-width: 130px;
@@ -380,45 +341,59 @@ onMounted(loadDashboard);
   margin-top: 4px;
 }
 
-.room-note {
-  font-size: 11px;
-  color: #6b7280;
-  margin-top: 4px;
-  white-space: pre-line;
-}
-
 .empty-room-cell {
-  color: #9ca3af;
+  color: #6b7280;
   font-style: italic;
   width: 260px;
   min-width: 260px;
 }
+/**
+ * Long Term
+ * 浅灰色
+ */
+ .room-cell.long-term,
+.unit-cell.long-term {
+  background: #f3f4f6;
+}
 
+/**
+ * 所有 rented
+ * 浅绿色
+ */
 .room-cell.airbnb-rented,
-.unit-cell.airbnb-rented {
-  background: #fee2e2;
-}
-
+.unit-cell.airbnb-rented,
 .room-cell.booking-rented,
-.unit-cell.booking-rented {
-  background: #ffedd5;
-}
-
+.unit-cell.booking-rented,
 .room-cell.rented,
 .unit-cell.rented {
-  background: #fee2e2;
+  background: #dcfce7;
 }
 
+/**
+ * Vacant / Available
+ * 白色
+ */
 .room-cell.vacant,
-.unit-cell.vacant {
-  background: #ecfdf5;
-}
-
+.unit-cell.vacant,
 .room-cell.available,
 .unit-cell.available {
-  background: #ecfdf5;
+  background: #ffffff;
 }
 
+/**
+ * Error / Maintenance / Offline / Inactive
+ * 淡红色
+ */
+.room-cell.error,
+.unit-cell.error,
+.room-cell.maintenance,
+.unit-cell.maintenance,
+.room-cell.offline,
+.unit-cell.offline,
+.room-cell.inactive,
+.unit-cell.inactive,
+.room-cell.no-ics,
+.unit-cell.no-ics,
 .room-cell.occupied,
 .unit-cell.occupied {
   background: #fee2e2;
