@@ -13,7 +13,8 @@
     "import:unitroom": "node scripts/importUnitsRooms.js",
     "sync:longterm": "node scripts/syncLongTermLeases.js",
     "setup:all": "npm run db:reset && npm run import:property && npm run import:unitroom && npm run sync:ics && npm run sync:longterm",
-    "setup:import": "npm run db:reset && npm run import:property && npm run import:unitroom"
+    "setup:import": "npm run db:reset && npm run import:property && npm run import:unitroom",
+    "deploy:setup": "npm run db:push && npm run import:property && npm run import:unitroom && npm run sync:ics && npm run sync:longterm"
   },
   "keywords": [],
   "author": "",
