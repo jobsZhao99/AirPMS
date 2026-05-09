@@ -2,19 +2,24 @@
   "name": "backend",
   "version": "1.0.0",
   "main": "index.js",
-  "scripts": {
-    "dev": "nodemon src/index.js",
-    "start": "node src/index.js",
-    "db:push": "prisma db push",
-    "db:reset": "prisma db push --force-reset && prisma generate",
-    "db:studio": "prisma studio",
-    "sync:ics": "node scripts/syncIcsStatus.js",
-    "import:property": "node scripts/importProperties.js",
-    "import:unitroom": "node scripts/importUnitsRooms.js",
-    "sync:longterm": "node scripts/syncLongTermLeases.js",
-    "setup:all": "npm run db:reset && npm run import:property && npm run import:unitroom && npm run sync:ics && npm run sync:longterm",
-    "setup:import": "npm run db:reset && npm run import:property && npm run import:unitroom",
-    "deploy:setup": "npm run db:push && npm run import:property && npm run import:unitroom && npm run sync:ics && npm run sync:longterm"
+"scripts": {
+  "dev": "nodemon src/index.js",
+  "start": "node src/index.js",
+
+  "db:push": "prisma db push",
+  "db:generate": "prisma generate",
+  "db:reset": "prisma db push --force-reset && prisma generate",
+
+  "sync:ics": "node scripts/syncIcsStatus.js",
+  "import:property": "node scripts/importProperties.js",
+  "import:unitroom": "node scripts/importUnitsRooms.js",
+  "sync:longterm": "node scripts/syncLongTermLeases.js",
+
+  "setup:all": "npm run db:reset && npm run import:property && npm run import:unitroom && npm run sync:ics && npm run sync:longterm",
+
+  "setup:import": "npm run db:reset && npm run import:property && npm run import:unitroom",
+
+  "deploy:setup": "npm run db:generate && npm run db:push && npm run import:property && npm run import:unitroom && npm run sync:ics && npm run sync:longterm"
   },
   "keywords": [],
   "author": "",
