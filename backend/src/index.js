@@ -4,6 +4,7 @@ const dotenv = require("dotenv");
 
 const { PrismaClient } = require("@prisma/client");
 const { PrismaPg } = require("@prisma/adapter-pg");
+const { syncIcsStatus } = require("./services/syncIcsStatusService");
 
 const pg = require("pg");
 
@@ -107,6 +108,42 @@ const prisma = new PrismaClient({
 
 app.get("/", (req, res) => {
   res.send("AirPMS backend is running");
+});
+
+
+
+
+/*
+|--------------------------------------------------------------------------
+| sync-ics
+|--------------------------------------------------------------------------
+*/
+
+
+app.post("/admin/sync-ics", async (req, res) => {
+  try {
+    const { password } = req.body;
+
+    if (password !== "admin12345") {
+      return res.status(401).json({
+        message: "Invalid admin password",
+      });
+    }
+
+    const result = await syncIcsStatus();
+
+    res.json({
+      message: "ICS sync completed",
+      result,
+    });
+  } catch (error) {
+    console.error(error);
+
+    res.status(500).json({
+      message: "ICS sync failed",
+      error: error.message,
+    });
+  }
 });
 
 /*

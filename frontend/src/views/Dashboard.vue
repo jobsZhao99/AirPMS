@@ -4,6 +4,8 @@ import api from "../api";
 
 const properties = ref([]);
 const loading = ref(false);
+const syncingIcs = ref(false);
+const syncMessage = ref("");
 
 function getRoomNumber(roomName) {
   const match = String(roomName || "").match(/\d+/);
@@ -120,6 +122,36 @@ async function loadDashboard() {
   }
 }
 
+async function syncIcs() {
+  const password = window.prompt("Enter admin password:");
+
+  if (!password) return;
+
+  syncingIcs.value = true;
+  syncMessage.value = "";
+
+  try {
+    const res = await api.post("/admin/sync-ics", {
+      password,
+    });
+
+    syncMessage.value = "ICS sync completed";
+    console.log("ICS sync result:", res.data);
+
+    await loadDashboard();
+  } catch (error) {
+    console.error("Failed to sync ICS", error);
+
+    if (error.response?.status === 401) {
+      syncMessage.value = "Invalid password";
+    } else {
+      syncMessage.value = "ICS sync failed";
+    }
+  } finally {
+    syncingIcs.value = false;
+  }
+}
+
 onMounted(loadDashboard);
 </script>
 
@@ -131,7 +163,31 @@ onMounted(loadDashboard);
         <p>Property / Unit / Room inventory overview</p>
       </div>
 
-      <button @click="loadDashboard">Refresh</button>
+      <div>
+        <div class="header-actions">
+          <button
+            class="secondary-button"
+            @click="loadDashboard"
+            :disabled="loading || syncingIcs"
+          >
+            Refresh
+          </button>
+
+          <button
+            @click="syncIcs"
+            :disabled="loading || syncingIcs"
+          >
+            {{ syncingIcs ? "Syncing..." : "Sync ICS" }}
+          </button>
+        </div>
+
+        <div
+          v-if="syncMessage"
+          class="sync-message"
+        >
+          {{ syncMessage }}
+        </div>
+      </div>
     </div>
 
     <div v-if="loading" class="loading">
@@ -246,6 +302,12 @@ onMounted(loadDashboard);
   font-size: 14px;
 }
 
+.header-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
 .page-header button {
   padding: 8px 16px;
   border: none;
@@ -253,6 +315,22 @@ onMounted(loadDashboard);
   color: white;
   border-radius: 6px;
   cursor: pointer;
+}
+
+.page-header button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.secondary-button {
+  background: #6b7280 !important;
+}
+
+.sync-message {
+  font-size: 12px;
+  color: #6b7280;
+  margin-top: 6px;
+  text-align: right;
 }
 
 .loading {
@@ -347,19 +425,12 @@ onMounted(loadDashboard);
   width: 260px;
   min-width: 260px;
 }
-/**
- * Long Term
- * 浅灰色
- */
- .room-cell.long-term,
+
+.room-cell.long-term,
 .unit-cell.long-term {
   background: #f3f4f6;
 }
 
-/**
- * 所有 rented
- * 浅绿色
- */
 .room-cell.airbnb-rented,
 .unit-cell.airbnb-rented,
 .room-cell.booking-rented,
@@ -369,10 +440,6 @@ onMounted(loadDashboard);
   background: #dcfce7;
 }
 
-/**
- * Vacant / Available
- * 白色
- */
 .room-cell.vacant,
 .unit-cell.vacant,
 .room-cell.available,
@@ -380,10 +447,6 @@ onMounted(loadDashboard);
   background: #ffffff;
 }
 
-/**
- * Error / Maintenance / Offline / Inactive
- * 淡红色
- */
 .room-cell.error,
 .unit-cell.error,
 .room-cell.maintenance,
@@ -397,30 +460,5 @@ onMounted(loadDashboard);
 .room-cell.occupied,
 .unit-cell.occupied {
   background: #fee2e2;
-}
-
-.room-cell.maintenance,
-.unit-cell.maintenance {
-  background: #fef3c7;
-}
-
-.room-cell.offline,
-.unit-cell.offline {
-  background: #e5e7eb;
-}
-
-.room-cell.error,
-.unit-cell.error {
-  background: #fef3c7;
-}
-
-.room-cell.inactive,
-.unit-cell.inactive {
-  background: #e5e7eb;
-}
-
-.room-cell.no-ics,
-.unit-cell.no-ics {
-  background: #f3f4f6;
 }
 </style>
