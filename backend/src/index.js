@@ -5,6 +5,7 @@ const dotenv = require("dotenv");
 const { PrismaClient } = require("@prisma/client");
 const { PrismaPg } = require("@prisma/adapter-pg");
 const { syncIcsStatus } = require("./services/syncIcsStatusService");
+const { syncLongTermLeases } = require("./services/syncLongTermLeasesService");
 
 const pg = require("pg");
 
@@ -145,6 +146,35 @@ app.post("/admin/sync-ics", async (req, res) => {
     });
   }
 });
+
+
+
+app.post("/admin/sync-longterm", async (req, res) => {
+  try {
+    const { password } = req.body;
+
+    if (password !== "admin12345") {
+      return res.status(401).json({
+        message: "Invalid admin password",
+      });
+    }
+
+    const result = await syncLongTermLeases();
+
+    res.json({
+      message: "Long Term sync completed",
+      result,
+    });
+  } catch (error) {
+    console.error(error);
+
+    res.status(500).json({
+      message: "Long Term sync failed",
+      error: error.message,
+    });
+  }
+});
+
 
 /*
 |--------------------------------------------------------------------------
