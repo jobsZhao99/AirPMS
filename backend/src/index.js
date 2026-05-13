@@ -271,6 +271,40 @@ app.use((err, req, res, next) => {
   });
 });
 
+
+
+
+
+let autoSyncRunning = false;
+
+async function runAutoSync() {
+  if (autoSyncRunning) {
+    console.log("Auto sync skipped: previous sync still running");
+    return;
+  }
+
+  autoSyncRunning = true;
+
+  try {
+    console.log("Auto sync started");
+
+    const icsResult = await syncIcsStatus();
+    console.log("Auto ICS sync completed:", icsResult);
+
+    const longTermResult = await syncLongTermLeases();
+    console.log("Auto Long Term sync completed:", longTermResult);
+
+    console.log("Auto sync completed");
+  } catch (error) {
+    console.error("Auto sync failed:", error);
+  } finally {
+    autoSyncRunning = false;
+  }
+}
+
+
+
+
 /*
 |--------------------------------------------------------------------------
 | Server
@@ -281,4 +315,10 @@ const PORT = process.env.PORT || 3000;
 
 app.listen(PORT, () => {
   console.log(`AirPMS server running on port ${PORT}`);
+
+  // 启动后先跑一次
+  runAutoSync();
+
+  // 每 30 分钟跑一次
+  setInterval(runAutoSync, 30 * 60 * 1000);
 });
