@@ -4,9 +4,6 @@ import api from "../api";
 
 const properties = ref([]);
 const loading = ref(false);
-const syncingIcs = ref(false);
-const syncingLongterm = ref(false);
-const syncMessage = ref("");
 
 function getRoomNumber(roomName) {
   const match = String(roomName || "").match(/\d+/);
@@ -123,67 +120,6 @@ async function loadDashboard() {
   }
 }
 
-async function syncIcs() {
-  const password = window.prompt("Enter admin password:");
-
-  if (!password) return;
-
-  syncingIcs.value = true;
-  syncMessage.value = "";
-
-  try {
-    const res = await api.post("/admin/sync-ics", {
-      password,
-    });
-
-    syncMessage.value = "ICS sync completed";
-    console.log("ICS sync result:", res.data);
-
-    await loadDashboard();
-  } catch (error) {
-    console.error("Failed to sync ICS", error);
-
-    if (error.response?.status === 401) {
-      syncMessage.value = "Invalid password";
-    } else {
-      syncMessage.value = "ICS sync failed";
-    }
-  } finally {
-    syncingIcs.value = false;
-  }
-}
-
-async function syncLongterm() {
-  const password = window.prompt("Enter admin password:");
-
-  if (!password) return;
-
-  syncingLongterm.value = true;
-  syncMessage.value = "";
-
-  try {
-    const res = await api.post("/admin/sync-longterm", {
-      password,
-    });
-
-    syncMessage.value = "Long Term sync completed";
-    console.log("Long Term sync result:", res.data);
-
-    await loadDashboard();
-  } catch (error) {
-    console.error("Failed to sync Long Term", error);
-
-    if (error.response?.status === 401) {
-      syncMessage.value = "Invalid password";
-    } else {
-      syncMessage.value = "Long Term sync failed";
-    }
-  } finally {
-    syncingLongterm.value = false;
-  }
-}
-
-
 onMounted(loadDashboard);
 </script>
 
@@ -200,30 +136,10 @@ onMounted(loadDashboard);
           <button
             class="secondary-button"
             @click="loadDashboard"
-            :disabled="loading || syncingIcs"
+            :disabled="loading"
           >
             Refresh
           </button>
-
-          <button
-            @click="syncIcs"
-            :disabled="loading || syncingIcs"
-          >
-            {{ syncingIcs ? "Syncing..." : "Sync ICS" }}
-          </button>
-          <button
-            @click="syncLongterm"
-            :disabled="loading || syncingIcs || syncingLongterm"
-          >
-            {{ syncingLongterm ? "Syncing..." : "Sync Long Term" }}
-          </button>
-        </div>
-
-        <div
-          v-if="syncMessage"
-          class="sync-message"
-        >
-          {{ syncMessage }}
         </div>
       </div>
     </div>
@@ -362,13 +278,6 @@ onMounted(loadDashboard);
 
 .secondary-button {
   background: #6b7280 !important;
-}
-
-.sync-message {
-  font-size: 12px;
-  color: #6b7280;
-  margin-top: 6px;
-  text-align: right;
 }
 
 .loading {

@@ -9,10 +9,10 @@
   "db:push": "prisma db push",
   "db:reset": "prisma db push --force-reset && prisma generate",
 
-  "sync:ics": "node scripts/syncIcsStatus.js",
+  "sync:ics": "node scripts/syncIcsStatusCopy.js",
   "import:property": "node scripts/importProperties.js",
   "import:unitroom": "node scripts/importUnitsRooms.js",
-  "sync:longterm": "node scripts/syncLongTermLeases.js",
+  "sync:longterm": "node scripts/syncLongTermLeasesCopy.js",
   "studio": "prisma studio",
   "setup:all": "npm run db:reset && npm run import:property && npm run import:unitroom && npm run sync:ics && npm run sync:longterm",
 

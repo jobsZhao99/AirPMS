@@ -333,6 +333,9 @@ const prisma = require("./prisma");
 
 const { syncIcsStatus } = require("./services/syncIcsStatusService");
 const { syncLongTermLeases } = require("./services/syncLongTermLeasesService");
+const {
+  downloadAllDatabaseData,
+} = require("./services/downloadDatabaseService");
 
 dotenv.config();
 
@@ -357,6 +360,7 @@ app.use(
     },
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
     allowedHeaders: ["Content-Type", "Authorization"],
+    exposedHeaders: ["Content-Disposition"],
     credentials: true,
   })
 );
@@ -414,6 +418,36 @@ app.post("/admin/sync-longterm", async (req, res) => {
 
     res.status(500).json({
       message: "Long Term sync failed",
+      error: error.message,
+    });
+  }
+});
+
+app.post("/admin/download-data", async (req, res) => {
+  try {
+    const { password } = req.body;
+
+    if (password !== "admin12345") {
+      return res.status(401).json({
+        message: "Invalid admin password",
+      });
+    }
+
+    const data = await downloadAllDatabaseData();
+    const filename = `airpms-database-${data.exportedAt.slice(0, 10)}.json`;
+
+    res.setHeader("Content-Type", "application/json");
+    res.setHeader(
+      "Content-Disposition",
+      `attachment; filename="${filename}"`
+    );
+
+    res.json(data);
+  } catch (error) {
+    console.error(error);
+
+    res.status(500).json({
+      message: "Failed to download database data",
       error: error.message,
     });
   }

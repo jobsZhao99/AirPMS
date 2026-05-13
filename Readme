@@ -11,3 +11,7 @@ node scripts/importProperties.js
 
 ### reset data base, erase and genarate
  npm run db:reset
+
+
+
+ 

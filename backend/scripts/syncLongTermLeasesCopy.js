@@ -5,7 +5,7 @@ const prisma = require("../src/prisma");
 
 const FILE_PATH = path.join(
   __dirname,
-  "../data/Jobs' airbnb_ops_v9_1_reviewed_complete_template - Tenant Directory.csv"
+  "../data/Tenant Directory.csv"
 );
 
 const LONG_TERM_MARKER = "LT:";
