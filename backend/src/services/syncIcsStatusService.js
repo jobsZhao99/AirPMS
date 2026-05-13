@@ -2,14 +2,38 @@ const prisma = require("../prisma");
 const { getRecentStayFromICS } = require("../utils/ics");
 
 async function syncIcsStatus() {
-  const rooms = await prisma.room.findMany({
-    where: { url: { not: null } },
-    include: { unit: { include: { property: true } } },
+  const roomListings = await prisma.listingUrl.findMany({
+    where: {
+      roomId: { not: null },
+      isPrimary: true,
+      status: "active",
+    },
+    include: {
+      room: {
+        include: {
+          unit: {
+            include: {
+              property: true,
+            },
+          },
+        },
+      },
+    },
   });
 
-  const units = await prisma.unit.findMany({
-    where: { url: { not: null } },
-    include: { property: true },
+  const unitListings = await prisma.listingUrl.findMany({
+    where: {
+      unitId: { not: null },
+      isPrimary: true,
+      status: "active",
+    },
+    include: {
+      unit: {
+        include: {
+          property: true,
+        },
+      },
+    },
   });
 
   let roomsSynced = 0;
@@ -17,9 +41,11 @@ async function syncIcsStatus() {
   let unitsSynced = 0;
   let unitsFailed = 0;
 
-  for (const room of rooms) {
+  for (const listing of roomListings) {
+    const room = listing.room;
+
     try {
-      const result = await getRecentStayFromICS(room.url);
+      const result = await getRecentStayFromICS(listing.url);
 
       await prisma.room.update({
         where: { id: room.id },
@@ -43,9 +69,11 @@ async function syncIcsStatus() {
     }
   }
 
-  for (const unit of units) {
+  for (const listing of unitListings) {
+    const unit = listing.unit;
+
     try {
-      const result = await getRecentStayFromICS(unit.url);
+      const result = await getRecentStayFromICS(listing.url);
 
       await prisma.unit.update({
         where: { id: unit.id },
@@ -70,10 +98,10 @@ async function syncIcsStatus() {
   }
 
   return {
-    roomsFound: rooms.length,
+    roomsFound: roomListings.length,
     roomsSynced,
     roomsFailed,
-    unitsFound: units.length,
+    unitsFound: unitListings.length,
     unitsSynced,
     unitsFailed,
   };

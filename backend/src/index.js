@@ -457,7 +457,11 @@ app.get("/properties", async (req, res) => {
   try {
     const properties = await prisma.property.findMany({
       include: {
-        units: true,
+        units: {
+          include: {
+            listingUrls: true,
+          },
+        },
       },
     });
 
@@ -498,7 +502,12 @@ app.get("/dashboard/inventory", async (req, res) => {
       include: {
         units: {
           include: {
-            rooms: true,
+            listingUrls: true,
+            rooms: {
+              include: {
+                listingUrls: true,
+              },
+            },
           },
           orderBy: {
             name: "asc",

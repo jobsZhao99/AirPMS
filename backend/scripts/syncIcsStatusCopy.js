@@ -3,8 +3,8 @@ const { getRecentStayFromICS } = require("../src/utils/ics");
 
 /**
  * Sync ICS status for:
- * - Rooms with room.url
- * - Units with unit.url
+ * - Rooms with primary active ListingUrl
+ * - Units with primary active ListingUrl
  *
  * Rule:
  * - Normal room listing: save status/note on Room
@@ -12,29 +12,35 @@ const { getRecentStayFromICS } = require("../src/utils/ics");
  */
 
 async function syncRoomIcsStatus() {
-  const rooms = await prisma.room.findMany({
+  const listings = await prisma.listingUrl.findMany({
     where: {
-      url: {
-        not: null,
-      },
+      roomId: { not: null },
+      isPrimary: true,
+      status: "active",
     },
     include: {
-      unit: {
+      room: {
         include: {
-          property: true,
+          unit: {
+            include: {
+              property: true,
+            },
+          },
         },
       },
     },
   });
 
-  console.log(`Found ${rooms.length} rooms with ICS URL`);
+  console.log(`Found ${listings.length} rooms with primary active ICS URL`);
 
   let synced = 0;
   let failed = 0;
 
-  for (const room of rooms) {
+  for (const listing of listings) {
+    const room = listing.room;
+
     try {
-      const result = await getRecentStayFromICS(room.url);
+      const result = await getRecentStayFromICS(listing.url);
 
       await prisma.room.update({
         where: {
@@ -74,25 +80,31 @@ async function syncRoomIcsStatus() {
 }
 
 async function syncUnitIcsStatus() {
-  const units = await prisma.unit.findMany({
+  const listings = await prisma.listingUrl.findMany({
     where: {
-      url: {
-        not: null,
-      },
+      unitId: { not: null },
+      isPrimary: true,
+      status: "active",
     },
     include: {
-      property: true,
+      unit: {
+        include: {
+          property: true,
+        },
+      },
     },
   });
 
-  console.log(`Found ${units.length} units with ICS URL`);
+  console.log(`Found ${listings.length} units with primary active ICS URL`);
 
   let synced = 0;
   let failed = 0;
 
-  for (const unit of units) {
+  for (const listing of listings) {
+    const unit = listing.unit;
+
     try {
-      const result = await getRecentStayFromICS(unit.url);
+      const result = await getRecentStayFromICS(listing.url);
 
       await prisma.unit.update({
         where: {

@@ -107,6 +107,10 @@ function statusClass(status) {
   return "default";
 }
 
+function hasListingUrls(item) {
+  return Boolean(item.listingUrls?.length);
+}
+
 async function loadDashboard() {
   loading.value = true;
 
@@ -181,7 +185,7 @@ onMounted(loadDashboard);
                 </div>
 
                 <div
-                  v-if="unit.url"
+                  v-if="hasListingUrls(unit)"
                   class="unit-status"
                 >
                   {{ unit.status }}
@@ -200,7 +204,7 @@ onMounted(loadDashboard);
               </div>
 
               <div
-                v-if="unit.url"
+                v-if="hasListingUrls(unit)"
                 class="room-status"
               >
                 {{ unit.status }}

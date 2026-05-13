@@ -10,14 +10,14 @@ const prisma = require("../src/prisma");
  * - Property column matches existing Property.name
  * - Property_Address column creates/finds Unit
  * - Room_Number column creates/finds Room
- * - ICS_URL goes to Room.url normally
+ * - ICS_URL creates/updates a Room ListingUrl normally
  * - Listing_Status goes to Room.status normally
  * - Listing_Name goes to Room.listingName
  * - appfolioName = Unit Name - Room Name
  *
  * Special case:
  * - If Room_Number is "Whole Unit":
- *   - save ICS_URL to Unit.url
+ *   - save ICS_URL to a Unit ListingUrl
  *   - save Listing_Status to Unit.status
  *   - do NOT create a Room named "Whole Unit"
  */
@@ -44,6 +44,24 @@ function isWholeUnit(roomName) {
 
 function buildAppfolioName(unitName, roomName) {
   return `${clean(unitName)} - ${clean(roomName)}`;
+}
+
+function detectChannel(url) {
+  const value = clean(url).toLowerCase();
+
+  if (value.includes("booking.com") || value.includes("admin.booking")) {
+    return "Booking.com";
+  }
+
+  if (value.includes("airbnb.com")) {
+    return "Airbnb";
+  }
+
+  if (value.includes("vrbo.com")) {
+    return "VRBO";
+  }
+
+  return "Unknown";
 }
 
 function getValue(row, possibleKeys) {
@@ -90,6 +108,62 @@ async function findOrCreateUnit({ propertyId, unitName }) {
   return newUnit;
 }
 
+async function createOrUpdateListingUrl({ roomId, unitId, url }) {
+  if (!url) return null;
+
+  const where = roomId
+    ? {
+        roomId,
+      }
+    : {
+        unitId,
+      };
+
+  const existingListing = await prisma.listingUrl.findFirst({
+    where: {
+      ...where,
+      url,
+    },
+  });
+
+  if (existingListing) {
+    await prisma.listingUrl.updateMany({
+      where,
+      data: {
+        isPrimary: false,
+      },
+    });
+
+    return prisma.listingUrl.update({
+      where: {
+        id: existingListing.id,
+      },
+      data: {
+        channel: detectChannel(url),
+        status: "active",
+        isPrimary: true,
+      },
+    });
+  }
+
+  await prisma.listingUrl.updateMany({
+    where,
+    data: {
+      isPrimary: false,
+    },
+  });
+
+  return prisma.listingUrl.create({
+    data: {
+      ...where,
+      url,
+      channel: detectChannel(url),
+      status: "active",
+      isPrimary: true,
+    },
+  });
+}
+
 async function findOrCreateRoom({
   unitId,
   unitName,
@@ -113,7 +187,6 @@ async function findOrCreateRoom({
         id: existingRoom.id,
       },
       data: {
-        url: url || existingRoom.url,
         status: status || existingRoom.status,
         listingName: listingName || existingRoom.listingName,
         appfolioName,
@@ -122,6 +195,11 @@ async function findOrCreateRoom({
 
     console.log(`Updated Room: ${appfolioName}`);
 
+    await createOrUpdateListingUrl({
+      roomId: updatedRoom.id,
+      url,
+    });
+
     return updatedRoom;
   }
 
@@ -129,7 +207,6 @@ async function findOrCreateRoom({
     data: {
       unitId,
       name: roomName,
-      url: url || null,
       status: status || DEFAULT_STATUS,
       listingName: listingName || null,
       appfolioName,
@@ -137,6 +214,11 @@ async function findOrCreateRoom({
   });
 
   console.log(`Created Room: ${appfolioName}`);
+
+  await createOrUpdateListingUrl({
+    roomId: newRoom.id,
+    url,
+  });
 
   return newRoom;
 }
@@ -224,9 +306,13 @@ async function importUnitsRooms() {
           id: unit.id,
         },
         data: {
-          url: url || unit.url,
           status: listingStatus || unit.status || DEFAULT_STATUS,
         },
+      });
+
+      await createOrUpdateListingUrl({
+        unitId: unit.id,
+        url,
       });
 
       console.log(`Updated Whole Unit: ${propertyName} / ${unitName}`);

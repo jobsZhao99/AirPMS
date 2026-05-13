@@ -1,7 +1,7 @@
 const prisma = require("../prisma");
 
 async function downloadAllDatabaseData() {
-  const [properties, units, rooms] = await Promise.all([
+  const [properties, units, rooms, listingUrls] = await Promise.all([
     prisma.property.findMany({
       orderBy: {
         name: "asc",
@@ -27,6 +27,22 @@ async function downloadAllDatabaseData() {
         },
       ],
     }),
+    prisma.listingUrl.findMany({
+      orderBy: [
+        {
+          roomId: "asc",
+        },
+        {
+          unitId: "asc",
+        },
+        {
+          isPrimary: "desc",
+        },
+        {
+          channel: "asc",
+        },
+      ],
+    }),
   ]);
 
   return {
@@ -35,6 +51,7 @@ async function downloadAllDatabaseData() {
       properties,
       units,
       rooms,
+      listingUrls,
     },
   };
 }

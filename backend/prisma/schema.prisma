@@ -23,22 +23,37 @@ model Unit {
   id         String     @id @default(cuid())
   name       String
   propertyId String
-  url        String?
   note       String?
   status     String   @default("Available")
   property   Property @relation(fields: [propertyId], references: [id])
   rooms      Room[]
+  listingUrls ListingUrl[]
 }
 
 model Room {
   id         String     @id @default(cuid())
   name       String
-  url        String?
   listingName String?
   appfolioName String?
   note       String?
   status     String   @default("Available")
   unitId     String
   unit       Unit    @relation(fields: [unitId], references: [id])
+  listingUrls ListingUrl[]
 }
 
+model ListingUrl {
+  id        String   @id @default(cuid())
+  url       String
+  channel   String   @default("Unknown")
+  status    String   @default("active")
+  notes     String?
+  isPrimary Boolean  @default(false)
+  roomId    String?
+  unitId    String?
+  room      Room?    @relation(fields: [roomId], references: [id], onDelete: Cascade)
+  unit      Unit?    @relation(fields: [unitId], references: [id], onDelete: Cascade)
+
+  @@index([roomId])
+  @@index([unitId])
+}
