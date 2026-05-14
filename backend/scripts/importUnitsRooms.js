@@ -306,7 +306,8 @@ async function importUnitsRooms() {
           id: unit.id,
         },
         data: {
-          status: listingStatus || unit.status || DEFAULT_STATUS,
+          AvailabilityStatus:
+            listingStatus || unit.AvailabilityStatus || DEFAULT_STATUS,
         },
       });
 

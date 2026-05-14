@@ -78,7 +78,7 @@ async function syncIcsStatus() {
       await prisma.unit.update({
         where: { id: unit.id },
         data: {
-          status: result.status,
+          AvailabilityStatus: result.status,
           note: result.note,
         },
       });
@@ -88,7 +88,7 @@ async function syncIcsStatus() {
       await prisma.unit.update({
         where: { id: unit.id },
         data: {
-          status: "ICS Error",
+          AvailabilityStatus: "ICS Error",
           note: error.message,
         },
       });

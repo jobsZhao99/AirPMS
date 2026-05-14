@@ -111,6 +111,10 @@ function hasListingUrls(item) {
   return Boolean(item.listingUrls?.length);
 }
 
+function unitStatus(unit) {
+  return unit.AvailabilityStatus || unit.status || "Available";
+}
+
 async function loadDashboard() {
   loading.value = true;
 
@@ -175,7 +179,7 @@ onMounted(loadDashboard);
               class="unit-cell"
               :class="[
                 rowIndex > 0 ? 'muted' : '',
-                rowIndex === 0 ? statusClass(unit.status) : '',
+                rowIndex === 0 ? statusClass(unitStatus(unit)) : '',
               ]"
               :title="rowIndex === 0 ? unit.note || '' : ''"
             >
@@ -188,7 +192,7 @@ onMounted(loadDashboard);
                   v-if="hasListingUrls(unit)"
                   class="unit-status"
                 >
-                  {{ unit.status }}
+                  {{ unitStatus(unit) }}
                 </div>
               </div>
             </div>
@@ -196,7 +200,7 @@ onMounted(loadDashboard);
             <div
               v-if="row.type === 'unitOnly'"
               class="room-cell empty-room-cell"
-              :class="statusClass(unit.status)"
+              :class="statusClass(unitStatus(unit))"
               :title="unit.note || ''"
             >
               <div class="room-name">
@@ -207,7 +211,7 @@ onMounted(loadDashboard);
                 v-if="hasListingUrls(unit)"
                 class="room-status"
               >
-                {{ unit.status }}
+                {{ unitStatus(unit) }}
               </div>
             </div>
 

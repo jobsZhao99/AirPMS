@@ -11,56 +11,101 @@ datasource db {
   provider = "postgresql"
 }
 
+enum CleaningStatus {
+  Cleaned
+  Dirty
+  UnderPipeline
+  NeedSetup     @map("Need Setup")
+  NeedSpiff     @map("Need Spiff")
+  Occupied
+}
+
 model Property {
-  id        String   @id @default(cuid())
-  name      String
-  address   String?
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  units     Unit[]
+  id                 String    @id @default(cuid())
+  AvailabilityStatus String    @default("Available")
+  AvailableFrom      DateTime?
+  AvailableTo        DateTime?
+  name               String
+  address            String?
+  createdAt          DateTime  @default(now())
+  updatedAt          DateTime  @updatedAt
+  units              Unit[]
 }
 
 model Unit {
-  id          String       @id @default(cuid())
-  name        String
-  propertyId  String
-  note        String?
-  status      String       @default("Available")
-  createdAt   DateTime     @default(now())
-  updatedAt   DateTime     @updatedAt
-  property    Property     @relation(fields: [propertyId], references: [id])
-  rooms       Room[]
-  listingUrls ListingUrl[]
+  id                 String          @id @default(cuid())
+  AvailabilityStatus String          @default("Available")
+  AvailableFrom      DateTime?
+  AvailableTo        DateTime?
+  name               String
+  propertyId         String
+  note               String?
+  cleaningStatus     CleaningStatus  @default(UnderPipeline)
+  leasingStatus      String          @default("Vacant")
+  createdAt          DateTime        @default(now())
+  updatedAt          DateTime        @updatedAt
+  property           Property        @relation(fields: [propertyId], references: [id])
+  rooms              Room[]
+  listingUrls        ListingUrl[]
+  bookingRecords     BookingRecord[]
 }
 
 model Room {
-  id           String       @id @default(cuid())
-  name         String
-  listingName  String?
-  appfolioName String?
-  note         String?
-  status       String       @default("Available")
-  unitId       String
-  createdAt    DateTime     @default(now())
-  updatedAt    DateTime     @updatedAt
-  unit         Unit         @relation(fields: [unitId], references: [id])
-  listingUrls  ListingUrl[]
+  id             String          @id @default(cuid())
+  name           String
+  listingName    String?
+  appfolioName   String?
+  note           String?
+  status         String          @default("Available")
+  unitId         String
+  cleaningStatus CleaningStatus  @default(UnderPipeline)
+  leasingStatus  String          @default("Vacant")
+  createdAt      DateTime        @default(now())
+  updatedAt      DateTime        @updatedAt
+  unit           Unit            @relation(fields: [unitId], references: [id])
+  listingUrls    ListingUrl[]
+  bookingRecords BookingRecord[]
 }
 
 model ListingUrl {
-  id        String   @id @default(cuid())
-  url       String
-  channel   String   @default("Unknown")
-  status    String   @default("active")
-  notes     String?
-  isPrimary Boolean  @default(false)
-  roomId    String?
-  unitId    String?
-  createdAt DateTime @default(now())
-  updatedAt DateTime @updatedAt
-  room      Room?    @relation(fields: [roomId], references: [id], onDelete: Cascade)
-  unit      Unit?    @relation(fields: [unitId], references: [id], onDelete: Cascade)
+  id             String          @id @default(cuid())
+  url            String
+  channel        String          @default("Unknown")
+  listingId      String? // this is the id from the channel, for example, Airbnb listing id
+  status         String          @default("active")
+  notes          String?
+  isPrimary      Boolean         @default(false)
+  roomId         String?
+  unitId         String?
+  createdAt      DateTime        @default(now())
+  updatedAt      DateTime        @updatedAt
+  room           Room?           @relation(fields: [roomId], references: [id])
+  unit           Unit?           @relation(fields: [unitId], references: [id])
+  bookingRecords BookingRecord[]
 
   @@index([roomId])
   @@index([unitId])
+}
+
+model BookingRecord {
+  id        String   @id @default(cuid())
+  status    String   @default("Confirmed")
+  guestName String?
+  guestId   String?
+  reservationCode String?
+  startDate DateTime
+  endDate   DateTime
+
+  guestPay   Float?
+  hostPayout Float?
+
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  roomId       String?
+  unitId       String?
+  listingUrlId String?
+  room         Room?       @relation(fields: [roomId], references: [id])
+  unit         Unit?       @relation(fields: [unitId], references: [id])
+  listingUrl   ListingUrl? @relation(fields: [listingUrlId], references: [id])
 }
