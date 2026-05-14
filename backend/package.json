@@ -11,6 +11,7 @@
   "db:reset": "prisma db push --force-reset && prisma generate",
 
   "sync:ics": "node scripts/syncIcsStatusCopy.js",
+  "extract:airbnb-listing-ids": "node scripts/extractAirbnbListingIds.js",
   "import:property": "node scripts/importProperties.js",
   "import:unitroom": "node scripts/importUnitsRooms.js",
   "sync:longterm": "node scripts/syncLongTermLeasesCopy.js",
