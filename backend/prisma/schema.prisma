@@ -12,34 +12,39 @@ datasource db {
 }
 
 model Property {
-  id        String     @id @default(cuid())
+  id        String   @id @default(cuid())
   name      String
   address   String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
   units     Unit[]
-
 }
 
 model Unit {
-  id         String     @id @default(cuid())
-  name       String
-  propertyId String
-  note       String?
-  status     String   @default("Available")
-  property   Property @relation(fields: [propertyId], references: [id])
-  rooms      Room[]
+  id          String       @id @default(cuid())
+  name        String
+  propertyId  String
+  note        String?
+  status      String       @default("Available")
+  createdAt   DateTime     @default(now())
+  updatedAt   DateTime     @updatedAt
+  property    Property     @relation(fields: [propertyId], references: [id])
+  rooms       Room[]
   listingUrls ListingUrl[]
 }
 
 model Room {
-  id         String     @id @default(cuid())
-  name       String
-  listingName String?
+  id           String       @id @default(cuid())
+  name         String
+  listingName  String?
   appfolioName String?
-  note       String?
-  status     String   @default("Available")
-  unitId     String
-  unit       Unit    @relation(fields: [unitId], references: [id])
-  listingUrls ListingUrl[]
+  note         String?
+  status       String       @default("Available")
+  unitId       String
+  createdAt    DateTime     @default(now())
+  updatedAt    DateTime     @updatedAt
+  unit         Unit         @relation(fields: [unitId], references: [id])
+  listingUrls  ListingUrl[]
 }
 
 model ListingUrl {
@@ -51,6 +56,8 @@ model ListingUrl {
   isPrimary Boolean  @default(false)
   roomId    String?
   unitId    String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
   room      Room?    @relation(fields: [roomId], references: [id], onDelete: Cascade)
   unit      Unit?    @relation(fields: [unitId], references: [id], onDelete: Cascade)
 
