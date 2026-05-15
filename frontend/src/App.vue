@@ -1,17 +1,10 @@
 <template>
   <div class="app-shell">
     <nav class="app-nav">
-      <RouterLink to="/" class="nav-link">
-        Dashboard
-      </RouterLink>
-
-      <RouterLink to="/admin" class="nav-link">
-        Admin Panel
-      </RouterLink>
+      <span class="nav-brand">AirPMS</span>
+      <RouterLink to="/" class="nav-link">Dashboard</RouterLink>
+      <RouterLink to="/admin" class="nav-link">Admin</RouterLink>
     </nav>
-
-    <!-- 路由只负责页面承载：Dashboard 仍是远程原来的入口，
-         点击房间后进入增强版 Room Details。 -->
     <RouterView />
   </div>
 </template>
@@ -19,34 +12,55 @@
 <style scoped>
 .app-shell {
   min-height: 100vh;
-  background: #f7f8fa;
+  display: flex;
+  flex-direction: column;
+  background: var(--parchment);
 }
 
 .app-nav {
   position: sticky;
   top: 0;
-  z-index: 10;
+  z-index: 100;
   display: flex;
-  gap: 8px;
-  padding: 12px 24px;
-  background: #ffffff;
-  border-bottom: 1px solid #e5e7eb;
+  align-items: center;
+  height: 52px;
+  padding: 0 28px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--linen);
+  box-shadow: var(--shadow-xs);
+}
+
+.nav-brand {
+  font-family: var(--font-display);
+  font-size: 19px;
+  font-weight: 700;
+  color: var(--ink);
+  margin-right: 24px;
+  letter-spacing: -0.3px;
+  flex-shrink: 0;
 }
 
 .nav-link {
-  padding: 8px 14px;
-  border: 1px solid #d1d5db;
-  border-radius: 6px;
-  background: #ffffff;
-  color: #374151;
-  cursor: pointer;
+  height: 52px;
+  padding: 0 14px;
+  display: flex;
+  align-items: center;
   text-decoration: none;
+  color: var(--ink-2);
   font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.nav-link:hover {
+  color: var(--ink);
+  border-bottom-color: var(--linen-2);
 }
 
 .nav-link.router-link-active {
-  border-color: #111827;
-  background: #111827;
-  color: #ffffff;
+  color: var(--ink);
+  border-bottom-color: var(--ink);
 }
 </style>

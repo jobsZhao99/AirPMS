@@ -66,8 +66,6 @@ async function fetchCurrentReservation(url, channel) {
 
 function decorateListingUrl(listing) {
   const channel = listing.channel;
-  // 远程 schema 已经把渠道侧房源 ID 命名为 listingId；
-  // 这里不要再引入 externalListingId，避免两套字段并存。
   const listingId = listing.listingId || extractChannelListingId(listing.url, channel);
   const links = channel === "Airbnb" ? buildAirbnbLinks(listingId) : null;
   return { ...listing, listingId, links };

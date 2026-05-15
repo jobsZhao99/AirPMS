@@ -185,35 +185,33 @@ async function downloadDatabase() {
 
 <style scoped>
 .admin-page {
-  padding: 24px;
-  background: #f7f8fa;
-  min-height: calc(100vh - 57px);
-  font-family: Arial, sans-serif;
+  padding: 28px;
+  background: var(--parchment);
+  min-height: calc(100vh - 52px);
 }
 
 .admin-header {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
-  margin-bottom: 22px;
+  margin-bottom: 28px;
 }
 
 .admin-header h1 {
-  font-size: 24px;
-  margin: 0;
-  color: #111827;
+  font-size: 26px;
+  letter-spacing: -0.4px;
 }
 
 .admin-header p,
 .admin-section p {
   margin: 6px 0 0;
-  color: #6b7280;
+  color: var(--ink-3);
   font-size: 14px;
 }
 
 .admin-grid {
   display: grid;
-  gap: 16px;
+  gap: 14px;
 }
 
 .admin-section {
@@ -221,17 +219,18 @@ async function downloadDatabase() {
   align-items: center;
   justify-content: space-between;
   gap: 16px;
-  padding: 18px;
-  background: #ffffff;
-  border: 1px solid #e5e7eb;
-  border-radius: 8px;
+  padding: 20px 22px;
+  background: var(--surface);
+  border: 1px solid var(--linen);
+  border-radius: var(--r-md);
   text-align: left;
+  box-shadow: var(--shadow-xs);
 }
 
 .admin-section h2 {
   margin: 0;
-  font-size: 18px;
-  color: #111827;
+  font-size: 16px;
+  letter-spacing: -0.2px;
 }
 
 .admin-actions {
@@ -242,42 +241,46 @@ async function downloadDatabase() {
 }
 
 .admin-actions button {
-  padding: 9px 16px;
+  padding: 9px 18px;
   border: none;
-  background: #111827;
-  color: white;
-  border-radius: 6px;
+  background: var(--ink);
+  color: var(--parchment);
+  border-radius: var(--r-sm);
   cursor: pointer;
+  font-weight: 700;
+  font-size: 13px;
   min-height: 38px;
+  transition: opacity 0.15s;
 }
 
-.admin-actions button:disabled {
-  opacity: 0.6;
-  cursor: not-allowed;
-}
+.admin-actions button:hover { opacity: 0.85; }
+.admin-actions button:disabled { opacity: 0.45; cursor: not-allowed; }
 
 .secondary-button {
-  background: #2563eb !important;
+  background: var(--s-booking-ink) !important;
 }
 
 .admin-message {
   margin-top: 16px;
-  padding: 12px 14px;
-  border-radius: 8px;
-  background: #eef2ff;
-  color: #3730a3;
+  padding: 12px 16px;
+  border-radius: var(--r-sm);
+  background: var(--surface-2);
+  color: var(--ink-2);
   text-align: left;
   font-size: 14px;
+  border: 1px solid var(--linen);
 }
 
 .admin-message.success {
-  background: #dcfce7;
-  color: #166534;
+  background: var(--s-cleaned-bg);
+  color: var(--s-cleaned-ink);
+  border-color: #b8d8c4;
 }
 
 .admin-message.error {
-  background: #fee2e2;
-  color: #991b1b;
+  background: var(--s-error-bg);
+  color: var(--s-error-ink);
+  border-color: #e8b4ae;
 }
 
 @media (max-width: 760px) {

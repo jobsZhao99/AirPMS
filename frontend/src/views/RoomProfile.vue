@@ -126,7 +126,6 @@ async function addUrl() {
   saving.value = true;
 
   try {
-    // 后端会从 Airbnb ICS URL 提取 listingId，前端不再维护 externalListingId。
     await api.post(`/api/rooms/${route.params.id}/listing-urls`, newUrl.value);
     resetUrlForms();
     await load();
@@ -418,47 +417,53 @@ onMounted(load);
 
 <style scoped>
 .room-page {
-  min-height: 100vh;
+  min-height: calc(100vh - 52px);
   padding: 28px;
-  background: #f7f8fa;
-  color: #111827;
-  font-family: Arial, sans-serif;
+  background: var(--parchment);
 }
 
 .back-button,
 .secondary-button,
 .danger-button,
 .primary-button {
-  border-radius: 6px;
+  border-radius: var(--r-sm);
   font-weight: 700;
   cursor: pointer;
+  font-size: 13px;
+  transition: background 0.15s, border-color 0.15s, opacity 0.15s;
 }
 
 .back-button {
-  border: 1px solid #d1d5db;
-  background: #ffffff;
-  padding: 9px 16px;
-  color: #111827;
+  border: 1px solid var(--linen-2);
+  background: var(--surface);
+  padding: 8px 16px;
+  color: var(--ink);
 }
+
+.back-button:hover { background: var(--surface-2); }
 
 .room-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
   gap: 20px;
-  padding: 28px 0 34px;
+  padding: 28px 0 32px;
 }
 
 .context-line {
-  margin: 0 0 10px;
-  color: #6b7280;
+  margin: 0 0 8px;
+  color: var(--ink-3);
+  font-size: 11px;
   font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
 }
 
 .room-header h1 {
   margin: 0;
-  font-size: 34px;
+  font-size: 36px;
   line-height: 1.1;
+  letter-spacing: -0.8px;
 }
 
 .status-row {
@@ -473,31 +478,37 @@ onMounted(load);
   display: inline-flex;
   align-items: center;
   border-radius: 999px;
-  padding: 4px 10px;
-  font-size: 12px;
+  padding: 4px 11px;
+  font-size: 11px;
   font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
-.status-airbnb,
+.status-airbnb {
+  background: var(--s-airbnb-bg);
+  color: var(--s-airbnb-ink);
+}
+
 .status-booking {
-  background: #e0f2fe;
-  color: #075985;
+  background: var(--s-booking-bg);
+  color: var(--s-booking-ink);
 }
 
 .status-longterm,
 .status-default {
-  background: #f3f4f6;
-  color: #374151;
+  background: var(--s-longterm-bg);
+  color: var(--s-longterm-ink);
 }
 
 .status-vacant {
-  background: #ecfdf3;
-  color: #027a48;
+  background: var(--s-cleaned-bg);
+  color: var(--s-cleaned-ink);
 }
 
 .status-warning {
-  background: #fff7ed;
-  color: #c2410c;
+  background: var(--s-error-bg);
+  color: var(--s-error-ink);
 }
 
 .detail-grid {
@@ -508,15 +519,17 @@ onMounted(load);
 
 .panel {
   margin-bottom: 20px;
-  border: 1px solid #e5e7eb;
-  border-radius: 8px;
-  background: #ffffff;
+  border: 1px solid var(--linen);
+  border-radius: var(--r-md);
+  background: var(--surface);
   padding: 22px;
+  box-shadow: var(--shadow-xs);
 }
 
 .panel h2 {
   margin: 0 0 18px;
-  font-size: 20px;
+  font-size: 18px;
+  letter-spacing: -0.3px;
 }
 
 .panel-title-row {
@@ -536,19 +549,22 @@ onMounted(load);
 }
 
 .info-list div {
-  margin-bottom: 22px;
+  margin-bottom: 20px;
 }
 
 .info-list dt {
-  margin-bottom: 8px;
-  color: #6b7280;
-  font-size: 14px;
-  font-weight: 800;
+  margin-bottom: 6px;
+  color: var(--ink-3);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.07em;
+  text-transform: uppercase;
 }
 
 .info-list dd {
   margin: 0;
-  font-size: 18px;
+  font-size: 17px;
+  color: var(--ink);
 }
 
 .listing-form,
@@ -559,9 +575,9 @@ onMounted(load);
 
 .listing-form {
   padding: 14px;
-  border: 1px solid #e5e7eb;
-  border-radius: 8px;
-  background: #f9fafb;
+  border: 1px solid var(--linen);
+  border-radius: var(--r-sm);
+  background: var(--surface-2);
   margin-bottom: 14px;
 }
 
@@ -571,22 +587,31 @@ onMounted(load);
 .notes-editor textarea {
   width: 100%;
   box-sizing: border-box;
-  border: 1px solid #d1d5db;
-  border-radius: 6px;
-  padding: 10px 12px;
-  color: #111827;
+  border: 1px solid var(--linen);
+  border-radius: var(--r-sm);
+  padding: 9px 12px;
+  background: var(--surface);
   font: inherit;
+  transition: border-color 0.15s;
+}
+
+.listing-form input:focus,
+.listing-form select:focus,
+.listing-form textarea:focus,
+.notes-editor textarea:focus {
+  outline: none;
+  border-color: var(--ink-2);
 }
 
 .listing-card {
   display: flex;
   justify-content: space-between;
   gap: 18px;
-  border: 1px solid #e5e7eb;
-  border-radius: 8px;
+  border: 1px solid var(--linen);
+  border-radius: var(--r-sm);
   padding: 14px 16px;
   margin-bottom: 12px;
-  background: #fbfdff;
+  background: var(--surface-2);
 }
 
 .listing-main {
@@ -601,15 +626,16 @@ onMounted(load);
 }
 
 .small-tag {
-  background: #ecfdf3;
-  color: #027a48;
+  background: var(--s-cleaned-bg);
+  color: var(--s-cleaned-ink);
 }
 
 .listing-url {
   display: block;
-  color: #4b5563;
+  color: var(--ink-3);
   word-break: break-all;
   text-decoration: none;
+  font-size: 12px;
 }
 
 .listing-url:hover,
@@ -621,8 +647,9 @@ onMounted(load);
 .empty-copy,
 .note-hint {
   margin: 8px 0 0;
-  color: #6b7280;
+  color: var(--ink-3);
   line-height: 1.5;
+  font-size: 13px;
 }
 
 .link-row,
@@ -638,9 +665,10 @@ onMounted(load);
 }
 
 .link-row a {
-  color: #2563eb;
+  color: var(--s-booking-ink);
   text-decoration: none;
   font-weight: 700;
+  font-size: 13px;
 }
 
 .listing-actions {
@@ -651,47 +679,64 @@ onMounted(load);
 
 .secondary-button,
 .danger-button {
-  border: 1px solid #d1d5db;
-  background: #ffffff;
-  padding: 8px 11px;
-  color: #374151;
+  border: 1px solid var(--linen);
+  background: var(--surface);
+  padding: 7px 11px;
+  color: var(--ink-2);
 }
 
+.secondary-button:hover { background: var(--surface-2); }
+
 .danger-button {
-  border-color: #fca5a5;
-  color: #b42318;
+  border-color: #e8b4ae;
+  color: var(--s-error-ink);
 }
+
+.danger-button:hover { background: var(--s-error-bg); }
 
 .primary-button {
   width: fit-content;
   border: 0;
-  background: #111827;
-  color: #ffffff;
-  padding: 9px 14px;
+  background: var(--ink);
+  color: var(--parchment);
+  padding: 9px 16px;
 }
 
+.primary-button:hover { opacity: 0.85; }
+
 button:disabled {
-  opacity: 0.55;
+  opacity: 0.45;
   cursor: wait;
 }
 
 .field-error,
 .notice.error {
-  color: #b42318;
+  color: var(--s-error-ink);
+  font-size: 13px;
 }
 
 .notice {
   margin: 18px 0;
-  border-radius: 8px;
-  background: #eaf3f5;
+  border-radius: var(--r-sm);
+  background: var(--surface-2);
+  border: 1px solid var(--linen);
   padding: 14px 16px;
+  font-size: 14px;
+  color: var(--ink-2);
+}
+
+.reservation-line {
+  color: var(--ink);
+  font-weight: 700;
+  margin-bottom: 8px;
 }
 
 .note-body,
 .system-note {
   white-space: pre-wrap;
   line-height: 1.6;
-  color: #374151;
+  color: var(--ink-2);
+  font-size: 14px;
 }
 
 .system-note {
