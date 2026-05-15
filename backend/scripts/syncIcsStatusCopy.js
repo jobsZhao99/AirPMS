@@ -111,6 +111,8 @@ async function syncUnitIcsStatus() {
           id: unit.id,
         },
         data: {
+          // Unit-level listing 的出租状态使用 AvailabilityStatus，
+          // 这样不会和房间自己的 status 字段互相覆盖。
           AvailabilityStatus: result.status,
           note: result.note,
         },

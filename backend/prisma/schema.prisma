@@ -55,7 +55,10 @@ model Room {
   name           String
   listingName    String?
   appfolioName   String?
+  // note 是系统同步备注，例如 ICS 同步出的日期区间；不要给人工备注复用这个字段。
   note           String?
+  // adminNotes 是运营人员手写备注，和系统同步 note 分开，避免刷新时覆盖人工记录。
+  adminNotes     String?
   status         String          @default("Available")
   unitId         String
   cleaningStatus CleaningStatus  @default(UnderPipeline)
@@ -71,7 +74,8 @@ model ListingUrl {
   id             String          @id @default(cuid())
   url            String
   channel        String          @default("Unknown")
-  listingId      String? // this is the id from the channel, for example, Airbnb listing id
+  // listingId 使用远程已有命名，存渠道侧 listing id，例如 Airbnb 房源 ID。
+  listingId      String?
   status         String          @default("active")
   notes          String?
   isPrimary      Boolean         @default(false)
@@ -88,13 +92,13 @@ model ListingUrl {
 }
 
 model BookingRecord {
-  id        String   @id @default(cuid())
-  status    String   @default("Confirmed")
-  guestName String?
-  guestId   String?
+  id              String   @id @default(cuid())
+  status          String   @default("Confirmed")
+  guestName       String?
+  guestId         String?
   reservationCode String?
-  startDate DateTime
-  endDate   DateTime
+  startDate       DateTime
+  endDate         DateTime
 
   guestPay   Float?
   hostPayout Float?

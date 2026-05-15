@@ -1,0 +1,16 @@
+.DS_Store
+**/.DS_Store
+
+# Local agent/tool configuration. These files contain machine-specific paths.
+.claude/
+AGENTS.md
+CLAUDE.md
+
+# Runtime/dependency output
+node_modules/
+dist/
+
+# Local secrets
+.env
+.env.*
+!.env.example

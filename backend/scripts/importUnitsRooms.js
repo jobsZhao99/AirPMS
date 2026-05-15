@@ -64,6 +64,18 @@ function detectChannel(url) {
   return "Unknown";
 }
 
+function extractAirbnbListingId(url) {
+  const match = clean(url).match(/\/calendar\/ical\/(\d+)\.ics/i);
+  return match ? match[1] : null;
+}
+
+function extractChannelListingId(url, channel) {
+  // 目前只有 Airbnb ICS URL 可以稳定解析出渠道侧 listing id。
+  // Booking.com 如果后续有明确 ID 来源，再在这里扩展。
+  if (channel === "Airbnb") return extractAirbnbListingId(url);
+  return null;
+}
+
 function getValue(row, possibleKeys) {
   for (const key of possibleKeys) {
     if (row[key] !== undefined) {
@@ -110,6 +122,8 @@ async function findOrCreateUnit({ propertyId, unitName }) {
 
 async function createOrUpdateListingUrl({ roomId, unitId, url }) {
   if (!url) return null;
+  const channel = detectChannel(url);
+  const listingId = extractChannelListingId(url, channel);
 
   const where = roomId
     ? {
@@ -139,7 +153,8 @@ async function createOrUpdateListingUrl({ roomId, unitId, url }) {
         id: existingListing.id,
       },
       data: {
-        channel: detectChannel(url),
+        channel,
+        listingId,
         status: "active",
         isPrimary: true,
       },
@@ -157,7 +172,8 @@ async function createOrUpdateListingUrl({ roomId, unitId, url }) {
     data: {
       ...where,
       url,
-      channel: detectChannel(url),
+      channel,
+      listingId,
       status: "active",
       isPrimary: true,
     },
@@ -306,6 +322,8 @@ async function importUnitsRooms() {
           id: unit.id,
         },
         data: {
+          // Whole Unit 的出租展示状态走远程新增的 AvailabilityStatus，
+          // 避免和 Room.status / cleaningStatus 混在一起。
           AvailabilityStatus:
             listingStatus || unit.AvailabilityStatus || DEFAULT_STATUS,
         },

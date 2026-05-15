@@ -1,10 +1,31 @@
 <script setup>
-import { ref, onMounted } from "vue";
+import { computed, onMounted, ref } from "vue";
 import api from "../api";
 
 const properties = ref([]);
 const loading = ref(false);
 const selectedRoomContext = ref(null);
+const detailError = ref("");
+const savingDetail = ref(false);
+
+const editingAdminNotes = ref(false);
+const adminNotesInput = ref("");
+
+const addingListing = ref(false);
+const newListing = ref({ url: "", channel: "", notes: "" });
+const editingListingId = ref("");
+const listingDraft = ref({ url: "", channel: "", notes: "" });
+const listingError = ref("");
+
+const channelOptions = ["Airbnb", "Booking.com", "VRBO", "Unknown"];
+
+const selectedRoom = computed(() => selectedRoomContext.value?.room || null);
+
+const activeListings = computed(() => {
+  return (selectedRoom.value?.listingUrls || []).filter((listing) => {
+    return String(listing.status || "active").toLowerCase() === "active";
+  });
+});
 
 function getRoomNumber(roomName) {
   const match = String(roomName || "").match(/\d+/);
@@ -116,32 +137,63 @@ function unitStatus(unit) {
   return unit.AvailabilityStatus || unit.status || "Available";
 }
 
-function selectRoom(property, unit, room) {
-  selectedRoomContext.value = {
-    property,
-    unit,
-    room,
-  };
+function resetDetailForms() {
+  addingListing.value = false;
+  editingListingId.value = "";
+  editingAdminNotes.value = false;
+  listingError.value = "";
+  newListing.value = { url: "", channel: "", notes: "" };
+  listingDraft.value = { url: "", channel: "", notes: "" };
+}
+
+async function selectRoom(property, unit, room) {
+  selectedRoomContext.value = { property, unit, room };
+  adminNotesInput.value = room.adminNotes || "";
+  resetDetailForms();
+  await refreshSelectedRoom();
 }
 
 function closeRoomDetails() {
   selectedRoomContext.value = null;
+  detailError.value = "";
+  resetDetailForms();
+}
+
+async function refreshSelectedRoom() {
+  if (!selectedRoom.value?.id) return;
+
+  try {
+    const res = await api.get(`/api/rooms/${selectedRoom.value.id}/profile`);
+    const profile = res.data;
+
+    // 详情页仍以远程现有 UI 为主，只用 profile API 补齐 listing 管理字段。
+    selectedRoomContext.value = {
+      property: profile.unit?.property || selectedRoomContext.value.property,
+      unit: profile.unit || selectedRoomContext.value.unit,
+      room: {
+        ...selectedRoomContext.value.room,
+        ...profile,
+      },
+    };
+    adminNotesInput.value = profile.adminNotes || "";
+  } catch (error) {
+    console.error("Failed to refresh room profile", error);
+    detailError.value = "Room details loaded from dashboard data; management actions may need backend API.";
+  }
 }
 
 function extractAirbnbListingId(url) {
-  const match = String(url || "").match(/\/(\d+)\.ics(?:[?#].*)?$/i);
-
+  const match = String(url || "").match(/\/calendar\/ical\/(\d+)\.ics/i);
   return match ? match[1] : "";
 }
 
 function numericId(value) {
   const text = String(value || "");
-
   return /^\d+$/.test(text) ? text : "";
 }
 
 function airbnbListing(room) {
-  return (room.listingUrls || []).find((listing) => {
+  return (room?.listingUrls || []).find((listing) => {
     return (
       String(listing.channel || "").toLowerCase() === "airbnb" ||
       String(listing.url || "").toLowerCase().includes("airbnb.com") ||
@@ -152,7 +204,6 @@ function airbnbListing(room) {
 
 function airbnbListingId(room) {
   const listing = airbnbListing(room);
-
   if (!listing) return "";
 
   return (
@@ -178,6 +229,118 @@ function airbnbLinks(room) {
     editListing: `https://www.airbnb.com/hosting/listings/editor/${listingId}/details/`,
     editCalendar: `https://www.airbnb.com/multicalendar/${listingId}`,
   };
+}
+
+function startEditListing(listing) {
+  editingListingId.value = listing.id;
+  listingDraft.value = {
+    url: listing.url || "",
+    channel: listing.channel || "Unknown",
+    notes: listing.notes || "",
+  };
+}
+
+async function saveAdminNotes() {
+  if (!selectedRoom.value?.id) return;
+
+  savingDetail.value = true;
+  detailError.value = "";
+
+  try {
+    await api.patch(`/api/rooms/${selectedRoom.value.id}/admin-notes`, {
+      adminNotes: adminNotesInput.value,
+    });
+    await refreshSelectedRoom();
+    editingAdminNotes.value = false;
+  } catch (error) {
+    console.error("Failed to save admin notes", error);
+    detailError.value = "Failed to save admin notes.";
+  } finally {
+    savingDetail.value = false;
+  }
+}
+
+async function addListingUrl() {
+  if (!selectedRoom.value?.id) return;
+  if (!newListing.value.url.trim()) {
+    listingError.value = "Please enter a listing URL.";
+    return;
+  }
+
+  savingDetail.value = true;
+  listingError.value = "";
+
+  try {
+    // 后端会从 Airbnb ICS URL 提取 ListingUrl.listingId，不新增 externalListingId。
+    await api.post(`/api/rooms/${selectedRoom.value.id}/listing-urls`, newListing.value);
+    resetDetailForms();
+    await refreshSelectedRoom();
+  } catch (error) {
+    console.error("Failed to add listing URL", error);
+    listingError.value = "Failed to add listing URL.";
+  } finally {
+    savingDetail.value = false;
+  }
+}
+
+async function updateListingUrl(listingId) {
+  if (!selectedRoom.value?.id) return;
+  if (!listingDraft.value.url.trim()) {
+    listingError.value = "Please enter a listing URL.";
+    return;
+  }
+
+  savingDetail.value = true;
+  listingError.value = "";
+
+  try {
+    await api.patch(
+      `/api/rooms/${selectedRoom.value.id}/listing-urls/${listingId}`,
+      listingDraft.value
+    );
+    resetDetailForms();
+    await refreshSelectedRoom();
+  } catch (error) {
+    console.error("Failed to update listing URL", error);
+    listingError.value = "Failed to update listing URL.";
+  } finally {
+    savingDetail.value = false;
+  }
+}
+
+async function setPrimaryListing(listingId) {
+  if (!selectedRoom.value?.id) return;
+
+  savingDetail.value = true;
+  detailError.value = "";
+
+  try {
+    await api.post(`/api/rooms/${selectedRoom.value.id}/listing-urls/${listingId}/set-primary`);
+    await refreshSelectedRoom();
+  } catch (error) {
+    console.error("Failed to set primary listing", error);
+    detailError.value = "Failed to set primary listing.";
+  } finally {
+    savingDetail.value = false;
+  }
+}
+
+async function deactivateListing(listingId) {
+  if (!selectedRoom.value?.id) return;
+  if (!window.confirm("Deactivate this listing URL?")) return;
+
+  savingDetail.value = true;
+  detailError.value = "";
+
+  try {
+    await api.delete(`/api/rooms/${selectedRoom.value.id}/listing-urls/${listingId}`);
+    await refreshSelectedRoom();
+  } catch (error) {
+    console.error("Failed to deactivate listing URL", error);
+    detailError.value = "Failed to deactivate listing URL.";
+  } finally {
+    savingDetail.value = false;
+  }
 }
 
 async function loadDashboard() {
@@ -210,6 +373,10 @@ onMounted(loadDashboard);
         Back
       </button>
 
+      <div v-if="detailError" class="detail-alert">
+        {{ detailError }}
+      </div>
+
       <div class="room-detail-header">
         <div>
           <div class="detail-kicker">
@@ -217,19 +384,19 @@ onMounted(loadDashboard);
           </div>
 
           <h1>
-            {{ selectedRoomContext.room.name }}
+            {{ selectedRoom.name }}
           </h1>
 
           <p>
-            {{ selectedRoomContext.room.status }}
+            {{ selectedRoom.status }}
           </p>
         </div>
 
         <div class="airbnb-actions">
           <a
             class="icon-button"
-            :class="{ disabled: !airbnbLinks(selectedRoomContext.room).preview }"
-            :href="airbnbLinks(selectedRoomContext.room).preview || undefined"
+            :class="{ disabled: !airbnbLinks(selectedRoom).preview }"
+            :href="airbnbLinks(selectedRoom).preview || undefined"
             target="_blank"
             rel="noreferrer"
             aria-label="Preview"
@@ -243,8 +410,8 @@ onMounted(loadDashboard);
 
           <a
             class="icon-button"
-            :class="{ disabled: !airbnbLinks(selectedRoomContext.room).editListing }"
-            :href="airbnbLinks(selectedRoomContext.room).editListing || undefined"
+            :class="{ disabled: !airbnbLinks(selectedRoom).editListing }"
+            :href="airbnbLinks(selectedRoom).editListing || undefined"
             target="_blank"
             rel="noreferrer"
             aria-label="Edit Listing"
@@ -258,8 +425,8 @@ onMounted(loadDashboard);
 
           <a
             class="icon-button"
-            :class="{ disabled: !airbnbLinks(selectedRoomContext.room).editCalendar }"
-            :href="airbnbLinks(selectedRoomContext.room).editCalendar || undefined"
+            :class="{ disabled: !airbnbLinks(selectedRoom).editCalendar }"
+            :href="airbnbLinks(selectedRoom).editCalendar || undefined"
             target="_blank"
             rel="noreferrer"
             aria-label="Edit Calendar"
@@ -292,56 +459,150 @@ onMounted(loadDashboard);
 
             <div>
               <dt>Room</dt>
-              <dd>{{ selectedRoomContext.room.name }}</dd>
+              <dd>{{ selectedRoom.name }}</dd>
             </div>
 
             <div>
               <dt>Listing Name</dt>
-              <dd>{{ selectedRoomContext.room.listingName || "Not set" }}</dd>
+              <dd>{{ selectedRoom.listingName || "Not set" }}</dd>
             </div>
 
             <div>
               <dt>AppFolio Name</dt>
-              <dd>{{ selectedRoomContext.room.appfolioName || "Not set" }}</dd>
+              <dd>{{ selectedRoom.appfolioName || "Not set" }}</dd>
             </div>
 
             <div>
               <dt>Cleaning</dt>
-              <dd>{{ selectedRoomContext.room.cleaningStatus || "Not set" }}</dd>
+              <dd>{{ selectedRoom.cleaningStatus || "Not set" }}</dd>
             </div>
 
             <div>
               <dt>Leasing</dt>
-              <dd>{{ selectedRoomContext.room.leasingStatus || "Not set" }}</dd>
+              <dd>{{ selectedRoom.leasingStatus || "Not set" }}</dd>
             </div>
           </dl>
         </section>
 
         <section class="detail-section">
-          <h2>Listings</h2>
+          <div class="section-title-row">
+            <h2>Listings</h2>
+            <button
+              class="small-button"
+              type="button"
+              @click="addingListing = !addingListing"
+            >
+              {{ addingListing ? "Cancel" : "Add" }}
+            </button>
+          </div>
+
+          <form
+            v-if="addingListing"
+            class="listing-form"
+            @submit.prevent="addListingUrl"
+          >
+            <input v-model="newListing.url" placeholder="Listing / ICS URL" />
+            <select v-model="newListing.channel">
+              <option value="">Auto Detect</option>
+              <option
+                v-for="channel in channelOptions"
+                :key="channel"
+                :value="channel"
+              >
+                {{ channel }}
+              </option>
+            </select>
+            <textarea v-model="newListing.notes" rows="2" placeholder="Notes" />
+            <div v-if="listingError" class="field-error">
+              {{ listingError }}
+            </div>
+            <button class="small-button primary" type="submit" :disabled="savingDetail">
+              Save
+            </button>
+          </form>
 
           <div
-            v-if="selectedRoomContext.room.listingUrls?.length"
+            v-if="activeListings.length"
             class="listing-list"
           >
             <div
-              v-for="listing in selectedRoomContext.room.listingUrls"
+              v-for="listing in activeListings"
               :key="listing.id"
               class="listing-row"
             >
-              <div>
-                <div class="listing-channel">
-                  {{ listing.channel }}
+              <form
+                v-if="editingListingId === listing.id"
+                class="listing-edit-form"
+                @submit.prevent="updateListingUrl(listing.id)"
+              >
+                <input v-model="listingDraft.url" placeholder="Listing / ICS URL" />
+                <select v-model="listingDraft.channel">
+                  <option
+                    v-for="channel in channelOptions"
+                    :key="channel"
+                    :value="channel"
+                  >
+                    {{ channel }}
+                  </option>
+                </select>
+                <textarea v-model="listingDraft.notes" rows="2" placeholder="Notes" />
+                <div v-if="listingError" class="field-error">
+                  {{ listingError }}
+                </div>
+                <div class="listing-actions">
+                  <button class="small-button primary" type="submit" :disabled="savingDetail">
+                    Save
+                  </button>
+                  <button class="small-button" type="button" @click="resetDetailForms">
+                    Cancel
+                  </button>
+                </div>
+              </form>
+
+              <template v-else>
+                <div>
+                  <div class="listing-channel">
+                    {{ listing.channel }}
+                    <span v-if="listing.isPrimary" class="primary-tag">Primary</span>
+                  </div>
+
+                  <div class="listing-url">
+                    {{ listing.url }}
+                  </div>
+
+                  <div v-if="listing.notes" class="listing-notes">
+                    {{ listing.notes }}
+                  </div>
                 </div>
 
-                <div class="listing-url">
-                  {{ listing.url }}
+                <div class="listing-side">
+                  <div class="listing-id">
+                    {{ listing.listingId || extractAirbnbListingId(listing.url) || "No ID" }}
+                  </div>
+                  <div class="listing-actions">
+                    <button class="small-button" type="button" @click="startEditListing(listing)">
+                      Edit
+                    </button>
+                    <button
+                      v-if="!listing.isPrimary"
+                      class="small-button"
+                      type="button"
+                      :disabled="savingDetail"
+                      @click="setPrimaryListing(listing.id)"
+                    >
+                      Primary
+                    </button>
+                    <button
+                      class="small-button danger"
+                      type="button"
+                      :disabled="savingDetail"
+                      @click="deactivateListing(listing.id)"
+                    >
+                      Deactivate
+                    </button>
+                  </div>
                 </div>
-              </div>
-
-              <div class="listing-id">
-                {{ listing.listingId || extractAirbnbListingId(listing.url) || "No ID" }}
-              </div>
+              </template>
             </div>
           </div>
 
@@ -351,10 +612,39 @@ onMounted(loadDashboard);
         </section>
 
         <section class="detail-section detail-note">
+          <div class="section-title-row">
+            <h2>Admin Notes</h2>
+            <button
+              class="small-button"
+              type="button"
+              @click="editingAdminNotes = !editingAdminNotes"
+            >
+              {{ editingAdminNotes ? "Cancel" : "Edit" }}
+            </button>
+          </div>
+
+          <div v-if="!editingAdminNotes">
+            <p>{{ selectedRoom.adminNotes || "No admin notes" }}</p>
+          </div>
+
+          <div v-else class="admin-note-editor">
+            <textarea v-model="adminNotesInput" rows="4" placeholder="Internal admin notes" />
+            <button
+              class="small-button primary"
+              type="button"
+              :disabled="savingDetail"
+              @click="saveAdminNotes"
+            >
+              Save Notes
+            </button>
+          </div>
+        </section>
+
+        <section class="detail-section detail-note">
           <h2>Note</h2>
 
           <p>
-            {{ selectedRoomContext.room.note || "No note" }}
+            {{ selectedRoom.note || "No note" }}
           </p>
         </section>
       </div>
@@ -362,22 +652,22 @@ onMounted(loadDashboard);
 
     <template v-else>
       <div class="page-header">
-      <div>
-        <h1>AirPMS Inventory Dashboard</h1>
-        <p>Property / Unit / Room inventory overview</p>
-      </div>
-
-      <div>
-        <div class="header-actions">
-          <button
-            class="secondary-button"
-            @click="loadDashboard"
-            :disabled="loading"
-          >
-            Refresh
-          </button>
+        <div>
+          <h1>AirPMS Inventory Dashboard</h1>
+          <p>Property / Unit / Room inventory overview</p>
         </div>
-      </div>
+
+        <div>
+          <div class="header-actions">
+            <button
+              class="secondary-button"
+              @click="loadDashboard"
+              :disabled="loading"
+            >
+              Refresh
+            </button>
+          </div>
+        </div>
       </div>
 
       <div v-if="loading" class="loading">
@@ -680,6 +970,15 @@ onMounted(loadDashboard);
   cursor: pointer;
 }
 
+.detail-alert {
+  margin-bottom: 14px;
+  border-radius: 6px;
+  background: #fff7ed;
+  color: #9a3412;
+  padding: 10px 12px;
+  font-size: 13px;
+}
+
 .room-detail-header {
   display: flex;
   justify-content: space-between;
@@ -768,6 +1067,18 @@ onMounted(loadDashboard);
   color: #111827;
 }
 
+.section-title-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.section-title-row h2 {
+  margin: 0;
+}
+
 .detail-section dl {
   display: grid;
   gap: 12px;
@@ -796,6 +1107,7 @@ onMounted(loadDashboard);
   white-space: pre-wrap;
   color: #374151;
   font-size: 14px;
+  margin: 0;
 }
 
 .listing-list {
@@ -807,7 +1119,7 @@ onMounted(loadDashboard);
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   gap: 12px;
-  align-items: center;
+  align-items: start;
   padding: 10px;
   background: #f9fafb;
   border: 1px solid #e5e7eb;
@@ -820,11 +1132,28 @@ onMounted(loadDashboard);
   font-weight: 700;
 }
 
-.listing-url {
+.primary-tag {
+  display: inline-block;
+  margin-left: 6px;
+  border-radius: 999px;
+  background: #ecfdf3;
+  color: #027a48;
+  padding: 2px 7px;
+  font-size: 11px;
+}
+
+.listing-url,
+.listing-notes {
   color: #6b7280;
   font-size: 12px;
   overflow-wrap: anywhere;
   margin-top: 2px;
+}
+
+.listing-side {
+  display: grid;
+  gap: 8px;
+  justify-items: end;
 }
 
 .listing-id {
@@ -832,6 +1161,67 @@ onMounted(loadDashboard);
   font-size: 12px;
   font-weight: 700;
   white-space: nowrap;
+}
+
+.listing-actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  gap: 6px;
+}
+
+.listing-form,
+.listing-edit-form,
+.admin-note-editor {
+  display: grid;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.listing-form input,
+.listing-form select,
+.listing-form textarea,
+.listing-edit-form input,
+.listing-edit-form select,
+.listing-edit-form textarea,
+.admin-note-editor textarea {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  padding: 8px 10px;
+  font: inherit;
+}
+
+.small-button {
+  border: 1px solid #d1d5db;
+  border-radius: 6px;
+  background: #ffffff;
+  color: #111827;
+  padding: 6px 9px;
+  cursor: pointer;
+  font-weight: 700;
+}
+
+.small-button.primary {
+  border-color: #111827;
+  background: #111827;
+  color: #ffffff;
+}
+
+.small-button.danger {
+  border-color: #fca5a5;
+  color: #b42318;
+}
+
+.small-button:disabled {
+  opacity: 0.55;
+  cursor: wait;
+}
+
+.field-error {
+  color: #b42318;
+  font-size: 12px;
 }
 
 .empty-state {
@@ -854,6 +1244,14 @@ onMounted(loadDashboard);
 
   .detail-note {
     grid-column: auto;
+  }
+
+  .listing-row {
+    grid-template-columns: 1fr;
+  }
+
+  .listing-side {
+    justify-items: start;
   }
 }
 </style>

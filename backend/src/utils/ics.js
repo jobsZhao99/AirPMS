@@ -40,6 +40,13 @@ function detectIcsSource(icsUrl) {
   
     return new Date(year, month, day);
   }
+
+  function extractICSField(block, fieldName) {
+    const regex = new RegExp(fieldName + "(?:;[^:]*)?:(.+)", "i");
+    const match = block.match(regex);
+
+    return match ? match[1].trim() : "";
+  }
   
   function formatDate(date) {
     if (!date) return "";
@@ -59,8 +66,8 @@ function detectIcsSource(icsUrl) {
     for (const block of blocks) {
       if (!block.includes("END:VEVENT")) continue;
   
-      const summaryMatch = block.match(/SUMMARY:(.+)/i);
-      const summary = summaryMatch ? summaryMatch[1].trim() : "";
+      const summary = extractICSField(block, "SUMMARY");
+      const uid = extractICSField(block, "UID");
   
       if (summary.toLowerCase() !== "reserved") continue;
   
@@ -73,6 +80,9 @@ function detectIcsSource(icsUrl) {
         start,
         end,
         summary,
+        // UID 通常可以作为 reservation/confirmation code 的弱引用，
+        // 详情页只用于生成快捷跳转，不写回主数据。
+        uid,
         source: "Airbnb",
       });
     }
@@ -88,9 +98,9 @@ function detectIcsSource(icsUrl) {
     for (const block of blocks) {
       if (!block.includes("END:VEVENT")) continue;
   
-      const summaryMatch = block.match(/SUMMARY:(.+)/i);
-      const summary = summaryMatch ? summaryMatch[1].trim() : "";
+      const summary = extractICSField(block, "SUMMARY");
       const summaryLower = summary.toLowerCase();
+      const uid = extractICSField(block, "UID");
   
       if (!summaryLower.includes("closed - not available")) continue;
   
@@ -103,6 +113,7 @@ function detectIcsSource(icsUrl) {
         start,
         end,
         summary,
+        uid,
         source: "Booking.com",
       });
     }

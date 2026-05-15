@@ -1,6 +1,7 @@
 const prisma = require("../prisma");
 
 async function downloadAllDatabaseData() {
+  // 导出所有核心表，方便线上数据做人工备份或交接排查。
   const [properties, units, rooms, listingUrls, bookingRecords] =
     await Promise.all([
       prisma.property.findMany({

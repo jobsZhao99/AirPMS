@@ -78,6 +78,8 @@ async function syncIcsStatus() {
       await prisma.unit.update({
         where: { id: unit.id },
         data: {
+          // Unit 没有独立房间时，ICS 的出租状态写到 AvailabilityStatus。
+          // Room.status 继续服务单间展示，leasingStatus/cleaningStatus 分开维护。
           AvailabilityStatus: result.status,
           note: result.note,
         },

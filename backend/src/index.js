@@ -336,6 +336,7 @@ const { syncLongTermLeases } = require("./services/syncLongTermLeasesService");
 const {
   downloadAllDatabaseData,
 } = require("./services/downloadDatabaseService");
+const roomProfileController = require("./room-profile/RoomProfileController");
 
 dotenv.config();
 
@@ -370,6 +371,38 @@ app.use(express.json());
 app.get("/", (req, res) => {
   res.send("AirPMS backend is running");
 });
+
+/*
+|--------------------------------------------------------------------------
+| Room Details 增强 API
+|--------------------------------------------------------------------------
+| 这些接口只补充远程已有房间详情页缺失的管理能力：
+| - Room.note 仍是系统同步备注
+| - Room.adminNotes 是人工备注
+| - ListingUrl.listingId 存 Airbnb/Booking 等渠道侧 listing id
+*/
+
+app.get("/api/rooms/:id/profile", roomProfileController.getProfile);
+app.patch(
+  "/api/rooms/:id/admin-notes",
+  roomProfileController.updateAdminNotes
+);
+app.post(
+  "/api/rooms/:id/listing-urls",
+  roomProfileController.addListingUrl
+);
+app.patch(
+  "/api/rooms/:id/listing-urls/:urlId",
+  roomProfileController.updateListingUrl
+);
+app.post(
+  "/api/rooms/:id/listing-urls/:urlId/set-primary",
+  roomProfileController.setPrimaryUrl
+);
+app.delete(
+  "/api/rooms/:id/listing-urls/:urlId",
+  roomProfileController.deleteListingUrl
+);
 
 app.post("/admin/sync-ics", async (req, res) => {
   try {

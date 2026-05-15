@@ -1,31 +1,18 @@
-<script setup>
-import { ref } from "vue";
-import Dashboard from "./views/Dashboard.vue";
-import AdminPanel from "./views/AdminPanel.vue";
-
-const activePage = ref("dashboard");
-</script>
-
 <template>
   <div class="app-shell">
     <nav class="app-nav">
-      <button
-        :class="{ active: activePage === 'dashboard' }"
-        @click="activePage = 'dashboard'"
-      >
+      <RouterLink to="/" class="nav-link">
         Dashboard
-      </button>
+      </RouterLink>
 
-      <button
-        :class="{ active: activePage === 'admin' }"
-        @click="activePage = 'admin'"
-      >
+      <RouterLink to="/admin" class="nav-link">
         Admin Panel
-      </button>
+      </RouterLink>
     </nav>
 
-    <Dashboard v-if="activePage === 'dashboard'" />
-    <AdminPanel v-else />
+    <!-- 路由只负责页面承载：Dashboard 仍是远程原来的入口，
+         点击房间后进入增强版 Room Details。 -->
+    <RouterView />
   </div>
 </template>
 
@@ -46,16 +33,18 @@ const activePage = ref("dashboard");
   border-bottom: 1px solid #e5e7eb;
 }
 
-.app-nav button {
+.nav-link {
   padding: 8px 14px;
   border: 1px solid #d1d5db;
   border-radius: 6px;
   background: #ffffff;
   color: #374151;
   cursor: pointer;
+  text-decoration: none;
+  font-size: 14px;
 }
 
-.app-nav button.active {
+.nav-link.router-link-active {
   border-color: #111827;
   background: #111827;
   color: #ffffff;
