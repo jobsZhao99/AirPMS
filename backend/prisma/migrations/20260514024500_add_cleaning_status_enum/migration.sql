@@ -1,5 +1,4 @@
--- 远程队友提交的基础数据库调整：
--- 把 Unit / Room 的 cleaningStatus 从普通文本收敛成 Prisma enum。
+-- Convert cleaningStatus on Unit and Room from free text to a constrained enum.
 DO $$
 BEGIN
   CREATE TYPE "CleaningStatus" AS ENUM (
