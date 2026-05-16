@@ -1,133 +1,184 @@
-# AirPMS Findings — Current State
+# AirPMS Findings — Dashboard View Toggle
 
-Updated: 2026-05-14 (Post Phase 1 / Session 2)
+Updated: 2026-05-15
 
 ---
 
-## Git Baseline
+## Request Summary
 
-Branch: `codex/room-details-enhancements`
-Latest commit: `c310c3b enhance room details listing management`
+The selected Dashboard region currently shows **Leasing Occupancy**. The user wants a toggle so the same room matrix can switch between:
 
-Previous reference branch (not to be merged whole):
-```text
-codex/airpms-mvc-refactor  — 62 files changed, 7108+, kept as reference only
+1. **Leasing Occupancy** — rented/vacant/maintenance style occupancy view.
+2. **Room Status** — cleaning/operations status view.
+
+The user explicitly described Room Status as cleaning status first, with future expansion for fields such as:
+
+- how many days dirty
+- days until next check-in
+- scheduling/cleaning pressure
+
+---
+
+## Current Frontend Findings
+
+File: `frontend/src/views/Dashboard.vue`
+
+Current behavior:
+
+- `properties` loads from `GET /dashboard/inventory`.
+- Room cells display `room.status`.
+- Room cell color uses `statusClass(room.status)`.
+- Unit-level display uses `unitStatus(unit)`, which returns:
+
+```js
+unit.AvailabilityStatus || unit.status || "Available"
 ```
 
+- Clicking a room calls `selectRoom(property, unit, room)` and opens the existing details panel.
+- The details panel already shows both:
+  - `selectedRoom.cleaningStatus`
+  - `selectedRoom.leasingStatus`
+
+Conclusion:
+
+- The Dashboard is already close to supporting the requested toggle.
+- The first version can be done by adding a mode state and display/class helper functions.
+- Room details should not be replaced or redesigned for this task.
+
 ---
 
-## Current Code Structure
+## Current Backend Findings
 
-### Backend
+File: `backend/src/index.js`
 
-```text
-backend/src/
-  index.js                                — all routes registered here
-  prisma.js                               — shared Prisma client
-  room-profile/                           — NEW: Phase 1 MVC module
-    RoomProfileController.js
-    RoomProfileService.js
-    RoomProfileRepository.js
-  services/
-    syncIcsStatusService.js               — teammate's, do not modify
-    syncLongTermLeasesService.js          — teammate's, do not modify
-    downloadDatabaseService.js
-  utils/
-    ics.js                                — ICS parser (uid support added in Phase 1)
+Current endpoint:
+
+```js
+GET /dashboard/inventory
 ```
 
-### Frontend
+It returns properties with:
 
-```text
-frontend/src/
-  main.js                                 — uses vue-router now
-  router/index.js                         — 3 routes: /, /admin, /rooms/:id
-  App.vue                                 — RouterLink + RouterView (no more manual activePage)
-  views/
-    Dashboard.vue                         — room cells clickable → /rooms/:id
-    AdminPanel.vue
-    RoomProfile.vue                       — NEW: Phase 1, per-room management page
+- units
+- unit listing URLs
+- rooms
+- room listing URLs
+
+Because Prisma returns all scalar fields by default, room/unit objects should already include:
+
+- `Room.status`
+- `Room.cleaningStatus`
+- `Room.leasingStatus`
+- `Unit.AvailabilityStatus`
+- `Unit.cleaningStatus`
+
+Conclusion:
+
+- No backend endpoint change is required for the first toggle version.
+
+---
+
+## Current Schema Findings
+
+File: `backend/prisma/schema.prisma`
+
+Relevant fields:
+
+```prisma
+enum CleaningStatus {
+  Cleaned
+  Dirty
+  UnderPipeline
+  NeedSetup     @map("Need Setup")
+  NeedSpiff     @map("Need Spiff")
+  Occupied
+}
 ```
 
----
-
-## Current Schema
-
-Active models (post Phase 1):
-
-```text
-Property
-Unit
-Room          — added: adminNotes String?
-ListingUrl    — added: listingId String?
-BookingRecord
+```prisma
+model Unit {
+  AvailabilityStatus String         @default("Available")
+  cleaningStatus     CleaningStatus @default(UnderPipeline)
+  leasingStatus      String         @default("Vacant")
+}
 ```
 
-Phase 2/3 will add: `ReservationRaw`, `ReservationHistory`, `RoomStateSnapshot`
-
----
-
-## Current API
-
-All live routes in `backend/src/index.js`:
-
-```text
-GET    /
-GET    /api/rooms/:id/profile                     — NEW Phase 1
-PATCH  /api/rooms/:id/admin-notes                 — NEW Phase 1
-POST   /api/rooms/:id/listing-urls                — NEW Phase 1
-PATCH  /api/rooms/:id/listing-urls/:urlId         — NEW Phase 1
-POST   /api/rooms/:id/listing-urls/:urlId/set-primary  — NEW Phase 1
-DELETE /api/rooms/:id/listing-urls/:urlId         — NEW Phase 1
-POST   /admin/sync-ics
-POST   /admin/sync-longterm
-POST   /admin/download-data
-GET    /properties
-POST   /properties
-GET    /dashboard/inventory
+```prisma
+model Room {
+  status         String         @default("Available")
+  cleaningStatus CleaningStatus @default(UnderPipeline)
+  leasingStatus  String         @default("Vacant")
+}
 ```
 
----
+Conclusion:
 
-## Phase 1 Test Results (Verified Live)
-
-- `GET /api/rooms/:id/profile` → name, status, listing URLs, live reservation with Airbnb link ✅
-- `adminNotes` column live in DB ✅
-- `listingId` auto-extracted from ICS URL ✅
-- Airbnb listing link + host manage link generated from listingId ✅
-- Live ICS fetch on profile load: current reservation + confirmation code → reservationLink ✅
-- Frontend routing: Dashboard → /rooms/:id → RoomProfile page ✅
+- Current schema already separates occupancy and cleaning state.
+- First version should not need Prisma migration.
 
 ---
 
-## Domain Boundaries (Confirmed)
+## Domain Clarification
 
-| Domain | Owner | Writes To |
-|---|---|---|
-| Leasing Occupancy | Teammate | Room.status, Room.note, Unit.status, Unit.note |
-| Room State (snapshot) | You | ReservationRaw, ReservationHistory, RoomStateSnapshot |
-| Room Profile (shared) | Both | ListingUrl CRUD, Room.adminNotes |
+### Leasing Occupancy
 
-Shared read source: `ListingUrl WHERE isPrimary=true AND status='active' AND roomId != null`
+Meaning:
+
+- Is this room rented or vacant right now?
+- Is the room Airbnb rented, Booking.com rented, long-term, vacant, maintenance, offline, or error?
+
+Primary fields:
+
+- `Room.status`
+- `Unit.AvailabilityStatus`
+
+### Room Status
+
+Meaning:
+
+- What operational/cleaning state is this room in?
+- Is it cleaned, dirty, under pipeline, need setup, need spiff, or occupied?
+
+Primary fields:
+
+- `Room.cleaningStatus`
+- `Unit.cleaningStatus`
+
+Future fields:
+
+- reservation history
+- cleaning assignment
+- dirty duration
+- next check-in pressure
 
 ---
 
-## Deployment Notes
+## Implementation Direction
 
-Backend start script: `prisma migrate deploy && prisma generate && node src/index.js`
+Recommended first version:
 
-Schema changes must be additive. Migrations live in `backend/prisma/migrations/`.
-Three migrations applied:
-- Base migration
-- Phase 1 migration (adminNotes + listingId + new migrations from teammate)
+- Frontend-only.
+- Add a Dashboard toggle.
+- Default to `Leasing Occupancy`.
+- Keep all current data loading and room detail behavior.
+- Add separate cleaning status color mapping.
+
+Recommended future version:
+
+- Add backend-generated room status metadata after reservation history and cleaning assignment logic exist in the PMS backend.
 
 ---
 
-## Next Phase (Phase 2 — Reservation Snapshot Pipeline)
+## Open Questions
 
-Tables to add: `ReservationRaw`, `ReservationHistory`
-Service to create: `backend/src/room-state/ReservationRepository.js`, `ReservationService.js`
-New route: `POST /api/room-state/sync`
+1. UI label language:
+   - Current app uses English labels.
+   - Recommended toggle labels: `Leasing Occupancy` and `Room Status`.
 
-Constraint: naming must not collide with teammate's existing ReservationRaw/History tables if any exist in DB.
-Action needed: verify DB for naming conflicts before writing Phase 2 schema.
+2. Room Status secondary line:
+   - First version can show only the cleaning status.
+   - Future version can show `Dirty 3d · Next 5d`.
+
+3. Tooltip behavior:
+   - First version can keep existing `room.note`.
+   - Future version may show cleaning notes or calculated room status metadata.

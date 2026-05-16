@@ -1,276 +1,377 @@
-# AirPMS Development Plan
+# AirPMS Dashboard View Toggle Plan
 
-Updated: 2026-05-14 (Session 2)
-
----
-
-## Current Baseline (Phase 1 complete)
-
-Active schema (双方共同开发基线): `Property → Unit → Room → ListingUrl`
-New fields added: `Room.adminNotes`, `ListingUrl.listingId`
-
-Note: DB 里有一批从 Google Sheets 迁移遗留的老表（Listing、ReservationRaw 等），不是当前活跃开发的一部分，忽略。
-
-Working features:
-- ICS sync → writes `Room.status` / `Room.note`
-- Long-term CSV sync → writes `Room.status` / `Room.note`
-- `/dashboard/inventory` — property/unit/room tree
-- Admin: sync-ics, sync-longterm, download-data
+Updated: 2026-05-15
+Status: Planned, not implemented
 
 ---
 
-## Domain Boundaries (Non-Negotiable)
+## Goal
 
-### Teammate — Leasing Occupancy
-Owns: `Room.status`, `Room.note`, `Unit.status`, `Unit.note`
-Services: `syncIcsStatusService.js`, `syncLongTermLeasesService.js`
-Reads: `ListingUrl` (isPrimary=true, status=active) → writes back to Room/Unit
-Logic: point-in-time status — "is this room rented right now?"
+在现有 Dashboard 的房间矩阵上方新增一个视图切换按钮，让同一套房间格子可以在两个运营视角之间切换：
 
-### You — Room State (snapshot-based)
-Owns: `ReservationRaw`, `ReservationHistory`, `RoomStateSnapshot` (new tables)
-Services: `room-state/` module (new)
-Reads: `ListingUrl` (isPrimary=true, status=active) — same source, different output
-Logic: historical snapshot diff — Dirty/Cleaned/Occupied/SameDay/ShortGap
+1. **Leasing Occupancy** — 当前已经存在的出租/占用视角，回答“房间现在是否出租、长期租、Airbnb 租出、空置或维护”。
+2. **Room Status** — 新增的清洁/运营状态视角，回答“房间清洁状态是什么，是否 Dirty/Cleaned/Need Setup/Need Spiff，后续还能展示 dirty days 和 next check-in pressure”。
 
-### Shared — Room Profile
-Owns: `ListingUrl` CRUD, `Room.adminNotes` (new field)
-Both teammates read ListingUrl; profile feature manages it via API
-Neither sync service touches `adminNotes`
+第一版只做轻量前端切换，不改数据库，不改后端同步逻辑。
 
 ---
 
-## Why Two Approaches Coexist Without Conflict
+## Current Baseline
 
-Teammate's sync writes to:       Room.status, Room.note
-Your sync writes to:              ReservationRaw, ReservationHistory, RoomStateSnapshot
-Profile CRUD writes to:           ListingUrl, Room.adminNotes
+Current branch after merge: `master`
+Current active Dashboard file: `frontend/src/views/Dashboard.vue`
+Current inventory API: `GET /dashboard/inventory`
 
-Zero field overlap. Both read ListingUrl.url but never write to it during sync.
+The inventory API already returns:
 
----
+- `Room.status` — current leasing/occupancy status from ICS and long-term sync.
+- `Room.cleaningStatus` — cleaning/room operation status enum.
+- `Room.leasingStatus` — separate leasing label, currently shown in details.
+- `Room.note` — system-generated note from sync.
+- `Unit.AvailabilityStatus` — current unit-level leasing/occupancy status.
+- `Unit.cleaningStatus` — unit-level cleaning/room operation status.
 
-## Teammate's Refresh Logic (Reference — Do Not Modify)
-
-syncIcsStatus():
-  1. Query ListingUrl WHERE isPrimary=true AND status='active' AND roomId != null
-  2. For each URL: fetch ICS → parse → get {status, note}
-  3. Write Room.status = "Airbnb Rented" | "Booking.com Rented" | "Vacant" | "ICS Error"
-  4. Write Room.note = date ranges string (e.g. "2025-01-15 - 2025-01-20")
-  5. Same for unitId listings → Unit.status / Unit.note
-
-syncLongTermLeases():
-  1. Read Tenant Directory.csv
-  2. Match rows to Room by room.appfolioName (normalized)
-  3. If room already has "Airbnb Rented" or "Booking.com Rented" → keep status, merge note
-  4. Otherwise → Room.status = "Long Term", Room.note = tenant info block
-
-Constraint: your code must never write Room.status, Room.note, Unit.status, Unit.note
+Because these fields already exist, the first version does not need a Prisma migration.
 
 ---
 
-## MVC Architecture (Your Domain)
+## Domain Boundary
 
+| View | Primary Meaning | Reads From | Must Not Write |
+|---|---|---|---|
+| Leasing Occupancy | Whether room/unit is rented, vacant, long-term, Airbnb, Booking.com, maintenance | `room.status`, `unit.AvailabilityStatus`, `room.note`, `unit.note` | `room.cleaningStatus` |
+| Room Status | Cleaning and operations state | `room.cleaningStatus`, `unit.cleaningStatus` | `room.status`, `unit.AvailabilityStatus`, sync-owned notes |
+
+Important: these two concepts are intentionally separate. Do not collapse `room.status` and `room.cleaningStatus` into one field.
+
+---
+
+## Implementation Scope
+
+### In Scope for First Version
+
+- Add a segmented toggle near the Dashboard header:
+  - `Leasing Occupancy`
+  - `Room Status`
+- Default selected mode: `Leasing Occupancy`.
+- Keep the current Dashboard layout and room click behavior.
+- In Leasing mode:
+  - Room cell text and color continue to use `room.status`.
+  - Unit cell text and color continue to use `unit.AvailabilityStatus`.
+- In Room Status mode:
+  - Room cell text and color use `room.cleaningStatus`.
+  - Unit / whole-unit cell text and color use `unit.cleaningStatus`.
+- Add a separate cleaning status color map so leasing colors do not get overloaded.
+- Keep room details page unchanged, except it should still show both Cleaning and Leasing fields.
+- Run frontend build after implementation.
+
+### Out of Scope for First Version
+
+- No new database tables.
+- No new Prisma migration.
+- No change to ICS sync.
+- No change to long-term lease sync.
+- No Google Sheet logic migration.
+- No calculation yet for dirty days, days to next check-in, or cleaning priority.
+
+---
+
+## Files to Modify
+
+### `frontend/src/views/Dashboard.vue`
+
+Main implementation file.
+
+Planned changes:
+
+- Add `dashboardMode` state:
+
+```js
+const dashboardMode = ref("leasing");
 ```
-backend/src/
-  room-state/                          ← your module, teammate does not touch
-    RoomStateController.js             HTTP only: parse req, call service, return res
-    RoomStateService.js                state engine: Dirty/Cleaned/Occupied/SameDay logic
-    ReservationService.js              ICS fetch + snapshot save + history diff
-    RoomStateRepository.js             all prisma calls for RoomStateSnapshot
-    ReservationRepository.js           all prisma calls for ReservationRaw/History
 
-  room-profile/                        ← shared module (agreed with teammate)
-    RoomProfileController.js
-    RoomProfileService.js
-    RoomProfileRepository.js
+- Add mode metadata:
 
-  shared/
-    prisma.js                          existing — read only
-    ics.js (utils/ics.js)              existing ICS parser — reuse, do not copy
+```js
+const dashboardModes = [
+  { key: "leasing", label: "Leasing Occupancy" },
+  { key: "roomStatus", label: "Room Status" },
+];
 ```
 
-Route additions to index.js (only additions, no changes):
-  GET  /api/rooms/:id/profile
-  POST /api/rooms/:id/listing-urls
-  PATCH /api/rooms/:id/listing-urls/:urlId
-  DELETE /api/rooms/:id/listing-urls/:urlId
-  PATCH /api/rooms/:id/admin-notes
-  POST /api/room-state/sync
-  GET  /api/room-state/grid
-  GET  /api/room-state/list
+- Add display helpers:
 
----
-
-## Schema Changes (Additive Only)
-
-### Add to Room model (1 new field):
-  adminNotes  String?    -- user-managed notes, never touched by sync
-
-### Add 3 new models:
-
-model ReservationRaw {
-  id           String     @id @default(cuid())
-  rawKey       String     @unique          -- listingUrlId|checkIn|checkOut|uid
-  listingUrlId String
-  checkIn      DateTime
-  checkOut     DateTime
-  summary      String?
-  eventType    String     @default("Reservation")
-  uid          String?
-  importedAt   DateTime
-  createdAt    DateTime   @default(now())
-  listingUrl   ListingUrl @relation(fields: [listingUrlId], references: [id])
+```js
+function isRoomStatusMode() {
+  return dashboardMode.value === "roomStatus";
 }
 
-model ReservationHistory {
-  id                String     @id @default(cuid())
-  historyKey        String     @unique
-  listingUrlId      String
-  checkIn           DateTime
-  checkOut          DateTime
-  summary           String?
-  eventType         String
-  uid               String?
-  isCurrent         Boolean    @default(true)
-  disappearedStatus String?    -- PAST_REMOVED | CANCELLED_REMOVED | null
-  firstSeenAt       DateTime
-  lastSeenAt        DateTime
-  removedAt         DateTime?
-  createdAt         DateTime   @default(now())
-  listingUrl        ListingUrl @relation(fields: [listingUrlId], references: [id])
+function roomDisplayStatus(room) {
+  return isRoomStatusMode()
+    ? room.cleaningStatus || "UnderPipeline"
+    : room.status || "Available";
 }
 
-model RoomStateSnapshot {
-  id            String     @id @default(cuid())
-  listingUrlId  String     @unique
-  roomId        String?
-  stateCode     String     -- DIRTY | CLEANED | OCCUPIED | SAME_DAY | SHORT_GAP_DIRTY | SHORT_GAP_CLEANED | VACANT
-  stateLabel    String?
-  lastCheckOut  DateTime?
-  lastCleaned   DateTime?
-  nextCheckIn   DateTime?
-  vacantDays    Int?
-  generatedAt   DateTime
-  createdAt     DateTime   @default(now())
-  listingUrl    ListingUrl @relation(fields: [listingUrlId], references: [id])
+function unitDisplayStatus(unit) {
+  return isRoomStatusMode()
+    ? unit.cleaningStatus || "UnderPipeline"
+    : unit.AvailabilityStatus || unit.status || "Available";
 }
+```
+
+- Add class helpers:
+
+```js
+function roomCellClass(room) {
+  return isRoomStatusMode()
+    ? cleaningStatusClass(roomDisplayStatus(room))
+    : statusClass(roomDisplayStatus(room));
+}
+
+function unitCellClass(unit) {
+  return isRoomStatusMode()
+    ? cleaningStatusClass(unitDisplayStatus(unit))
+    : statusClass(unitDisplayStatus(unit));
+}
+```
+
+- Add `cleaningStatusClass(status)` separate from existing `statusClass(status)`.
+
+Suggested mapping:
+
+```js
+function cleaningStatusClass(status) {
+  const value = String(status || "").toLowerCase();
+
+  if (value.includes("cleaned")) return "cleaned";
+  if (value.includes("dirty")) return "dirty";
+  if (value.includes("need setup")) return "need-setup";
+  if (value.includes("need spiff")) return "need-spiff";
+  if (value.includes("occupied")) return "occupied";
+  if (value.includes("underpipeline") || value.includes("under pipeline")) return "under-pipeline";
+
+  return "default";
+}
+```
+
+- Change current cell rendering:
+
+```vue
+{{ room.status }}
+```
+
+to:
+
+```vue
+{{ roomDisplayStatus(room) }}
+```
+
+- Change current class binding:
+
+```vue
+:class="statusClass(room.status)"
+```
+
+to:
+
+```vue
+:class="roomCellClass(room)"
+```
+
+- Change unit/whole-unit display in the same way.
+
+### `frontend/src/style.css`
+
+Only if shared variables are needed.
+
+Preferred approach: keep most CSS scoped in `Dashboard.vue`. If new colors should be reusable later, add warm-paper variables here.
+
+### No Backend Files in First Version
+
+The API already includes the required fields through Prisma include. No backend change expected.
 
 ---
 
 ## Phase Plan
 
-### Phase 0 — Baseline Stable ✅
-Current master is working. No changes needed.
+### Phase 1 — Baseline Confirmation
 
-### Phase 1 — Room Profile (Shared, Small PR) ✅ COMPLETE
-Branch: feat/room-profile
-Goal: frontend can manage ListingUrls and admin notes per room
-Schema changes applied:
-  - Room.adminNotes String? ✅
-  - ListingUrl.listingId String? ✅ (Airbnb listing ID auto-extracted from ICS URL)
-Files created:
-  - backend/src/room-profile/RoomProfileController.js ✅
-  - backend/src/room-profile/RoomProfileService.js ✅
-  - backend/src/room-profile/RoomProfileRepository.js ✅
-  - backend/src/utils/ics.js — added uid extraction (extractICSUid) ✅
-  - frontend/src/views/RoomProfile.vue ✅
-  - frontend/src/router/index.js ✅
-  - frontend/src/main.js — added vue-router ✅
-  - frontend/src/App.vue — RouterLink + RouterView ✅
-  - Dashboard.vue — room cells clickable → /rooms/:id ✅
-API (all live, tested):
-  GET    /api/rooms/:id/profile           ✅ returns status, live reservation, listing URLs w/ Airbnb links
-  POST   /api/rooms/:id/listing-urls      ✅
-  PATCH  /api/rooms/:id/listing-urls/:urlId  ✅
-  POST   /api/rooms/:id/listing-urls/:urlId/set-primary ✅
-  DELETE /api/rooms/:id/listing-urls/:urlId  ✅
-  PATCH  /api/rooms/:id/admin-notes       ✅
-Teammate impact: zero
-Tested: live ICS fetch works, Airbnb reservation link generated correctly
+Status: complete ✅
 
-### Phase 2 — Reservation Snapshot Pipeline (Your Domain)
-Branch: feat/room-state-pipeline
-Goal: ICS fetch → structured snapshot → history diff
-Schema changes: add ReservationRaw + ReservationHistory (linked to ListingUrl)
-Files to create:
-  - backend/src/room-state/ReservationRepository.js
-  - backend/src/room-state/ReservationService.js
-API:
-  POST /api/room-state/sync    -- trigger ICS fetch for all active primary URLs
-Logic:
-  1. Query ListingUrl (isPrimary=true, active, roomId != null)
-  2. Fetch ICS → parse events (reuse utils/ics.js parser)
-  3. Upsert ReservationRaw (rawKey = listingUrlId|checkIn|checkOut|uid)
-  4. Diff against ReservationHistory:
-     - New events → create history row (isCurrent=true)
-     - Existing events → update lastSeenAt
-     - Missing events → mark disappearedStatus:
-         checkOut < today → PAST_REMOVED
-         checkOut >= today → CANCELLED_REMOVED
-Teammate impact: zero (new tables, reads same ListingUrl source)
-Status: pending
+Steps:
 
-### Phase 3 — Room State Engine (Your Domain)
-Branch: feat/room-state-engine (or same as Phase 2)
-Goal: ReservationHistory → RoomStateSnapshot
-Schema changes: add RoomStateSnapshot
-Files to create:
-  - backend/src/room-state/RoomStateRepository.js
-  - backend/src/room-state/RoomStateService.js
-  - backend/src/room-state/RoomStateController.js
-State priority logic:
-  OCCUPIED       -- current date is between checkIn and checkOut
-  SAME_DAY       -- checkout and checkin on same calendar day
-  SHORT_GAP_DIRTY/CLEANED  -- next checkin within 31 days
-  DIRTY          -- had past checkout, not yet cleaned
-  CLEANED        -- cleaned after last checkout
-  VACANT         -- no history, no upcoming
-API:
-  GET /api/room-state/grid    -- grouped by property, for frontend tiles
-  GET /api/room-state/list    -- flat list
-Teammate impact: zero
-Status: pending
+1. Confirm Dashboard currently loads from `GET /dashboard/inventory`.
+2. Confirm returned room objects contain `status` and `cleaningStatus`.
+3. Confirm returned unit objects contain `AvailabilityStatus` and `cleaningStatus`.
+4. Confirm current room click still opens details.
 
-### Phase 4 — Frontend Room State Page (Your Domain)
-Branch: feat/frontend-room-state
-Goal: visual room state map
-Files to create:
-  - frontend/src/views/RoomState.vue
-  - frontend/src/router/index.js (if not exists)
-Teammate impact: zero (new page)
-Status: pending
+Expected result:
 
-### Phase 5 — Frontend Room Profile Page (Shared)
-Branch: feat/frontend-room-profile
-Goal: per-room management page
-Features:
-  - View room info + current status (from teammate's Room.status)
-  - Manage ListingUrls (add/set primary/deactivate)
-  - Edit adminNotes
-Status: pending
+- No schema or backend blocker.
+- Work remains frontend-only.
+
+### Phase 2 — Add Dashboard Mode State
+
+Status: complete ✅
+
+Steps:
+
+1. Add `dashboardMode` and `dashboardModes` to `Dashboard.vue`.
+2. Add `isRoomStatusMode()`.
+3. Add `roomDisplayStatus(room)` and `unitDisplayStatus(unit)`.
+4. Add `roomCellClass(room)` and `unitCellClass(unit)`.
+5. Add `cleaningStatusClass(status)`.
+
+Expected result:
+
+- The template can ask one helper for display label and one helper for class.
+- Existing leasing behavior remains the default.
+
+### Phase 3 — Add Header Toggle UI
+
+Status: complete ✅
+
+Steps:
+
+1. Add a segmented control near the Dashboard header action area.
+2. Use two buttons:
+   - `Leasing Occupancy`
+   - `Room Status`
+3. Bind active button to `dashboardMode`.
+4. Keep `Refresh` visible and unchanged.
+
+Expected result:
+
+- User can switch views without leaving Dashboard.
+- Refresh still works.
+
+### Phase 4 — Rewire Room and Unit Cells
+
+Status: complete ✅
+
+Steps:
+
+1. Replace room cell label from `room.status` to `roomDisplayStatus(room)`.
+2. Replace room cell class from `statusClass(room.status)` to `roomCellClass(room)`.
+3. Replace whole-unit cell label from `unitStatus(unit)` to `unitDisplayStatus(unit)`.
+4. Replace unit cell class from `statusClass(unitStatus(unit))` to `unitCellClass(unit)`.
+5. Keep tooltip as `note` for now. In Room Status mode this can later become cleaning notes or status metadata.
+
+Expected result:
+
+- Leasing mode looks like today.
+- Room Status mode uses cleaning state.
+
+### Phase 5 — Add Cleaning Status Styling
+
+Status: complete ✅
+
+Steps:
+
+1. Add CSS styles for:
+   - `.room-cell.cleaned`
+   - `.room-cell.dirty`
+   - `.room-cell.need-setup`
+   - `.room-cell.need-spiff`
+   - `.room-cell.under-pipeline`
+2. Use the existing warm-paper visual style.
+3. Keep the left status stripe pattern so the two views feel like the same Dashboard.
+
+Suggested visual meaning:
+
+| Cleaning Status | Color Direction |
+|---|---|
+| Cleaned | soft green |
+| Dirty | red / rose |
+| Need Setup | orange |
+| Need Spiff | amber |
+| UnderPipeline | muted blue-gray |
+| Occupied | existing occupied blue |
+
+Expected result:
+
+- Room Status mode is visually distinct and scan-friendly.
+
+### Phase 6 — Verification
+
+Status: complete ✅ (npm run build passed, 0 errors)
+
+Commands:
+
+```bash
+cd "/Users/sharkqiqqi/Documents/airPulse/AirPMS/frontend"
+npm run build
+```
+
+Manual checks:
+
+- Open `http://localhost:5173/`.
+- Confirm default mode is `Leasing Occupancy`.
+- Confirm rooms still show `Airbnb Rented`, `Long Term`, `Vacant`, etc. in default mode.
+- Click `Room Status`.
+- Confirm rooms show `Cleaned`, `Dirty`, `UnderPipeline`, etc.
+- Click a room and confirm room details still opens.
+- Go back and confirm Dashboard still works.
+- Click Refresh and confirm the selected view still renders correctly.
+
+Expected result:
+
+- Build passes.
+- Existing leasing occupancy behavior is preserved.
+- New room status view works without backend changes.
 
 ---
 
-## Interface Contract Between Domains
+## Future Phase — Operational Room Status Metadata
 
-The only shared data source both services read:
-  ListingUrl WHERE isPrimary=true AND status='active' AND roomId != null
+Status: not started
 
-Teammate reads it → writes Room.status/note
-You read it → writes ReservationRaw/History/RoomStateSnapshot
+After the first version is stable, add backend-generated metadata for scheduling decisions:
 
-This table is managed by the Room Profile feature (Phase 1).
-If a URL is set as primary or deactivated, both sync pipelines are affected.
-Coordinate with teammate before changing ListingUrl schema.
+```js
+room.roomStatusMeta = {
+  dirtyDays: 3,
+  nextCheckIn: "2026-05-20",
+  daysToNextCheckIn: 5,
+  cleaningPriority: "High",
+};
+```
+
+Potential future display:
+
+```text
+Dirty
+3d dirty · Next 5d
+```
+
+This future phase should come from the Room State pipeline, not from the existing leasing sync. It will likely need reservation history and cleaning assignment data.
 
 ---
 
-## Non-Negotiable Rules
+## Risks and Guardrails
 
-1. Never write Room.status, Room.note, Unit.status, Unit.note (teammate owns these)
-2. Never modify syncIcsStatusService.js or syncLongTermLeasesService.js
-3. Schema changes must be additive (no column renames or deletions)
-4. Schema changes need teammate review before db:push
-5. index.js changes: only add new routes, never modify existing routes
-6. Reuse utils/ics.js ICS parser — do not copy it into your module
+| Risk | Guardrail |
+|---|---|
+| Accidentally changing leasing behavior | Keep `dashboardMode` default as `leasing`; do not modify sync services |
+| Confusing `Room.status` with `Room.cleaningStatus` | Use helper names that clearly say `roomDisplayStatus` and `cleaningStatusClass` |
+| Colors becoming misleading | Keep separate class mapper for leasing vs cleaning |
+| Room details click breaks | Do not change `selectRoom(property, unit, room)` |
+| Backend scope creep | Do not add API or schema changes in first version |
+
+---
+
+## Definition of Done
+
+- Dashboard has a visible two-option toggle.
+- Default view matches current Leasing Occupancy display.
+- Room Status view displays cleaning status values.
+- Unit and whole-unit rows also respond to the toggle.
+- Room detail navigation still works.
+- `frontend npm run build` passes.
+- Planning files updated with implementation progress.
+
+---
+
+## Errors Encountered
+
+No implementation errors yet. Planning only.

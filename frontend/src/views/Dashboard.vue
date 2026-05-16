@@ -137,6 +137,50 @@ function unitStatus(unit) {
   return unit.AvailabilityStatus || unit.status || "Available";
 }
 
+const dashboardMode = ref("leasing");
+const dashboardModes = [
+  { key: "leasing", label: "Leasing Occupancy" },
+  { key: "roomStatus", label: "Room Status" },
+];
+
+function isRoomStatusMode() {
+  return dashboardMode.value === "roomStatus";
+}
+
+function roomDisplayStatus(room) {
+  return isRoomStatusMode()
+    ? room.cleaningStatus || "UnderPipeline"
+    : room.status || "Available";
+}
+
+function unitDisplayStatus(unit) {
+  return isRoomStatusMode()
+    ? unit.cleaningStatus || "UnderPipeline"
+    : unit.AvailabilityStatus || unit.status || "Available";
+}
+
+function cleaningStatusClass(status) {
+  const v = String(status || "").toLowerCase().replace(/[\s_-]/g, "");
+  if (v === "cleaned") return "cleaned";
+  if (v === "dirty") return "dirty";
+  if (v === "needsetup") return "need-setup";
+  if (v === "needspiff") return "need-spiff";
+  if (v === "occupied") return "occupied";
+  return "under-pipeline";
+}
+
+function roomCellClass(room) {
+  return isRoomStatusMode()
+    ? cleaningStatusClass(roomDisplayStatus(room))
+    : statusClass(roomDisplayStatus(room));
+}
+
+function unitCellClass(unit) {
+  return isRoomStatusMode()
+    ? cleaningStatusClass(unitDisplayStatus(unit))
+    : statusClass(unitDisplayStatus(unit));
+}
+
 function resetDetailForms() {
   addingListing.value = false;
   editingListingId.value = "";
@@ -656,16 +700,24 @@ onMounted(loadDashboard);
           <p>Property / Unit / Room inventory overview</p>
         </div>
 
-        <div>
-          <div class="header-actions">
-            <button
-              class="secondary-button"
-              @click="loadDashboard"
-              :disabled="loading"
-            >
-              Refresh
-            </button>
-          </div>
+        <div class="header-right">
+          <button
+            class="mode-toggle-button"
+            type="button"
+            @click="dashboardMode = isRoomStatusMode() ? 'leasing' : 'roomStatus'"
+          >
+            <svg viewBox="0 0 16 16" aria-hidden="true">
+              <path d="M1 5h10M8 2l3 3-3 3M15 11H5M8 8l-3 3 3 3"/>
+            </svg>
+            {{ isRoomStatusMode() ? "Room Status" : "Leasing Occupancy" }}
+          </button>
+          <button
+            class="secondary-button"
+            @click="loadDashboard"
+            :disabled="loading"
+          >
+            Refresh
+          </button>
         </div>
       </div>
 
@@ -696,7 +748,7 @@ onMounted(loadDashboard);
                 class="unit-cell"
                 :class="[
                   rowIndex > 0 ? 'muted' : '',
-                  rowIndex === 0 ? statusClass(unitStatus(unit)) : '',
+                  rowIndex === 0 ? unitCellClass(unit) : '',
                 ]"
                 :title="rowIndex === 0 ? unit.note || '' : ''"
               >
@@ -709,7 +761,7 @@ onMounted(loadDashboard);
                     v-if="hasListingUrls(unit)"
                     class="unit-status"
                   >
-                    {{ unitStatus(unit) }}
+                    {{ unitDisplayStatus(unit) }}
                   </div>
                 </div>
               </div>
@@ -717,7 +769,7 @@ onMounted(loadDashboard);
               <div
                 v-if="row.type === 'unitOnly'"
                 class="room-cell empty-room-cell"
-                :class="statusClass(unitStatus(unit))"
+                :class="unitCellClass(unit)"
                 :title="unit.note || ''"
               >
                 <div class="room-name">
@@ -728,7 +780,7 @@ onMounted(loadDashboard);
                   v-if="hasListingUrls(unit)"
                   class="room-status"
                 >
-                  {{ unitStatus(unit) }}
+                  {{ unitDisplayStatus(unit) }}
                 </div>
               </div>
 
@@ -736,7 +788,7 @@ onMounted(loadDashboard);
                 v-for="room in row.rooms"
                 :key="room.id"
                 class="room-cell room-button"
-                :class="statusClass(room.status)"
+                :class="roomCellClass(room)"
                 :title="room.note || ''"
                 type="button"
                 @click="selectRoom(property, unit, room)"
@@ -746,7 +798,7 @@ onMounted(loadDashboard);
                 </span>
 
                 <span class="room-status">
-                  {{ room.status }}
+                  {{ roomDisplayStatus(room) }}
                 </span>
               </button>
             </div>
@@ -1005,6 +1057,102 @@ onMounted(loadDashboard);
 .room-cell.error .room-name,
 .room-cell.maintenance .room-name,
 .room-cell.error .room-status { color: var(--s-error-ink); }
+
+/* Header right side: toggle + refresh */
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-shrink: 0;
+}
+
+/* Single mode toggle button */
+.mode-toggle-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 14px;
+  border: 1px solid var(--linen-2);
+  border-radius: var(--r-sm);
+  background: var(--surface);
+  color: var(--ink);
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s, border-color 0.15s;
+}
+
+.mode-toggle-button svg {
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  fill: none;
+  stroke: var(--ink-2);
+  stroke-width: 1.8;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  transition: stroke 0.15s;
+}
+
+.mode-toggle-button:hover {
+  background: var(--surface-2);
+  border-color: var(--ink);
+}
+
+.mode-toggle-button:hover svg {
+  stroke: var(--ink);
+}
+
+/* Cleaning status cells */
+.room-cell.cleaned,
+.unit-cell.cleaned {
+  background: var(--s-cleaned-bg);
+}
+.room-cell.cleaned::before { background: var(--s-cleaned-ink); }
+.room-cell.cleaned .room-name,
+.room-cell.cleaned .room-status,
+.unit-cell.cleaned .unit-name,
+.unit-cell.cleaned .unit-status { color: var(--s-cleaned-ink); }
+
+.room-cell.dirty,
+.unit-cell.dirty {
+  background: var(--s-error-bg);
+}
+.room-cell.dirty::before { background: var(--s-error-ink); }
+.room-cell.dirty .room-name,
+.room-cell.dirty .room-status,
+.unit-cell.dirty .unit-name,
+.unit-cell.dirty .unit-status { color: var(--s-error-ink); }
+
+.room-cell.need-setup,
+.unit-cell.need-setup {
+  background: #fde8cc;
+}
+.room-cell.need-setup::before { background: #b56a00; }
+.room-cell.need-setup .room-name,
+.room-cell.need-setup .room-status,
+.unit-cell.need-setup .unit-name,
+.unit-cell.need-setup .unit-status { color: #b56a00; }
+
+.room-cell.need-spiff,
+.unit-cell.need-spiff {
+  background: #fef3c7;
+}
+.room-cell.need-spiff::before { background: #92700a; }
+.room-cell.need-spiff .room-name,
+.room-cell.need-spiff .room-status,
+.unit-cell.need-spiff .unit-name,
+.unit-cell.need-spiff .unit-status { color: #92700a; }
+
+.room-cell.under-pipeline,
+.unit-cell.under-pipeline {
+  background: #eaeff4;
+}
+.room-cell.under-pipeline::before { background: #6a8898; }
+.room-cell.under-pipeline .room-name,
+.room-cell.under-pipeline .room-status,
+.unit-cell.under-pipeline .unit-name,
+.unit-cell.under-pipeline .unit-status { color: #5a7a8a; }
 
 .room-detail-page {
   text-align: left;
