@@ -58,35 +58,53 @@ function detectIcsSource(icsUrl) {
     return `${year}-${month}-${day}`;
   }
   
+  // Airbnb ICS UID 格式：<guestId>-<hash>@airbnb.com
+  // 取第一个 "-" 之前的部分即为 guest user ID。
+  function extractGuestId(uid) {
+    const dashIndex = String(uid || "").indexOf("-");
+    return dashIndex > 0 ? uid.substring(0, dashIndex) : null;
+  }
+
+  // DESCRIPTION 示例：
+  // "Reservation URL: https://www.airbnb.com/hosting/reservations/details/HMA9HEMTM4\nPhone Number..."
+  function extractReservationCode(description) {
+    const match = String(description || "").match(/\/reservations\/details\/([A-Z0-9]+)/i);
+    return match ? match[1] : null;
+  }
+
   function parseAirbnbICSEvents(icsText) {
     const events = [];
     const cleanText = unfoldIcsText(icsText);
     const blocks = cleanText.split("BEGIN:VEVENT");
-  
+
     for (const block of blocks) {
       if (!block.includes("END:VEVENT")) continue;
-  
+
       const summary = extractICSField(block, "SUMMARY");
       const uid = extractICSField(block, "UID");
-  
+
       if (summary.toLowerCase() !== "reserved") continue;
-  
+
       const start = extractICSDate(block, "DTSTART");
       const end = extractICSDate(block, "DTEND");
-  
+
       if (!start || !end) continue;
-  
+
+      const description = extractICSField(block, "DESCRIPTION");
+      const guestId = extractGuestId(uid);
+      const reservationCode = extractReservationCode(description);
+
       events.push({
         start,
         end,
         summary,
-        // UID 通常可以作为 reservation/confirmation code 的弱引用，
-        // 详情页只用于生成快捷跳转，不写回主数据。
         uid,
+        guestId,
+        reservationCode,
         source: "Airbnb",
       });
     }
-  
+
     return events;
   }
   
@@ -121,98 +139,31 @@ function detectIcsSource(icsUrl) {
     return events;
   }
   
-  function parseICSEventsBySource(icsText, source) {
-    if (source === "Booking.com") {
-      return parseBookingICSEvents(icsText);
-    }
-  
-    if (source === "Airbnb") {
-      return parseAirbnbICSEvents(icsText);
-    }
-  
-    return [
-      ...parseAirbnbICSEvents(icsText),
-      ...parseBookingICSEvents(icsText),
-    ];
-  }
-  
-  /**
-   * Read one ICS URL and return status + note.
-   *
-   * Final status examples:
-   * - Airbnb Rented
-   * - Booking.com Rented
-   * - Vacant
-   * - HTTP 404
-   * - Not ICS
-   * - ICS Error
-   */
-  async function getRecentStayFromICS(icsUrl) {
-    const source = detectIcsSource(icsUrl);
-  
-    const response = await fetch(icsUrl, {
-      redirect: "follow",
-    });
-  
-    if (!response.ok) {
-      return {
-        status: `HTTP ${response.status}`,
-        note: `ICS fetch failed. HTTP Status: ${response.status}`,
-      };
-    }
-  
-    const icsText = await response.text();
-  
-    if (!icsText.includes("BEGIN:VCALENDAR")) {
-      return {
-        status: "Not ICS",
-        note: "Fetched content is not valid ICS calendar content.",
-      };
-    }
-  
-    const events = parseICSEventsBySource(icsText, source);
-  
-    if (!events.length) {
-      return {
-        status: "Vacant",
-        note: "",
-      };
-    }
-  
+  function deriveRoomStatus(events, source) {
     const today = new Date();
     today.setHours(0, 0, 0, 0);
-  
-    const validEvents = events
-      .filter((event) => event.end >= today)
+
+    const valid = events
+      .filter((e) => e.end >= today)
       .sort((a, b) => a.start - b.start);
-  
-    if (!validEvents.length) {
-      return {
-        status: "Vacant",
-        note: "",
-      };
-    }
-  
-    const note = validEvents
-      .map((event) => `${formatDate(event.start)} - ${formatDate(event.end)}`)
+
+    if (!valid.length) return { status: "Vacant", note: "" };
+
+    const note = valid
+      .map((e) => `${formatDate(e.start)} - ${formatDate(e.end)}`)
       .join("\n");
-  
-    const rentedStatus =
-      source === "Booking.com"
-        ? "Booking.com Rented"
-        : source === "Airbnb"
-          ? "Airbnb Rented"
-          : "Rented";
-  
-    return {
-      status: rentedStatus,
-      note,
-    };
+
+    const status =
+      source === "Booking.com" ? "Booking.com Rented" :
+      source === "Airbnb"      ? "Airbnb Rented"      :
+                                 "Rented";
+
+    return { status, note };
   }
-  
+
   module.exports = {
-    getRecentStayFromICS,
     detectIcsSource,
     parseAirbnbICSEvents,
     parseBookingICSEvents,
+    deriveRoomStatus,
   };

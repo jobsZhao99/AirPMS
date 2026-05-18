@@ -40,27 +40,6 @@ Files updated:
 
 Planned, not implemented.
 
-Next recommended implementation branch:
-
-```bash
-git switch -c codex/dashboard-view-toggle
-```
-
-Next recommended command before coding:
-
-```bash
-git status -sb
-```
-
-### Pending Work
-
-1. Add Dashboard mode state.
-2. Add segmented toggle UI.
-3. Add display helpers for leasing vs room status.
-4. Add cleaning status color classes.
-5. Verify room click/details still works.
-6. Run frontend build.
-
 ### Errors Encountered
 
 No errors. Planning only.
@@ -97,17 +76,6 @@ Iterated on the view toggle button UI based on user feedback:
 - **Iteration 2**: Single button labeled with destination view. User feedback: "我觉得你边上加的那个有点多余".
 - **Iteration 3 (final)**: Single `.mode-toggle-button` with ⇄ SVG icon + current view name. Button shows current mode; click toggles to opposite.
 
-Final template:
-```vue
-<button class="mode-toggle-button" type="button"
-  @click="dashboardMode = isRoomStatusMode() ? 'leasing' : 'roomStatus'">
-  <svg viewBox="0 0 16 16" aria-hidden="true">
-    <path d="M1 5h10M8 2l3 3-3 3M15 11H5M8 8l-3 3 3 3"/>
-  </svg>
-  {{ isRoomStatusMode() ? "Room Status" : "Leasing Occupancy" }}
-</button>
-```
-
 ### Phase Status
 
 All 6 phases in `task_plan.md` marked complete ✅.
@@ -115,3 +83,57 @@ All 6 phases in `task_plan.md` marked complete ✅.
 ### Errors Encountered
 
 No errors in Session 3.
+
+---
+
+## 2026-05-18 — Upcoming Reservations Feature + Bug Fixes (Session 4)
+
+### Work Done
+
+- `backend/src/utils/ics.js`: Added `extractGuestId(uid)` and `extractReservationCode(description)` to parse Airbnb ICS events. Added `deriveRoomStatus()` function (extracted from `getRecentStayFromICS` logic). Exported `deriveRoomStatus`.
+- `backend/src/services/syncIcsStatusService.js`: Refactored to use `fetchAndParseEvents()` + `deriveRoomStatus()`. Added `upsertBookingRecords()` — upserts `BookingRecord` rows for upcoming events during sync.
+- `backend/src/room-profile/RoomProfileService.js`: Renamed `fetchCurrentReservation` → `fetchUpcomingReservations`. Now returns an array of reservations with `guestId`, `reservationCode`, `isCurrent` flag.
+- `frontend/src/views/Dashboard.vue`: Added "Reservations" section in room detail panel. Shows Current/Upcoming badge per reservation. guestId is plain text (not a link). reservationCode links to Airbnb host reservation details.
+- `frontend/src/router/index.js` + `RoomProfile.vue`: Deleted standalone room profile page and route; merged into Dashboard side panel.
+
+### Bugs Fixed
+
+- Backend process was suspended (T state) causing dashboard to hang on "Loading inventory". Resolved by resuming with `kill -CONT`.
+- API was returning `currentReservation` but frontend expected `upcomingReservations` — required backend restart to pick up new code.
+- guestId link to `airbnb.com/users/show/` removed (URL doesn't work for hosts). Now plain text.
+- Section title "Upcoming Reservations" was misleading — current guests also appeared. Fixed by adding `isCurrent` badge.
+
+### Errors Encountered
+
+No implementation errors. All bugs were runtime/environment issues.
+
+---
+
+## 2026-05-18 — Code Review (Session 5)
+
+### Scope
+
+Full review of all uncommitted changes + key backend/frontend files.
+
+### Critical Issues Found
+
+See `findings.md` for full detail.
+
+1. **Dead code duplication** (`ics.js`): `getRecentStayFromICS` and `deriveRoomStatus` do nearly identical work. `getRecentStayFromICS` is now unused by sync service but still exported.
+2. **No fetch timeout**: `fetchAndParseEvents` and `fetchUpcomingReservations` have no timeout. A hanging ICS URL blocks the entire sync/profile indefinitely.
+3. **N+1 DB queries** in `upsertBookingRecords`: Sequential `findFirst` + `update/create` for each event. 10 upcoming events = up to 20 sequential queries per room.
+4. **Unit listings don't upsert booking records**: `upsertBookingRecords` is called only for room listings, silently skipped for unit-level listings.
+
+### Medium Issues Found
+
+5. **~310 lines of commented-out dead code** at top of `index.js`.
+6. **`parseICSEventsBySource` unused**: Defined in `ics.js` but not called by new sync code.
+7. **Booking.com rooms never show reservations in profile**: `fetchUpcomingReservations` only fetches for Airbnb primary URL.
+8. **Dashboard.vue is 1573 lines**: Monolithic SFC, hard to maintain.
+
+### Minor Issues Found
+
+9. Inconsistent indentation in `ics.js` (4-space at top level vs 2-space in some blocks).
+10. No auth on admin/management routes.
+11. No loading indicator while `refreshSelectedRoom` fetches room profile.
+12. No tests anywhere in the project.

@@ -433,6 +433,10 @@ onMounted(loadDashboard);
           <p>
             {{ selectedRoom.status }}
           </p>
+
+          <p v-if="selectedRoom.upcomingReservations?.[0]?.guestId" class="header-guest-id">
+            Guest ID: {{ selectedRoom.upcomingReservations[0].guestId }}
+          </p>
         </div>
 
         <div class="airbnb-actions">
@@ -689,6 +693,38 @@ onMounted(loadDashboard);
           <p>
             {{ selectedRoom.note || "No note" }}
           </p>
+        </section>
+
+        <section v-if="selectedRoom.upcomingReservations?.length" class="detail-section detail-reservation">
+          <h2>Reservations</h2>
+
+          <div
+            v-for="(res, i) in selectedRoom.upcomingReservations"
+            :key="i"
+            class="reservation-card"
+          >
+            <div class="reservation-dates">
+              <span v-if="res.isCurrent" class="reservation-badge current">Current</span>
+              <span v-else class="reservation-badge upcoming">Upcoming</span>
+              {{ new Date(res.checkIn).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" }) }}
+              –
+              {{ new Date(res.checkOut).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" }) }}
+            </div>
+            <div class="reservation-meta">
+              <span v-if="res.guestId">Guest ID: {{ res.guestId }}</span>
+              <span v-if="res.reservationCode">
+                Code:
+                <a
+                  v-if="res.reservationLink"
+                  :href="res.reservationLink"
+                  target="_blank"
+                  rel="noreferrer"
+                  class="reservation-link"
+                >{{ res.reservationCode }}</a>
+                <span v-else>{{ res.reservationCode }}</span>
+              </span>
+            </div>
+          </div>
         </section>
       </div>
     </div>
@@ -1319,6 +1355,71 @@ onMounted(loadDashboard);
   font-size: 14px;
   line-height: 1.6;
   margin: 0;
+}
+
+.detail-reservation {
+  grid-column: 1 / -1;
+}
+
+.header-guest-id {
+  margin: 6px 0 0;
+  font-size: 13px;
+  color: var(--ink-3);
+}
+
+.reservation-card {
+  padding: 10px 0;
+  border-bottom: 1px solid var(--linen);
+}
+
+.reservation-card:last-child {
+  border-bottom: none;
+}
+
+.reservation-dates {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 14px;
+  margin-bottom: 4px;
+}
+
+.reservation-badge {
+  font-size: 11px;
+  font-weight: 600;
+  padding: 1px 6px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.reservation-badge.current {
+  background: #d1fae5;
+  color: #065f46;
+}
+
+.reservation-badge.upcoming {
+  background: #e0e7ff;
+  color: #3730a3;
+}
+
+.reservation-meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-size: 13px;
+  color: var(--ink-3);
+}
+
+.reservation-link {
+  color: var(--s-booking-ink, #1a73e8);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.reservation-link:hover {
+  text-decoration: underline;
 }
 
 .listing-list {

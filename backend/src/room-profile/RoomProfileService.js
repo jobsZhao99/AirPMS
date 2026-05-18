@@ -31,12 +31,19 @@ function buildReservationLink(channel, confirmationCode) {
 
 // Fetch ICS live and return the active (today-or-future) reservation with UID.
 // Used only when viewing a room profile — not part of the sync pipeline.
-async function fetchCurrentReservation(url, channel) {
+async function fetchUpcomingReservations(url, channel) {
   try {
-    const response = await fetch(url, { redirect: "follow" });
-    if (!response.ok) return null;
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), 10000);
+    let response;
+    try {
+      response = await fetch(url, { redirect: "follow", signal: controller.signal });
+    } finally {
+      clearTimeout(timer);
+    }
+    if (!response.ok) return [];
     const icsText = await response.text();
-    if (!icsText.includes("BEGIN:VCALENDAR")) return null;
+    if (!icsText.includes("BEGIN:VCALENDAR")) return [];
 
     const events =
       channel === "Booking.com"
@@ -45,20 +52,21 @@ async function fetchCurrentReservation(url, channel) {
 
     const today = new Date();
     today.setHours(0, 0, 0, 0);
+    const now = new Date();
 
-    const active = events
+    return events
       .filter((e) => e.end >= today)
-      .sort((a, b) => a.start - b.start)[0];
-
-    if (!active) return null;
-    return {
-      checkIn: active.start,
-      checkOut: active.end,
-      confirmationCode: active.uid || null,
-      reservationLink: buildReservationLink(channel, active.uid),
-    };
+      .sort((a, b) => a.start - b.start)
+      .map((e) => ({
+        checkIn: e.start,
+        checkOut: e.end,
+        guestId: e.guestId || null,
+        reservationCode: e.reservationCode || null,
+        reservationLink: buildReservationLink(channel, e.reservationCode),
+        isCurrent: e.start <= now && e.end >= now,
+      }));
   } catch {
-    return null;
+    return [];
   }
 }
 
@@ -82,9 +90,9 @@ async function getRoomProfile(roomId) {
     (u) => u.isPrimary && u.status === "active" && u.channel === "Airbnb"
   );
 
-  let currentReservation = null;
+  let upcomingReservations = [];
   if (primaryAirbnb) {
-    currentReservation = await fetchCurrentReservation(primaryAirbnb.url, "Airbnb");
+    upcomingReservations = await fetchUpcomingReservations(primaryAirbnb.url, "Airbnb");
   }
 
   return {
@@ -99,7 +107,7 @@ async function getRoomProfile(roomId) {
     adminNotes: room.adminNotes,
     unit: room.unit,
     listingUrls,
-    currentReservation,
+    upcomingReservations,
   };
 }
 

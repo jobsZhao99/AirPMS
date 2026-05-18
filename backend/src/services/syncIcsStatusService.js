@@ -1,5 +1,80 @@
 const prisma = require("../prisma");
-const { getRecentStayFromICS } = require("../utils/ics");
+const {
+  detectIcsSource,
+  parseAirbnbICSEvents,
+  parseBookingICSEvents,
+  deriveRoomStatus,
+} = require("../utils/ics");
+
+async function fetchAndParseEvents(url) {
+  const source = detectIcsSource(url);
+  const controller = new AbortController();
+  const timer = setTimeout(() => controller.abort(), 10000);
+
+  let response;
+  try {
+    response = await fetch(url, { redirect: "follow", signal: controller.signal });
+  } finally {
+    clearTimeout(timer);
+  }
+
+  if (!response.ok) {
+    throw new Error(`HTTP ${response.status}`);
+  }
+
+  const icsText = await response.text();
+
+  if (!icsText.includes("BEGIN:VCALENDAR")) {
+    throw new Error("Not ICS");
+  }
+
+  const events =
+    source === "Booking.com"
+      ? parseBookingICSEvents(icsText)
+      : parseAirbnbICSEvents(icsText);
+
+  return { events, source };
+}
+
+async function upsertBookingRecords(listing, events) {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+
+  for (const event of events.filter((e) => e.end >= today)) {
+    const { reservationCode, guestId, start, end } = event;
+
+    const existing = reservationCode
+      ? await prisma.bookingRecord.findFirst({
+          where: { reservationCode, roomId: listing.roomId },
+        })
+      : null;
+
+    if (existing) {
+      await prisma.bookingRecord.update({
+        where: { id: existing.id },
+        data: {
+          guestId: guestId ?? existing.guestId,
+          startDate: start,
+          endDate: end,
+          status: "Confirmed",
+        },
+      });
+    } else {
+      await prisma.bookingRecord.create({
+        data: {
+          reservationCode: reservationCode ?? null,
+          guestId: guestId ?? null,
+          startDate: start,
+          endDate: end,
+          status: "Confirmed",
+          roomId: listing.roomId ?? null,
+          unitId: listing.unitId ?? null,
+          listingUrlId: listing.id,
+        },
+      });
+    }
+  }
+}
 
 async function syncIcsStatus() {
   const roomListings = await prisma.listingUrl.findMany({
@@ -45,24 +120,21 @@ async function syncIcsStatus() {
     const room = listing.room;
 
     try {
-      const result = await getRecentStayFromICS(listing.url);
+      const { events, source } = await fetchAndParseEvents(listing.url);
+      const { status, note } = deriveRoomStatus(events, source);
 
       await prisma.room.update({
         where: { id: room.id },
-        data: {
-          status: result.status,
-          note: result.note,
-        },
+        data: { status, note },
       });
+
+      await upsertBookingRecords(listing, events);
 
       roomsSynced++;
     } catch (error) {
       await prisma.room.update({
         where: { id: room.id },
-        data: {
-          status: "ICS Error",
-          note: error.message,
-        },
+        data: { status: "ICS Error", note: error.message },
       });
 
       roomsFailed++;
@@ -73,26 +145,19 @@ async function syncIcsStatus() {
     const unit = listing.unit;
 
     try {
-      const result = await getRecentStayFromICS(listing.url);
+      const { events, source } = await fetchAndParseEvents(listing.url);
+      const { status, note } = deriveRoomStatus(events, source);
 
       await prisma.unit.update({
         where: { id: unit.id },
-        data: {
-          // Unit 没有独立房间时，ICS 的出租状态写到 AvailabilityStatus。
-          // Room.status 继续服务单间展示，leasingStatus/cleaningStatus 分开维护。
-          AvailabilityStatus: result.status,
-          note: result.note,
-        },
+        data: { AvailabilityStatus: status, note },
       });
 
       unitsSynced++;
     } catch (error) {
       await prisma.unit.update({
         where: { id: unit.id },
-        data: {
-          AvailabilityStatus: "ICS Error",
-          note: error.message,
-        },
+        data: { AvailabilityStatus: "ICS Error", note: error.message },
       });
 
       unitsFailed++;
