@@ -1,7 +1,7 @@
 <template>
   <div class="app-shell">
     <nav class="app-nav">
-      <span class="nav-brand">AirPMS</span>
+      <span class="nav-brand">Air-Pulse</span>
       <RouterLink to="/" class="nav-link">Dashboard</RouterLink>
       <RouterLink to="/admin" class="nav-link">Admin</RouterLink>
     </nav>

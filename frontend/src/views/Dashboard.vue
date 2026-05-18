@@ -173,7 +173,7 @@ onMounted(loadDashboard);
     <template v-else>
       <div class="page-header">
         <div>
-          <h1>AirPMS Inventory Dashboard</h1>
+          <h1>Air-Pulse Inventory Dashboard</h1>
           <p>Property / Unit / Room inventory overview</p>
         </div>
 
