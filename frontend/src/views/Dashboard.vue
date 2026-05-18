@@ -5,6 +5,7 @@ import api from "../api";
 const properties = ref([]);
 const loading = ref(false);
 const selectedRoomContext = ref(null);
+const loadingProfile = ref(false);
 const detailError = ref("");
 const savingDetail = ref(false);
 
@@ -206,11 +207,11 @@ function closeRoomDetails() {
 async function refreshSelectedRoom() {
   if (!selectedRoom.value?.id) return;
 
+  loadingProfile.value = true;
   try {
     const res = await api.get(`/api/rooms/${selectedRoom.value.id}/profile`);
     const profile = res.data;
 
-    // 详情页仍以远程现有 UI 为主，只用 profile API 补齐 listing 管理字段。
     selectedRoomContext.value = {
       property: profile.unit?.property || selectedRoomContext.value.property,
       unit: profile.unit || selectedRoomContext.value.unit,
@@ -223,6 +224,8 @@ async function refreshSelectedRoom() {
   } catch (error) {
     console.error("Failed to refresh room profile", error);
     detailError.value = "Room details loaded from dashboard data; management actions may need backend API.";
+  } finally {
+    loadingProfile.value = false;
   }
 }
 
@@ -408,13 +411,16 @@ onMounted(loadDashboard);
       v-if="selectedRoomContext"
       class="room-detail-page"
     >
-      <button
-        class="back-button"
-        type="button"
-        @click="closeRoomDetails"
-      >
-        Back
-      </button>
+      <div class="detail-topbar">
+        <button
+          class="back-button"
+          type="button"
+          @click="closeRoomDetails"
+        >
+          Back
+        </button>
+        <span v-if="loadingProfile" class="profile-loading">Loading…</span>
+      </div>
 
       <div v-if="detailError" class="detail-alert">
         {{ detailError }}
@@ -1194,8 +1200,14 @@ onMounted(loadDashboard);
   text-align: left;
 }
 
-.back-button {
+.detail-topbar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   margin-bottom: 20px;
+}
+
+.back-button {
   border: 1px solid var(--linen-2);
   background: var(--surface);
   color: var(--ink);
@@ -1208,6 +1220,11 @@ onMounted(loadDashboard);
 }
 
 .back-button:hover { background: var(--surface-2); }
+
+.profile-loading {
+  font-size: 12px;
+  color: var(--ink-3);
+}
 
 .detail-alert {
   margin-bottom: 14px;

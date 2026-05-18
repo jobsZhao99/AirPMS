@@ -40,14 +40,24 @@ async function upsertBookingRecords(listing, events) {
   const today = new Date();
   today.setHours(0, 0, 0, 0);
 
-  for (const event of events.filter((e) => e.end >= today)) {
-    const { reservationCode, guestId, start, end } = event;
+  const upcoming = events.filter((e) => e.end >= today);
+  if (!upcoming.length) return;
 
-    const existing = reservationCode
-      ? await prisma.bookingRecord.findFirst({
-          where: { reservationCode, roomId: listing.roomId },
-        })
-      : null;
+  const codes = upcoming.map((e) => e.reservationCode).filter(Boolean);
+  const ownerFilter = listing.roomId
+    ? { roomId: listing.roomId }
+    : { unitId: listing.unitId };
+
+  const existingRecords = codes.length
+    ? await prisma.bookingRecord.findMany({
+        where: { reservationCode: { in: codes }, ...ownerFilter },
+      })
+    : [];
+
+  const existingByCode = new Map(existingRecords.map((r) => [r.reservationCode, r]));
+
+  for (const { reservationCode, guestId, start, end } of upcoming) {
+    const existing = reservationCode ? existingByCode.get(reservationCode) : null;
 
     if (existing) {
       await prisma.bookingRecord.update({
@@ -152,6 +162,8 @@ async function syncIcsStatus() {
         where: { id: unit.id },
         data: { AvailabilityStatus: status, note },
       });
+
+      await upsertBookingRecords(listing, events);
 
       unitsSynced++;
     } catch (error) {
